@@ -398,12 +398,20 @@
       border-color: rgba(255,255,255,.2);
     }
 
-    .feature-item:first-child {
+    .feature-item--wide {
       grid-column: span 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
       align-items: center;
+    }
+
+    .feature-img-flat {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 16px 48px rgba(0,0,0,.5);
+      border: 1px solid rgba(255,255,255,.1);
+      display: block;
     }
 
     .feature-icon {
@@ -455,16 +463,6 @@
       width: 100%;
     }
 
-    .feature-screenshot {
-      width: 100%;
-      border-radius: 14px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(255,255,255,.1);
-      display: block;
-      object-fit: cover;
-      object-position: top;
-      max-height: 180px;
-    }
 
     /* ── CATEGORIES ── */
     .categories-section { padding: 100px 48px; background: var(--cream-dark); }
@@ -713,7 +711,7 @@
       .how-grid { grid-template-columns: 1fr; }
       .features { padding: 64px 24px; }
       .features-grid { grid-template-columns: 1fr; }
-      .feature-item:first-child { grid-column: span 1; grid-template-columns: 1fr; }
+      .feature-item--wide { grid-column: span 1; grid-template-columns: 1fr; }
       .categories-section { padding: 64px 24px; }
       .cats-scroll { grid-template-columns: 1fr 1fr; }
       .trust-section { grid-template-columns: 1fr; padding: 64px 24px; gap: 40px; }
@@ -822,7 +820,8 @@
 
     <div class="features-grid">
 
-      <div class="feature-item reveal visible">
+      <!-- Chat + Price Offer (full width) -->
+      <div class="feature-item feature-item--wide reveal visible">
         <div>
           <div class="feature-icon" style="background:rgba(255,255,255,.1)">💬</div>
           <h3>Real-time chat with price offers</h3>
@@ -837,6 +836,7 @@
         </div>
       </div>
 
+      <!-- Escrow + Dispute (side by side, no screenshots) -->
       <div class="feature-item reveal visible" style="transition-delay:.1s">
         <div class="feature-icon" style="background:rgba(45,122,110,.3)">🔒</div>
         <h3>Secure escrow payments</h3>
@@ -844,24 +844,37 @@
       </div>
 
       <div class="feature-item reveal visible" style="transition-delay:.15s">
-        <img src="screenshots/reviews.png" alt="Reviews in app" class="feature-screenshot">
-        <div class="feature-icon" style="background:rgba(232,98,58,.3)">⭐</div>
-        <h3>Verified reviews &amp; ratings</h3>
-        <p>Only real bookings generate reviews. Build your reputation or choose providers with confidence based on genuine feedback.</p>
-      </div>
-
-      <div class="feature-item reveal visible" style="transition-delay:.2s">
-        <img src="screenshots/dispute.png" alt="Dispute resolution in app" class="feature-screenshot">
         <div class="feature-icon" style="background:rgba(255,255,255,.1)">🛡️</div>
         <h3>Dispute resolution</h3>
         <p>Something didn't go as planned? Open a dispute with evidence. A moderator reviews both sides and issues a fair decision.</p>
       </div>
 
-      <div class="feature-item reveal visible" style="transition-delay:.25s">
-        <img src="screenshots/wallet.png" alt="Built-in wallet in app" class="feature-screenshot">
-        <div class="feature-icon" style="background:rgba(45,122,110,.3)">💰</div>
-        <h3>Built-in wallet</h3>
-        <p>Earn directly into your Verko wallet. Cash out to your bank via Stripe whenever you're ready. Minimum €10.</p>
+      <!-- Reviews (full width) -->
+      <div class="feature-item feature-item--wide reveal visible" style="transition-delay:.2s">
+        <div>
+          <div class="feature-icon" style="background:rgba(232,98,58,.3)">⭐</div>
+          <h3>Verified reviews &amp; ratings</h3>
+          <p>Only real bookings generate reviews. Build your reputation or choose providers with confidence based on genuine feedback.</p>
+        </div>
+        <div class="feature-visual">
+          <img src="screenshots/reviews.png" alt="Reviews in app" class="feature-img-flat">
+        </div>
+      </div>
+
+      <!-- Wallet (full width) -->
+      <div class="feature-item feature-item--wide reveal visible" style="transition-delay:.25s">
+        <div>
+          <div class="feature-icon" style="background:rgba(45,122,110,.3)">💰</div>
+          <h3>Built-in wallet</h3>
+          <p>Earn directly into your Verko wallet. Cash out to your bank via Stripe whenever you're ready. Minimum €10.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="feature-phone">
+            <div class="feature-phone-frame">
+              <img src="screenshots/wallet.png" alt="Wallet in app" class="feature-phone-screen">
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>

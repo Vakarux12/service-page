@@ -518,10 +518,10 @@
 
   function search(q,categoryId,isInitial){
     var my=++seq;
-    results.innerHTML=skeletons(8);
+    results.innerHTML=skeletons(5);
     statusEl.textContent=q?copy[lang].searching:copy[lang].loading;
     browseTitle.textContent=(q||categoryId)?copy[lang].searchTitle:copy[lang].browseTitle;
-    var url=API+"/listings?limit=24";
+    var url=API+"/listings?limit=5";
     if(q)url+="&search="+encodeURIComponent(q);
     if(categoryId)url+="&category_id="+categoryId;
     fetch(url).then(function(r){return r.json();}).then(function(list){

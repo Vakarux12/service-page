@@ -1,453 +1,373 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title id="docTitle">Verko. — Find cleaners and local help, peer to peer</title>
-<meta id="metaDesc" name="description" content="Verko. connects people who need cleaning and everyday help with workers nearby — direct, peer-to-peer, no agencies.">
-<meta property="og:title" content="Verko. — peer-to-peer help, direct.">
-<meta property="og:description" content="Workers find customers. Customers find a cleaner. No agencies in between.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title id="docTitle">Verko — Find local help, peer to peer</title>
+<meta id="metaDesc" name="description" content="Verko is a peer-to-peer marketplace for cleaning, repairs and everyday help in Lithuania. Search real providers nearby, compare prices and reviews, message directly. No agencies.">
+<meta property="og:title" content="Verko — peer-to-peer help, direct.">
+<meta property="og:description" content="Search real providers nearby, compare prices and reviews, message directly. No agencies in between.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Ccircle cx='66' cy='66' r='15' fill='%23ffffff'/%3E%3C/svg%3E">
+<meta property="og:url" content="https://verko.lt/">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://verko.lt/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f0f0f'/%3E%3Ctext x='50' y='62' font-family='Inter,Arial,sans-serif' font-size='52' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EV%3C/text%3E%3Ccircle cx='78' cy='66' r='8' fill='%23ef5350'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.verko.lt" crossorigin>
+<link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+  /* Theme tokens mirror the Verko app (v2/src/app.css) so the site and app feel identical. */
   :root{
-    --ink:#121212;
-    --ink-2:#1c1c1c;
-    --ink-3:#272727;
-    --line-dark: rgba(255,255,255,.14);
-    --mute-dark: rgba(255,255,255,.64);
-    --paper:#ffffff;
-    --paper-2:#f4f3f1;
-    --line-light: rgba(18,18,18,.14);
-    --mute-light: rgba(18,18,18,.62);
-    --radius: 22px;
-    --serif: 'Fraunces', Georgia, serif;
-    --sans: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
-    --ease: cubic-bezier(.16,.8,.24,1);
+    --bg:#ffffff;
+    --fg:#0f0f0f;
+    --muted:#6b7280;
+    --line:#e5e7eb;
+    --line-strong:#d1d5db;
+    --accent:#0f0f0f;
+    --accent-fg:#ffffff;
+    --field-bg:#f9fafb;
+    --danger:#dc2626;
+    --ok:#16a34a;
+    --bar-bg:rgba(255,255,255,0.85);
+    --bar-solid:#ffffff;
+    --dot:#ef5350;
+    --shadow:rgba(0,0,0,0.14);
+    --radius:10px;
+    --max:1180px;
+    --ease:cubic-bezier(.16,.8,.24,1);
+    color-scheme:light;
+  }
+  html[data-theme="dark"]{
+    --bg:#0f1012; --fg:#f3f4f6; --muted:#9ca3af; --line:#2a2d31; --line-strong:#3a3e44;
+    --accent:#f3f4f6; --accent-fg:#0f1012; --field-bg:#1b1d21; --danger:#f87171; --ok:#4ade80;
+    --bar-bg:rgba(20,21,24,0.82); --bar-solid:#141518; --shadow:rgba(0,0,0,0.55);
+    color-scheme:dark;
+  }
+  @media (prefers-color-scheme: dark){
+    html[data-theme="auto"]{
+      --bg:#0f1012; --fg:#f3f4f6; --muted:#9ca3af; --line:#2a2d31; --line-strong:#3a3e44;
+      --accent:#f3f4f6; --accent-fg:#0f1012; --field-bg:#1b1d21; --danger:#f87171; --ok:#4ade80;
+      --bar-bg:rgba(20,21,24,0.82); --bar-solid:#141518; --shadow:rgba(0,0,0,0.55);
+      color-scheme:dark;
+    }
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    font-family:var(--sans);
-    background:var(--paper);
-    color:var(--ink);
-    line-height:1.4;
-    -webkit-font-smoothing:antialiased;
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--fg);line-height:1.5;font-size:16px;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
   }
   img,svg{display:block;max-width:100%;}
   a{color:inherit;text-decoration:none;}
   ul{list-style:none;}
   button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
-  :focus-visible{outline:2px solid currentColor;outline-offset:3px;}
+  input{font:inherit;color:inherit;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 
-  .skip-link{
-    position:absolute;left:-9999px;top:auto;
-    background:var(--ink);color:#fff;padding:.6rem 1rem;border-radius:8px;z-index:200;
-  }
+  .skip-link{position:absolute;left:-9999px;background:var(--accent);color:var(--accent-fg);padding:.6rem 1rem;border-radius:8px;z-index:300;}
   .skip-link:focus{left:1rem;top:1rem;}
 
-  .container{max-width:1180px;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3rem);}
+  .container{max-width:var(--max);margin-inline:auto;padding-inline:clamp(1.1rem,5vw,2.5rem);}
+
+  /* ---------- logo ---------- */
+  .logo{font-weight:800;letter-spacing:-.5px;display:inline-flex;align-items:center;font-size:1.4rem;}
+  .logo .dot{color:var(--dot);margin-left:1px;}
 
   /* ---------- header ---------- */
-  .site-header{
-    position:sticky;top:0;z-index:100;
-    background:var(--ink);color:#fff;
-    border-bottom:1px solid var(--line-dark);
-  }
-  .header-inner{
-    display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
-    padding-block:.9rem;
-  }
-  .logo{
-    font-family:var(--serif);font-weight:600;font-size:1.45rem;letter-spacing:-.02em;
-    display:inline-flex;align-items:baseline;gap:.08em;
-  }
-  .logo .dot{
-    width:.22em;height:.22em;border-radius:50%;background:#fff;display:inline-block;
-    transform:translateY(.02em);
-  }
-  .nav-links{display:flex;gap:1.6rem;font-size:.92rem;color:var(--mute-dark);}
-  .nav-links a{transition:color .2s var(--ease);}
-  .nav-links a:hover{color:#fff;}
-  .header-right{display:flex;align-items:center;gap:.9rem;}
+  .site-header{position:sticky;top:0;z-index:100;background:var(--bar-bg);
+    -webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px);
+    border-bottom:1px solid var(--line);}
+  .header-inner{display:flex;align-items:center;gap:1.2rem;height:62px;}
+  .nav-links{display:flex;gap:1.5rem;font-size:.92rem;font-weight:500;color:var(--muted);margin-left:.6rem;}
+  .nav-links a:hover{color:var(--fg);}
+  .header-right{margin-left:auto;display:flex;align-items:center;gap:.55rem;}
 
-  .lang-toggle{
-    display:inline-flex;background:var(--ink-2);border:1px solid var(--line-dark);
-    border-radius:999px;padding:3px;
-  }
-  .lang-toggle button{
-    font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;
-    padding:.4rem .7rem;border-radius:999px;color:var(--mute-dark);
-    transition:background .25s var(--ease), color .25s var(--ease);
-  }
-  .lang-toggle button.active{background:#fff;color:var(--ink);}
+  .seg{display:inline-flex;background:var(--field-bg);border:1px solid var(--line);border-radius:999px;padding:3px;}
+  .seg button{font-size:.72rem;font-weight:600;letter-spacing:.02em;padding:.35rem .6rem;border-radius:999px;color:var(--muted);transition:background .2s var(--ease),color .2s var(--ease);}
+  .seg button.active{background:var(--accent);color:var(--accent-fg);}
+  .icon-btn{width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:var(--field-bg);display:inline-flex;align-items:center;justify-content:center;font-size:1rem;}
+  .icon-btn:hover{border-color:var(--line-strong);}
 
-  .btn{
-    display:inline-flex;align-items:center;gap:.45em;white-space:nowrap;
-    padding:.85rem 1.6rem;border-radius:999px;font-weight:600;font-size:.92rem;
-    transition:transform .25s var(--ease), background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
-  }
-  .btn:hover{transform:translateY(-2px);}
-  .btn--light{background:#fff;color:var(--ink);}
-  .btn--dark{background:var(--ink);color:#fff;}
-  .btn--outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);}
-  .btn--outline:hover{background:#fff;color:var(--ink);border-color:#fff;}
-  .btn-sm{padding:.6rem 1.1rem;font-size:.82rem;}
+  .btn{display:inline-flex;align-items:center;gap:.4em;white-space:nowrap;padding:.7rem 1.2rem;border-radius:999px;font-weight:600;font-size:.92rem;border:1px solid transparent;transition:transform .2s var(--ease),background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),opacity .2s var(--ease);}
+  .btn:hover{transform:translateY(-1px);}
+  .btn--primary{background:var(--accent);color:var(--accent-fg);}
+  .btn--ghost{background:var(--field-bg);color:var(--fg);border-color:var(--line);}
+  .btn--ghost:hover{border-color:var(--line-strong);}
+  .btn--sm{padding:.5rem 1rem;font-size:.85rem;}
+  .btn--block{width:100%;justify-content:center;}
 
   /* ---------- hero ---------- */
-  .hero-mark{
-    text-align:center;padding:clamp(3rem,8vw,5.5rem) 0 clamp(2.25rem,5vw,3.25rem);
-  }
-  .kicker{
-    font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;
-    font-size:.7rem;color:var(--mute-light);margin-bottom:1rem;
-  }
-  .kicker.on-dark{color:var(--mute-dark);}
-  .wordmark{
-    font-family:var(--serif);font-weight:600;letter-spacing:-.02em;
-    font-size:clamp(3rem,11vw,6.8rem);line-height:.95;
-  }
-  .wordmark .dot{
-    width:.16em;height:.16em;border-radius:50%;background:var(--ink);
-    display:inline-block;vertical-align:.03em;margin-left:.02em;
-  }
-  @media (prefers-reduced-motion: no-preference){
-    .wordmark .dot{animation:pulse 3.2s var(--ease) infinite;}
-  }
-  @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.22);}}
+  .hero{padding:clamp(2.75rem,7vw,5rem) 0 clamp(1.5rem,4vw,2.5rem);text-align:center;}
+  .kicker{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);margin-bottom:1rem;}
+  .hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;line-height:1.02;}
+  .hero h1 .accent{color:var(--dot);}
+  .hero .tagline{font-size:clamp(1.02rem,2vw,1.25rem);color:var(--muted);max-width:46ch;margin:1.1rem auto 0;}
 
-  .hero-tagline{
-    font-size:clamp(1rem,2vw,1.2rem);color:var(--mute-light);
-    max-width:38ch;margin:1.1rem auto 0;
-  }
+  /* ---------- search ---------- */
+  .searchbar{margin:clamp(1.5rem,4vw,2.25rem) auto 0;max-width:680px;display:flex;gap:.5rem;background:var(--bg);border:1.5px solid var(--line-strong);border-radius:999px;padding:.4rem .4rem .4rem 1.2rem;box-shadow:0 8px 30px -16px var(--shadow);transition:border-color .2s var(--ease),box-shadow .2s var(--ease);}
+  .searchbar:focus-within{border-color:var(--accent);box-shadow:0 12px 36px -16px var(--shadow);}
+  .searchbar input{flex:1;border:none;background:none;outline:none;font-size:1.02rem;min-width:0;}
+  .searchbar input::placeholder{color:var(--muted);}
+  .searchbar .btn{flex-shrink:0;}
 
-  .split{display:grid;grid-template-columns:1fr 1fr;}
-  .panel{
-    padding:clamp(2.5rem,6vw,4.5rem) clamp(1.4rem,5vw,3.5rem);
-    display:flex;flex-direction:column;gap:1.1rem;
-  }
-  .panel.dark{background:var(--ink);color:#fff;}
-  .panel.light{background:var(--paper-2);color:var(--ink);}
-  .panel h2{
-    font-family:var(--serif);font-weight:600;line-height:1.05;
-    font-size:clamp(1.8rem,3.6vw,2.65rem);
-  }
-  .panel p{font-size:1rem;line-height:1.6;max-width:36ch;}
-  .panel.dark p{color:var(--mute-dark);}
-  .panel.light p{color:var(--mute-light);}
-  .panel .btn{width:fit-content;margin-top:.4rem;}
+  .cats{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.1rem;}
+  .cat{padding:.5rem 1rem;border:1px solid var(--line);border-radius:999px;font-size:.85rem;font-weight:500;background:var(--field-bg);color:var(--muted);transition:all .18s var(--ease);}
+  .cat:hover{border-color:var(--line-strong);color:var(--fg);}
+  .cat.active{background:var(--accent);color:var(--accent-fg);border-color:var(--accent);}
 
-  /* ---------- generic section header ---------- */
-  .section{padding-block:clamp(3.5rem,8vw,6rem);}
-  .section-head{max-width:48ch;margin-bottom:clamp(2rem,5vw,3rem);}
-  .section-head h2{
-    font-family:var(--serif);font-weight:600;line-height:1.08;
-    font-size:clamp(1.8rem,3.4vw,2.5rem);margin-top:.5rem;
-  }
-  .section.on-dark .kicker, .section.on-dark p{color:var(--mute-dark);}
-  .section.on-dark{background:var(--ink);color:#fff;}
-  .section.on-light-2{background:var(--paper-2);}
+  /* ---------- results / browse ---------- */
+  .section{padding-block:clamp(2.5rem,6vw,4.5rem);}
+  .section.alt{background:var(--field-bg);}
+  .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;letter-spacing:-.02em;}
+  .section-head p{color:var(--muted);font-size:.95rem;margin-top:.3rem;}
+  .results-status{color:var(--muted);font-size:.9rem;margin-bottom:1rem;min-height:1.2em;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:clamp(1rem,2.5vw,1.6rem);}
+  .tile{display:block;border-radius:var(--radius);}
+  .tile .thumb-wrap{position:relative;}
+  .tile .thumb{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius);background:var(--field-bg);border:1px solid var(--line);transition:opacity .2s var(--ease);}
+  .tile:hover .thumb{opacity:.9;}
+  .tile .thumb.placeholder{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:1.8rem;}
+  .tile .t-title{font-size:.98rem;font-weight:600;margin-top:.55rem;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .tile .t-price{font-size:.9rem;font-weight:700;margin-top:.15rem;}
+  .tile .t-meta{font-size:.78rem;color:var(--muted);font-weight:500;margin-top:.15rem;display:flex;align-items:center;gap:4px;}
+  .tile .t-meta .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;}
+  .verified{color:var(--ok);flex-shrink:0;display:inline-flex;}
+  .promoted-badge{position:absolute;top:.5rem;left:.5rem;background:var(--accent);color:var(--accent-fg);font-size:.65rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:.2rem .5rem;border-radius:999px;display:inline-flex;align-items:center;gap:3px;}
+
+  .empty{text-align:center;color:var(--muted);padding:3rem 1rem;font-size:.95rem;}
+  .skel{border-radius:var(--radius);background:linear-gradient(100deg,var(--field-bg) 30%,var(--line) 50%,var(--field-bg) 70%);background-size:200% 100%;animation:sh 1.2s infinite;}
+  .skel.thumb{width:100%;aspect-ratio:1/1;}
+  @keyframes sh{to{background-position:-200% 0;}}
+
+  /* ---------- split panels ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+  .panel{border:1px solid var(--line);border-radius:16px;padding:clamp(1.6rem,3.5vw,2.4rem);background:var(--bg);display:flex;flex-direction:column;gap:.9rem;}
+  .panel.dark{background:var(--accent);color:var(--accent-fg);border-color:var(--accent);}
+  .panel .kicker{margin-bottom:0;}
+  .panel.dark .kicker{color:rgba(255,255,255,.6);}
+  html[data-theme="dark"] .panel.dark .kicker, html[data-theme="auto"] .panel.dark .kicker{color:rgba(15,16,18,.55);}
+  .panel h3{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;}
+  .panel p{color:var(--muted);font-size:.97rem;max-width:38ch;}
+  .panel.dark p{color:rgba(255,255,255,.7);}
+  html[data-theme="dark"] .panel.dark p, html[data-theme="auto"] .panel.dark p{color:rgba(15,16,18,.62);}
+  .panel .btn{width:fit-content;margin-top:.3rem;}
 
   /* ---------- how it works ---------- */
-  .tracks{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-  .track{
-    border-radius:var(--radius);padding:clamp(1.6rem,3vw,2.2rem);
-    display:flex;flex-direction:column;gap:1.5rem;
-  }
-  .track.worker{background:var(--ink);color:#fff;}
-  .track.customer{background:#fff;color:var(--ink);border:1px solid var(--line-light);}
-  .track .kicker{margin-bottom:0;}
-  .track.worker .kicker{color:var(--mute-dark);}
-  .step{display:flex;gap:1rem;align-items:flex-start;}
-  .step .num{
-    font-family:var(--mono);font-size:.82rem;opacity:.5;min-width:2ch;padding-top:.2rem;
-  }
-  .step h3{font-size:1.02rem;font-weight:600;margin-bottom:.25rem;}
-  .step p{font-size:.92rem;line-height:1.55;}
-  .track.worker p{color:var(--mute-dark);}
-  .track.customer p{color:var(--mute-light);}
-
-  /* ---------- services ---------- */
-  .chips{display:flex;flex-wrap:wrap;gap:.6rem;}
-  .chip{
-    padding:.6rem 1.15rem;border:1px solid var(--line-light);border-radius:999px;
-    font-size:.86rem;background:#fff;transition:background .2s var(--ease), color .2s var(--ease);
-  }
-  .chip:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
-  .chip.more{border-style:dashed;color:var(--mute-light);background:transparent;}
-  .chip.more:hover{background:transparent;color:var(--mute-light);}
+  .tracks{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+  .track{border:1px solid var(--line);border-radius:16px;padding:clamp(1.5rem,3vw,2.2rem);display:flex;flex-direction:column;gap:1.3rem;background:var(--bg);}
+  .step{display:flex;gap:.9rem;align-items:flex-start;}
+  .step .num{font-weight:800;font-size:.85rem;color:var(--dot);min-width:2ch;padding-top:.15rem;}
+  .step h4{font-size:1rem;font-weight:700;margin-bottom:.2rem;}
+  .step p{font-size:.9rem;color:var(--muted);}
 
   /* ---------- trust ---------- */
-  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;}
-  .trust-card{
-    background:var(--ink-2);border:1px solid var(--line-dark);border-radius:var(--radius);
-    padding:1.6rem;display:flex;flex-direction:column;gap:.7rem;
-  }
-  .trust-card .mark{width:9px;height:9px;border-radius:50%;background:#fff;opacity:.85;}
-  .trust-card h3{font-size:1.02rem;font-weight:600;}
-  .trust-card p{font-size:.9rem;line-height:1.55;color:var(--mute-dark);}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+  .trust-card{border:1px solid var(--line);border-radius:14px;padding:1.4rem;background:var(--bg);display:flex;flex-direction:column;gap:.6rem;}
+  .trust-card .ic{width:34px;height:34px;border-radius:10px;background:var(--field-bg);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.05rem;}
+  .trust-card h4{font-size:1rem;font-weight:700;}
+  .trust-card p{font-size:.88rem;color:var(--muted);}
 
   /* ---------- final cta ---------- */
-  .final-cta{
-    position:relative;overflow:hidden;background:var(--ink);color:#fff;
-    text-align:center;padding-block:clamp(4.5rem,10vw,7rem);
-  }
-  .giant-dot{
-    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:min(62vw,820px);height:min(62vw,820px);border-radius:50%;
-    background:#fff;opacity:.045;pointer-events:none;
-  }
-  .final-cta .inner{position:relative;}
-  .final-cta h2{
-    font-family:var(--serif);font-weight:600;letter-spacing:-.01em;
-    font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.05;
-  }
-  .final-cta .sub{
-    font-size:clamp(1rem,2vw,1.2rem);color:var(--mute-dark);
-    margin:1rem 0 2.25rem;
-  }
-  .cta-row{display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap;}
-  .divider-dot{width:6px;height:6px;border-radius:50%;background:var(--mute-dark);}
+  .final{background:var(--accent);color:var(--accent-fg);border-radius:20px;text-align:center;padding:clamp(2.5rem,6vw,4rem) 1.5rem;}
+  .final h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-.02em;}
+  .final p{color:rgba(255,255,255,.72);margin:.8rem auto 1.8rem;max-width:42ch;}
+  html[data-theme="dark"] .final p, html[data-theme="auto"] .final p{color:rgba(15,16,18,.62);}
+  .final .btn--primary{background:var(--bg);color:var(--fg);}
+  .final .btn--ghost{background:transparent;border-color:rgba(255,255,255,.4);color:var(--accent-fg);}
+  .cta-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
 
   /* ---------- footer ---------- */
-  .site-footer{background:var(--ink);color:#fff;border-top:1px solid var(--line-dark);}
-  .footer-top{
-    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;
-    padding-block:clamp(2.5rem,6vw,3.5rem);
-  }
-  .footer-brand .logo{margin-bottom:.9rem;}
-  .footer-brand p{color:var(--mute-dark);font-size:.92rem;max-width:32ch;margin-bottom:.4rem;}
-  .footer-col h4{
-    font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;
-    font-size:.7rem;color:var(--mute-dark);margin-bottom:1rem;
-  }
-  .footer-col ul{display:flex;flex-direction:column;gap:.7rem;font-size:.92rem;}
-  .footer-col a{color:var(--mute-dark);transition:color .2s var(--ease);}
-  .footer-col a:hover{color:#fff;}
-  .footer-bottom{
-    border-top:1px solid var(--line-dark);padding-block:1.4rem;
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem;
-    font-size:.82rem;color:var(--mute-dark);
-  }
+  .site-footer{border-top:1px solid var(--line);background:var(--field-bg);}
+  .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2rem;padding-block:clamp(2rem,5vw,3rem);}
+  .footer-brand p{color:var(--muted);font-size:.9rem;max-width:32ch;margin-top:.7rem;}
+  .footer-col h5{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.9rem;font-weight:700;}
+  .footer-col ul{display:flex;flex-direction:column;gap:.6rem;font-size:.92rem;}
+  .footer-col a{color:var(--muted);}
+  .footer-col a:hover{color:var(--fg);}
+  .footer-bottom{border-top:1px solid var(--line);padding-block:1.2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.82rem;color:var(--muted);}
 
-  /* ---------- reveal (scroll motion) ---------- */
-  @media (prefers-reduced-motion: no-preference){
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
-    .reveal.visible{opacity:1;transform:none;}
-  }
+  /* ---------- detail modal ---------- */
+  .modal{position:fixed;inset:0;z-index:200;display:none;}
+  .modal.open{display:block;}
+  .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.5);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);}
+  .modal-card{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(820px,calc(100vw - 2rem));max-height:min(90vh,900px);overflow:auto;background:var(--bg);border:1px solid var(--line);border-radius:16px;box-shadow:0 30px 80px -30px rgba(0,0,0,.6);}
+  .modal-close{position:sticky;top:.75rem;float:right;margin:.75rem .75rem 0 0;z-index:2;width:34px;height:34px;border-radius:999px;background:var(--bar-solid);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+  .modal-body{padding:0 clamp(1.2rem,3vw,1.8rem) clamp(1.4rem,3vw,1.9rem);}
+  .gallery{display:flex;gap:.6rem;overflow-x:auto;padding:1.2rem 0 .4rem;scroll-snap-type:x mandatory;}
+  .gallery img{height:260px;border-radius:12px;object-fit:cover;scroll-snap-align:start;flex-shrink:0;border:1px solid var(--line);}
+  .gallery .placeholder{height:260px;width:100%;border-radius:12px;background:var(--field-bg);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:2.5rem;}
+  .d-title{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;margin-top:.6rem;}
+  .d-price{font-size:1.15rem;font-weight:700;margin-top:.2rem;}
+  .d-loc{color:var(--muted);font-size:.92rem;margin-top:.15rem;}
+  .d-desc{margin-top:1rem;color:var(--fg);font-size:.97rem;white-space:pre-wrap;line-height:1.6;}
+  .provider{display:flex;align-items:center;gap:.8rem;margin-top:1.4rem;padding:1rem;border:1px solid var(--line);border-radius:14px;background:var(--field-bg);}
+  .provider .pp{width:48px;height:48px;border-radius:999px;object-fit:cover;background:var(--line);flex-shrink:0;}
+  .provider .pp.ph{display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted);}
+  .provider .pn{font-weight:700;}
+  .provider .ps{font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:5px;margin-top:1px;}
+  .reviews{margin-top:1.4rem;}
+  .reviews h4{font-size:1rem;font-weight:700;margin-bottom:.7rem;}
+  .review{border:1px solid var(--line);border-radius:12px;padding:.8rem .9rem;margin-bottom:.6rem;}
+  .review .stars{color:#f5a623;font-size:.85rem;}
+  .review p{font-size:.9rem;margin-top:.25rem;}
+  .review .when{font-size:.75rem;color:var(--muted);margin-top:.3rem;}
+  .d-cta{margin-top:1.4rem;display:flex;flex-direction:column;gap:.6rem;}
+  .d-note{font-size:.82rem;color:var(--muted);text-align:center;}
 
-  /* ---------- responsive ---------- */
-  @media (max-width:780px){
-    .split{grid-template-columns:1fr;}
-    .tracks{grid-template-columns:1fr;}
+  @media (max-width:820px){
+    .footer-top{grid-template-columns:1fr 1fr;}
     .trust-grid{grid-template-columns:1fr 1fr;}
-    .footer-top{grid-template-columns:1fr;gap:2rem;}
   }
   @media (max-width:680px){
     .nav-links{display:none;}
-    .trust-grid{grid-template-columns:1fr;}
+    .split,.tracks{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr;}
   }
-  @media (max-width:500px){
-    .header-right{gap:.6rem;}
-    .btn{padding:.75rem 1.3rem;font-size:.86rem;}
+  @media (max-width:480px){
+    .header-inner{gap:.6rem;}
+    .seg button{padding:.35rem .5rem;}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+    .reveal.in{opacity:1;transform:none;}
   }
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#browse">Skip to content</a>
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="logo" href="#main" aria-label="Verko.">Verko<span class="dot" aria-hidden="true"></span></a>
+    <a class="logo" href="#top" aria-label="Verko">Verko<span class="dot">.</span></a>
     <nav class="nav-links" aria-label="Main">
-      <a href="#how-it-works" class="i18n" data-en="How it works" data-lt="Kaip tai veikia">How it works</a>
-      <a href="#services" class="i18n" data-en="Services" data-lt="Paslaugos">Services</a>
+      <a href="#browse" class="i18n" data-en="Browse" data-lt="Naršyti">Browse</a>
+      <a href="#how" class="i18n" data-en="How it works" data-lt="Kaip veikia">How it works</a>
+      <a href="#why" class="i18n" data-en="Why Verko" data-lt="Kodėl Verko">Why Verko</a>
     </nav>
     <div class="header-right">
-      <div class="lang-toggle" role="group" aria-label="Language">
-        <button id="btnEn" type="button" aria-label="English">EN</button>
-        <button id="btnLt" type="button" aria-label="Lietuvių">LT</button>
+      <div class="seg" role="group" aria-label="Language">
+        <button id="langEn" type="button">EN</button>
+        <button id="langLt" type="button">LT</button>
       </div>
-      <a class="btn btn--light btn-sm cta-link" data-role="" href="https://app.verko.lt/?lang=en">
-        <span class="i18n" data-en="Open app" data-lt="Atidaryti programą">Open app</span>
-      </a>
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle theme">◐</button>
+      <a class="btn btn--primary btn--sm app-link" data-path="/login"><span class="i18n" data-en="Open app" data-lt="Atidaryti">Open app</span></a>
     </div>
   </div>
 </header>
 
-<main id="main">
+<main id="top">
 
-  <!-- ===================== HERO ===================== -->
-  <section aria-label="Intro">
-    <div class="container hero-mark">
-      <p class="kicker i18n" data-en="Peer-to-peer services" data-lt="Tiesioginė paslaugų rinka">Peer-to-peer services</p>
-      <h1 class="wordmark">Verko<span class="dot" aria-hidden="true"></span></h1>
-      <p class="hero-tagline i18n" data-en="Where workers find customers, and customers — help." data-lt="Kur darbuotojai randa klientus, o klientai — pagalbą.">Where workers find customers, and customers — help.</p>
+  <!-- ================= HERO + SEARCH ================= -->
+  <section class="hero">
+    <div class="container">
+      <p class="kicker i18n" data-en="Peer-to-peer marketplace · Lithuania" data-lt="Tiesioginė paslaugų rinka · Lietuva">Peer-to-peer marketplace · Lithuania</p>
+      <h1 class="i18n" data-en="Find local help, <span class='accent'>direct.</span>" data-lt="Rask pagalbą netoliese, <span class='accent'>tiesiogiai.</span>">Find local help, <span class="accent">direct.</span></h1>
+      <p class="tagline i18n" data-en="Cleaning, repairs, moving and more — from real people nearby. No agencies, no markup." data-lt="Valymas, remontas, kraustymasis ir kt. — iš tikrų žmonių netoliese. Be agentūrų, be antkainio.">Cleaning, repairs, moving and more — from real people nearby. No agencies, no markup.</p>
+
+      <form class="searchbar" id="searchForm" role="search">
+        <input id="searchInput" type="search" autocomplete="off"
+               placeholder="Search cleaning, repairs, moving…"
+               data-ph-en="Search cleaning, repairs, moving…"
+               data-ph-lt="Ieškok valymo, remonto, kraustymosi…"
+               aria-label="Search services">
+        <button class="btn btn--primary" type="submit"><span class="i18n" data-en="Search" data-lt="Ieškoti">Search</span></button>
+      </form>
+
+      <div class="cats" id="cats" aria-label="Categories"></div>
     </div>
+  </section>
 
-    <div class="split">
-      <div class="panel dark reveal">
-        <p class="kicker on-dark i18n" data-en="For workers" data-lt="Darbuotojams">For workers</p>
-        <h2 class="i18n" data-en="Find customers. Not agencies." data-lt="Rask klientus. Ne agentūrą.">Find customers. Not agencies.</h2>
-        <p class="i18n" data-en="List your cleaning, repair, or care services. Set your hours, your price, your rules." data-lt="Skelbk valymo, remonto ar priežiūros paslaugas. Pasirink valandas, kainą ir taisykles.">List your cleaning, repair, or care services. Set your hours, your price, your rules.</p>
-        <a class="btn btn--light cta-link" data-role="worker" href="https://app.verko.lt/?lang=en&as=worker">
-          <span class="i18n" data-en="Start earning" data-lt="Pradėk uždarbį">Start earning</span>
-          <span aria-hidden="true">→</span>
-        </a>
+  <!-- ================= BROWSE / RESULTS ================= -->
+  <section class="section" id="browse">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 id="browseTitle" class="i18n" data-en="Live on Verko right now" data-lt="Šiuo metu Verko">Live on Verko right now</h2>
+          <p class="i18n" data-en="Real listings from real providers. Tap one to see details." data-lt="Tikri skelbimai iš tikrų teikėjų. Spustelėk, kad pamatytum.">Real listings from real providers. Tap one to see details.</p>
+        </div>
+        <a class="btn btn--ghost btn--sm app-link" data-path="/market"><span class="i18n" data-en="See all in app" data-lt="Visi programoje">See all in app</span></a>
       </div>
-      <div class="panel light reveal">
-        <p class="kicker i18n" data-en="For customers" data-lt="Klientams">For customers</p>
-        <h2 class="i18n" data-en="Find a cleaner. Today." data-lt="Susirask valytoją. Šiandien.">Find a cleaner. Today.</h2>
-        <p class="i18n" data-en="Browse real people nearby, compare prices, message directly, and book in minutes." data-lt="Naršyk tikrus žmones netoliese, palygink kainas, susirašinėk tiesiogiai ir užsisakyk per kelias minutes.">Browse real people nearby, compare prices, message directly, and book in minutes.</p>
-        <a class="btn btn--dark cta-link" data-role="customer" href="https://app.verko.lt/?lang=en&as=customer">
-          <span class="i18n" data-en="Find help" data-lt="Rask pagalbą">Find help</span>
-          <span aria-hidden="true">→</span>
-        </a>
+      <p class="results-status" id="resultsStatus" aria-live="polite"></p>
+      <div class="grid" id="results"></div>
+    </div>
+  </section>
+
+  <!-- ================= TWO SIDES ================= -->
+  <section class="section alt">
+    <div class="container">
+      <div class="split">
+        <div class="panel dark reveal">
+          <p class="kicker i18n" data-en="For customers" data-lt="Klientams">For customers</p>
+          <h3 class="i18n" data-en="Find a cleaner. Today." data-lt="Susirask valytoją. Šiandien.">Find a cleaner. Today.</h3>
+          <p class="i18n" data-en="Browse real people nearby, compare prices and reviews, then message directly and book in minutes." data-lt="Naršyk tikrus žmones netoliese, palygink kainas ir atsiliepimus, susirašinėk tiesiogiai ir užsisakyk per kelias minutes.">Browse real people nearby, compare prices and reviews, then message directly and book in minutes.</p>
+          <a class="btn btn--primary app-link" data-path="/market"><span class="i18n" data-en="Find help" data-lt="Rask pagalbą">Find help</span> →</a>
+        </div>
+        <div class="panel reveal">
+          <p class="kicker i18n" data-en="For providers" data-lt="Teikėjams">For providers</p>
+          <h3 class="i18n" data-en="Find customers. Not agencies." data-lt="Rask klientus. Ne agentūrą.">Find customers. Not agencies.</h3>
+          <p class="i18n" data-en="List your services, set your own price and hours, and keep what you earn. Build a reputation with real reviews." data-lt="Skelbk paslaugas, pasirink kainą ir valandas, pasilaikyk uždarbį. Kurk reputaciją su tikrais atsiliepimais.">List your services, set your own price and hours, and keep what you earn. Build a reputation with real reviews.</p>
+          <a class="btn btn--ghost app-link" data-path="/post"><span class="i18n" data-en="Start earning" data-lt="Pradėk uždarbį">Start earning</span> →</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== HOW IT WORKS ===================== -->
-  <section class="section" id="how-it-works">
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="section" id="how">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head"><div>
         <p class="kicker i18n" data-en="How it works" data-lt="Kaip tai veikia">How it works</p>
         <h2 class="i18n" data-en="Built for both sides." data-lt="Sukurta abiem pusėms.">Built for both sides.</h2>
-      </div>
-
+      </div></div>
       <div class="tracks">
-        <div class="track worker reveal">
-          <p class="kicker i18n" data-en="Workers" data-lt="Darbuotojai">Workers</p>
-
-          <div class="step">
-            <span class="num">01</span>
-            <div>
-              <h3 class="i18n" data-en="Create your profile" data-lt="Susikurk profilį">Create your profile</h3>
-              <p class="i18n" data-en="Add your services and the area you cover." data-lt="Pridėk paslaugas ir rajoną, kurį aptarnauji.">Add your services and the area you cover.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span class="num">02</span>
-            <div>
-              <h3 class="i18n" data-en="Get found" data-lt="Būk pastebėtas">Get found</h3>
-              <p class="i18n" data-en="Nearby customers see your listing first." data-lt="Netoliese esantys klientai pamatys tavo skelbimą pirmiausia.">Nearby customers see your listing first.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span class="num">03</span>
-            <div>
-              <h3 class="i18n" data-en="Get paid" data-lt="Gauk apmokėjimą">Get paid</h3>
-              <p class="i18n" data-en="Agree on price, do the job, collect your review." data-lt="Susitark dėl kainos, atlik darbą, gauk atsiliepimą.">Agree on price, do the job, collect your review.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="track customer reveal">
+        <div class="track reveal">
           <p class="kicker i18n" data-en="Customers" data-lt="Klientai">Customers</p>
-
-          <div class="step">
-            <span class="num">01</span>
-            <div>
-              <h3 class="i18n" data-en="Search your area" data-lt="Ieškok savo rajone">Search your area</h3>
-              <p class="i18n" data-en="Cleaning, repairs, moving help, and more." data-lt="Valymo, remonto, pagalbos kraustantis ir kt.">Cleaning, repairs, moving help, and more.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span class="num">02</span>
-            <div>
-              <h3 class="i18n" data-en="Compare and chat" data-lt="Palygink ir susirašinėk">Compare and chat</h3>
-              <p class="i18n" data-en="See prices and reviews, then message directly." data-lt="Pažiūrėk kainas ir atsiliepimus, tada susirašinėk tiesiogiai.">See prices and reviews, then message directly.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span class="num">03</span>
-            <div>
-              <h3 class="i18n" data-en="Book directly" data-lt="Užsisakyk tiesiogiai">Book directly</h3>
-              <p class="i18n" data-en="No agency fees, no markup." data-lt="Be agentūros mokesčių, be antkainio.">No agency fees, no markup.</p>
-            </div>
-          </div>
+          <div class="step"><span class="num">1</span><div><h4 class="i18n" data-en="Search your area" data-lt="Ieškok savo rajone">Search your area</h4><p class="i18n" data-en="Cleaning, repairs, moving help and more." data-lt="Valymo, remonto, pagalbos kraustantis ir kt.">Cleaning, repairs, moving help and more.</p></div></div>
+          <div class="step"><span class="num">2</span><div><h4 class="i18n" data-en="Compare and chat" data-lt="Palygink ir susirašinėk">Compare and chat</h4><p class="i18n" data-en="See prices and reviews, then message directly." data-lt="Pažiūrėk kainas ir atsiliepimus, tada susirašinėk.">See prices and reviews, then message directly.</p></div></div>
+          <div class="step"><span class="num">3</span><div><h4 class="i18n" data-en="Book directly" data-lt="Užsisakyk tiesiogiai">Book directly</h4><p class="i18n" data-en="No agency fees, no markup." data-lt="Be agentūros mokesčių, be antkainio.">No agency fees, no markup.</p></div></div>
+        </div>
+        <div class="track reveal">
+          <p class="kicker i18n" data-en="Providers" data-lt="Teikėjai">Providers</p>
+          <div class="step"><span class="num">1</span><div><h4 class="i18n" data-en="Create your listing" data-lt="Sukurk skelbimą">Create your listing</h4><p class="i18n" data-en="Add your services and the area you cover." data-lt="Pridėk paslaugas ir rajoną, kurį aptarnauji.">Add your services and the area you cover.</p></div></div>
+          <div class="step"><span class="num">2</span><div><h4 class="i18n" data-en="Get found" data-lt="Būk pastebėtas">Get found</h4><p class="i18n" data-en="Nearby customers see your listing first." data-lt="Netoliese esantys klientai pamato tave pirmiausia.">Nearby customers see your listing first.</p></div></div>
+          <div class="step"><span class="num">3</span><div><h4 class="i18n" data-en="Get paid" data-lt="Gauk apmokėjimą">Get paid</h4><p class="i18n" data-en="Agree on price, do the job, collect your review." data-lt="Susitark dėl kainos, atlik darbą, gauk atsiliepimą.">Agree on price, do the job, collect your review.</p></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== SERVICES ===================== -->
-  <section class="section on-light-2" id="services">
+  <!-- ================= WHY ================= -->
+  <section class="section alt" id="why">
     <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker i18n" data-en="What people need" data-lt="Ko reikia žmonėms">What people need</p>
-        <h2 class="i18n" data-en="Cleaning. And everything around it." data-lt="Valymas. Ir visa kita.">Cleaning. And everything around it.</h2>
-      </div>
-      <div class="chips reveal">
-        <span class="chip i18n" data-en="House cleaning" data-lt="Namų valymas">House cleaning</span>
-        <span class="chip i18n" data-en="Office cleaning" data-lt="Biurų valymas">Office cleaning</span>
-        <span class="chip i18n" data-en="Deep cleaning" data-lt="Gilus valymas">Deep cleaning</span>
-        <span class="chip i18n" data-en="Move-out cleaning" data-lt="Valymas išsikraustant">Move-out cleaning</span>
-        <span class="chip i18n" data-en="Window cleaning" data-lt="Langų valymas">Window cleaning</span>
-        <span class="chip i18n" data-en="Ironing" data-lt="Lyginimas">Ironing</span>
-        <span class="chip i18n" data-en="Garden care" data-lt="Sodo priežiūra">Garden care</span>
-        <span class="chip i18n" data-en="Small repairs" data-lt="Smulkus remontas">Small repairs</span>
-        <span class="chip i18n" data-en="Furniture assembly" data-lt="Baldų surinkimas">Furniture assembly</span>
-        <span class="chip i18n" data-en="Moving help" data-lt="Pagalba kraustantis">Moving help</span>
-        <span class="chip i18n" data-en="Babysitting" data-lt="Vaikų priežiūra">Babysitting</span>
-        <span class="chip i18n" data-en="Elderly care" data-lt="Senelių priežiūra">Elderly care</span>
-        <span class="chip i18n" data-en="Pet sitting" data-lt="Gyvūnų priežiūra">Pet sitting</span>
-        <span class="chip more i18n" data-en="+ more" data-lt="ir daugiau">+ more</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== TRUST ===================== -->
-  <section class="section on-dark">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker i18n" data-en="Why Verko." data-lt="Kodėl Verko.">Why Verko.</p>
+      <div class="section-head"><div>
+        <p class="kicker i18n" data-en="Why Verko" data-lt="Kodėl Verko">Why Verko</p>
         <h2 class="i18n" data-en="No middlemen. Just people." data-lt="Be tarpininkų. Tik žmonės.">No middlemen. Just people.</h2>
-      </div>
-      <div class="trust-grid reveal">
-        <div class="trust-card">
-          <span class="mark" aria-hidden="true"></span>
-          <h3 class="i18n" data-en="Direct messaging" data-lt="Tiesioginis susirašinėjimas">Direct messaging</h3>
-          <p class="i18n" data-en="Agree on details before you book. No call center, no waiting." data-lt="Susitark dėl detalių prieš užsakymą. Jokio skambučių centro, jokio laukimo.">Agree on details before you book. No call center, no waiting.</p>
-        </div>
-        <div class="trust-card">
-          <span class="mark" aria-hidden="true"></span>
-          <h3 class="i18n" data-en="Transparent pricing" data-lt="Skaidrios kainos">Transparent pricing</h3>
-          <p class="i18n" data-en="Workers set their own rates — you see them upfront." data-lt="Darbuotojai patys nustato įkainius — juos matai iš anksto.">Workers set their own rates — you see them upfront.</p>
-        </div>
-        <div class="trust-card">
-          <span class="mark" aria-hidden="true"></span>
-          <h3 class="i18n" data-en="Real reviews" data-lt="Tikri atsiliepimai">Real reviews</h3>
-          <p class="i18n" data-en="Rated by real customers, after real jobs." data-lt="Įvertinti tikrų klientų po realių darbų.">Rated by real customers, after real jobs.</p>
-        </div>
-        <div class="trust-card">
-          <span class="mark" aria-hidden="true"></span>
-          <h3 class="i18n" data-en="Your choice" data-lt="Jūsų pasirinkimas">Your choice</h3>
-          <p class="i18n" data-en="Workers choose their hours and jobs. Customers choose who they hire." data-lt="Darbuotojai renkasi valandas ir darbus. Klientai renkasi, ką samdo.">Workers choose their hours and jobs. Customers choose who they hire.</p>
-        </div>
+      </div></div>
+      <div class="trust-grid">
+        <div class="trust-card reveal"><div class="ic">💬</div><h4 class="i18n" data-en="Direct messaging" data-lt="Tiesioginis susirašinėjimas">Direct messaging</h4><p class="i18n" data-en="Agree on details before you book. No call center, no waiting." data-lt="Susitark dėl detalių prieš užsakymą. Jokio skambučių centro.">Agree on details before you book. No call center, no waiting.</p></div>
+        <div class="trust-card reveal"><div class="ic">💸</div><h4 class="i18n" data-en="Transparent pricing" data-lt="Skaidrios kainos">Transparent pricing</h4><p class="i18n" data-en="Providers set their own rates — you see them upfront." data-lt="Teikėjai patys nustato įkainius — juos matai iš anksto.">Providers set their own rates — you see them upfront.</p></div>
+        <div class="trust-card reveal"><div class="ic">⭐</div><h4 class="i18n" data-en="Real reviews" data-lt="Tikri atsiliepimai">Real reviews</h4><p class="i18n" data-en="Rated by real customers, after real jobs." data-lt="Įvertinti tikrų klientų po realių darbų.">Rated by real customers, after real jobs.</p></div>
+        <div class="trust-card reveal"><div class="ic">✓</div><h4 class="i18n" data-en="Verified providers" data-lt="Patvirtinti teikėjai">Verified providers</h4><p class="i18n" data-en="Phone-verified accounts and a legitimacy score on every profile." data-lt="Telefonu patvirtintos paskyros ir patikimumo įvertis kiekviename profilyje.">Phone-verified accounts and a legitimacy score on every profile.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== FINAL CTA ===================== -->
-  <section class="final-cta">
-    <div class="giant-dot" aria-hidden="true"></div>
-    <div class="container inner reveal">
-      <h2 class="i18n" data-en="Two sides. One app." data-lt="Dvi pusės. Viena programa.">Two sides. One app.</h2>
-      <p class="sub i18n" data-en="Join Verko. today." data-lt="Prisijunk prie Verko. šiandien.">Join Verko. today.</p>
-      <div class="cta-row">
-        <a class="btn btn--light cta-link" data-role="worker" href="https://app.verko.lt/?lang=en&as=worker">
-          <span class="i18n" data-en="I'm a worker" data-lt="Esu darbuotojas">I'm a worker</span>
-        </a>
-        <span class="divider-dot" aria-hidden="true"></span>
-        <a class="btn btn--outline cta-link" data-role="customer" href="https://app.verko.lt/?lang=en&as=customer">
-          <span class="i18n" data-en="I'm a customer" data-lt="Esu klientas">I'm a customer</span>
-        </a>
+  <!-- ================= FINAL CTA ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="final reveal">
+        <h2 class="i18n" data-en="Two sides. One app." data-lt="Dvi pusės. Viena programa.">Two sides. One app.</h2>
+        <p class="i18n" data-en="Create a free account to message providers and book." data-lt="Susikurk nemokamą paskyrą, kad galėtum rašyti teikėjams ir užsisakyti.">Create a free account to message providers and book.</p>
+        <div class="cta-row">
+          <a class="btn btn--primary app-link" data-path="/register"><span class="i18n" data-en="Create account" data-lt="Susikurti paskyrą">Create account</span></a>
+          <a class="btn btn--ghost app-link" data-path="/login"><span class="i18n" data-en="Log in" data-lt="Prisijungti">Log in</span></a>
+        </div>
       </div>
     </div>
   </section>
@@ -457,24 +377,25 @@
 <footer class="site-footer">
   <div class="container footer-top">
     <div class="footer-brand">
-      <a class="logo" href="#main" aria-label="Verko.">Verko<span class="dot" aria-hidden="true"></span></a>
-      <p class="i18n" data-en="Direct help, for everyone." data-lt="Tiesioginė pagalba visiems.">Direct help, for everyone.</p>
-      <p class="i18n" data-en="Made for Lithuania." data-lt="Sukurta Lietuvai.">Made for Lithuania.</p>
+      <a class="logo" href="#top">Verko<span class="dot">.</span></a>
+      <p class="i18n" data-en="Direct, peer-to-peer help for everyone. Made for Lithuania." data-lt="Tiesioginė pagalba visiems. Sukurta Lietuvai.">Direct, peer-to-peer help for everyone. Made for Lithuania.</p>
     </div>
     <div class="footer-col">
-      <h4 class="i18n" data-en="Product" data-lt="Produktas">Product</h4>
+      <h5 class="i18n" data-en="Product" data-lt="Produktas">Product</h5>
       <ul>
-        <li><a href="#how-it-works" class="i18n" data-en="How it works" data-lt="Kaip tai veikia">How it works</a></li>
-        <li><a href="#services" class="i18n" data-en="Services" data-lt="Paslaugos">Services</a></li>
-        <li><a class="cta-link" data-role="" href="https://app.verko.lt/?lang=en"><span class="i18n" data-en="Open app" data-lt="Atidaryti programą">Open app</span></a></li>
+        <li><a href="#browse" class="i18n" data-en="Browse services" data-lt="Naršyti paslaugas">Browse services</a></li>
+        <li><a href="#how" class="i18n" data-en="How it works" data-lt="Kaip veikia">How it works</a></li>
+        <li><a class="app-link" data-path="/market"><span class="i18n" data-en="Open the app" data-lt="Atidaryti programą">Open the app</span></a></li>
+        <li><a class="app-link" data-path="/post"><span class="i18n" data-en="Become a provider" data-lt="Tapk teikėju">Become a provider</span></a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4 class="i18n" data-en="Language" data-lt="Kalba">Language</h4>
-      <div class="lang-toggle" role="group" aria-label="Language">
-        <button id="btnEnFooter" type="button" aria-label="English">EN</button>
-        <button id="btnLtFooter" type="button" aria-label="Lietuvių">LT</button>
-      </div>
+      <h5 class="i18n" data-en="Account" data-lt="Paskyra">Account</h5>
+      <ul>
+        <li><a class="app-link" data-path="/login"><span class="i18n" data-en="Log in" data-lt="Prisijungti">Log in</span></a></li>
+        <li><a class="app-link" data-path="/register"><span class="i18n" data-en="Create account" data-lt="Susikurti paskyrą">Create account</span></a></li>
+        <li><a href="mailto:info@verko.lt">info@verko.lt</a></li>
+      </ul>
     </div>
   </div>
   <div class="container footer-bottom">
@@ -483,81 +404,269 @@
   </div>
 </footer>
 
+<!-- ================= LISTING DETAIL MODAL ================= -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card">
+    <button class="modal-close" type="button" data-close aria-label="Close">✕</button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
 <script>
 (function(){
-  var APP_BASE = "https://app.verko.lt/";
+  "use strict";
+  var API = "https://api.verko.lt/v1";
+  var APP = "https://app.verko.lt";
+  var lang = "en";
+
+  // ---- i18n ----
   var copy = {
-    en: {
-      title: "Verko. — Find cleaners and local help, peer to peer",
-      desc: "Verko. connects people who need cleaning and everyday help with workers nearby — direct, peer-to-peer, no agencies."
+    en:{
+      title:"Verko — Find local help, peer to peer",
+      desc:"Verko is a peer-to-peer marketplace for cleaning, repairs and everyday help in Lithuania. Search real providers nearby, compare prices and reviews, message directly. No agencies.",
+      searching:"Searching…", loading:"Loading listings…",
+      resultsFor:function(n,q){return n+" result"+(n===1?"":"s")+' for "'+q+'"';},
+      none:function(q){return 'No services found for "'+q+'". Try another search.';},
+      browseTitle:"Live on Verko right now", searchTitle:"Search results",
+      reviews:"Reviews", noDesc:"No description provided.",
+      message:"Message provider", openApp:"Open in app",
+      needAccount:"You need a free account to message and book.",
+      reviewCount:function(n){return n+" review"+(n===1?"":"s");},
+      loadFail:"Could not load listings. Open the app to browse."
     },
-    lt: {
-      title: "Verko. — Susirask valytojus ir pagalbą tiesiogiai",
-      desc: "Verko. sujungia žmones, ieškančius valymo ir kitos pagalbos, su darbuotojais netoliese — tiesiogiai, be agentūrų."
+    lt:{
+      title:"Verko — Rask pagalbą netoliese, tiesiogiai",
+      desc:"Verko — tiesioginė paslaugų rinka valymui, remontui ir kasdienei pagalbai Lietuvoje. Ieškok tikrų teikėjų netoliese, palygink kainas ir atsiliepimus, rašyk tiesiogiai. Be agentūrų.",
+      searching:"Ieškoma…", loading:"Kraunami skelbimai…",
+      resultsFor:function(n,q){return n+(n===1?" rezultatas":(n<10?" rezultatai":" rezultatų"))+' užklausai "'+q+'"';},
+      none:function(q){return 'Paslaugų pagal "'+q+'" nerasta. Pabandyk kitaip.';},
+      browseTitle:"Šiuo metu Verko", searchTitle:"Paieškos rezultatai",
+      reviews:"Atsiliepimai", noDesc:"Aprašymo nėra.",
+      message:"Rašyti teikėjui", openApp:"Atidaryti programoje",
+      needAccount:"Reikia nemokamos paskyros, kad galėtum rašyti ir užsisakyti.",
+      reviewCount:function(n){return n+(n===1?" atsiliepimas":(n<10?" atsiliepimai":" atsiliepimų"));},
+      loadFail:"Nepavyko įkelti skelbimų. Atidaryk programą."
     }
   };
 
-  var i18nEls = document.querySelectorAll('.i18n');
-  var ctaLinks = document.querySelectorAll('.cta-link');
-  var metaDesc = document.getElementById('metaDesc');
-  var docTitle = document.getElementById('docTitle');
-  var toggleBtns = [
-    {en: document.getElementById('btnEn'), lt: document.getElementById('btnLt')},
-    {en: document.getElementById('btnEnFooter'), lt: document.getElementById('btnLtFooter')}
-  ];
+  var $ = function(s,r){return (r||document).querySelector(s);};
+  var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+  function appUrl(path){return APP+path+(path.indexOf("?")>-1?"&":"?")+"lang="+lang;}
 
-  function setLang(lang){
-    if(lang !== 'lt') lang = 'en';
-    document.documentElement.lang = lang;
-
-    i18nEls.forEach(function(el){
-      var text = el.dataset[lang];
-      if(text) el.textContent = text;
-    });
-
-    ctaLinks.forEach(function(a){
-      var role = a.dataset.role;
-      var href = APP_BASE + '?lang=' + lang + (role ? '&as=' + role : '');
-      a.setAttribute('href', href);
-    });
-
-    docTitle.textContent = copy[lang].title;
-    metaDesc.setAttribute('content', copy[lang].desc);
-
-    toggleBtns.forEach(function(pair){
-      if(!pair.en || !pair.lt) return;
-      pair.en.classList.toggle('active', lang === 'en');
-      pair.lt.classList.toggle('active', lang === 'lt');
-      pair.en.setAttribute('aria-pressed', lang === 'en');
-      pair.lt.setAttribute('aria-pressed', lang === 'lt');
-    });
+  // ---- theme ----
+  function applyTheme(t){
+    if(t!=="light"&&t!=="dark"&&t!=="auto")t="auto";
+    document.documentElement.setAttribute("data-theme",t);
+    try{localStorage.setItem("vk_theme",t);}catch(e){}
   }
-
-  toggleBtns.forEach(function(pair){
-    if(pair.en) pair.en.addEventListener('click', function(){ setLang('en'); });
-    if(pair.lt) pair.lt.addEventListener('click', function(){ setLang('lt'); });
+  (function(){var t;try{t=localStorage.getItem("vk_theme");}catch(e){} applyTheme(t);})();
+  $("#themeBtn").addEventListener("click",function(){
+    var cur=document.documentElement.getAttribute("data-theme");
+    applyTheme(cur==="dark"?"light":"dark");
   });
 
-  function detectLang(){
-    var nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    return nav.indexOf('lt') === 0 ? 'lt' : 'en';
+  // ---- language ----
+  function setLang(l){
+    lang = (l==="lt")?"lt":"en";
+    document.documentElement.lang = lang;
+    $$(".i18n").forEach(function(el){
+      var v=el.getAttribute("data-"+lang);
+      if(v!=null) el.innerHTML=v;
+    });
+    var inp=$("#searchInput");
+    inp.setAttribute("placeholder",inp.getAttribute("data-ph-"+lang)||"");
+    $("#docTitle").textContent=copy[lang].title;
+    $("#metaDesc").setAttribute("content",copy[lang].desc);
+    $("#langEn").classList.toggle("active",lang==="en");
+    $("#langLt").classList.toggle("active",lang==="lt");
+    $$(".app-link").forEach(function(a){a.setAttribute("href",appUrl(a.getAttribute("data-path")||"/"));});
+    try{localStorage.setItem("vk_lang",lang);}catch(e){}
+  }
+  $("#langEn").addEventListener("click",function(){setLang("en");});
+  $("#langLt").addEventListener("click",function(){setLang("lt");});
+
+  // ---- rendering ----
+  function ratingStr(r){return r?("★ "+Number(r).toFixed(1)):"";}
+  function verifiedSvg(){return '<span class="verified" title="Verified">'+
+    '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 1.8 3 .2.9 2.9 2.2 2-1 2.9 1 2.9-2.2 2-.9 2.9-3 .2L12 22l-2.4-1.8-3-.2-.9-2.9-2.2-2 1-2.9-1-2.9 2.2-2 .9-2.9 3-.2z"/><path d="M10.6 14.6l-2-2-1.2 1.2 3.2 3.2 5.6-5.6-1.2-1.2z" fill="#fff"/></svg></span>';}
+
+  function tileHtml(l){
+    var rating=ratingStr(l.doer_rating);
+    var meta=esc(l.doer_name||"")+(rating?(" · "+rating):"");
+    var thumb=l.cover_image_url
+      ? '<img class="thumb" src="'+esc(l.cover_image_url)+'" alt="'+esc(l.title)+'" loading="lazy">'
+      : '<div class="thumb placeholder">🛠️</div>';
+    var promo=l.is_promoted?'<span class="promoted-badge">⚡ '+(lang==="lt"?"Reklamuojama":"Promoted")+'</span>':"";
+    return '<a class="tile" href="#listing-'+l.id+'" data-id="'+l.id+'">'+
+      '<div class="thumb-wrap">'+thumb+promo+'</div>'+
+      '<div class="t-title">'+esc(l.title)+'</div>'+
+      (l.price_text?'<div class="t-price">'+esc(l.price_text)+'</div>':'')+
+      '<div class="t-meta"><span class="name">'+meta+'</span>'+(l.doer_phone_verified?verifiedSvg():'')+'</div>'+
+    '</a>';
   }
 
-  setLang(detectLang());
-
-  if('IntersectionObserver' in window){
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {threshold: .15});
-    document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+  function skeletons(n){
+    var h="";
+    for(var i=0;i<n;i++) h+='<div><div class="skel thumb"></div></div>';
+    return h;
   }
+
+  var results=$("#results"), statusEl=$("#resultsStatus"), browseTitle=$("#browseTitle");
+  var seq=0;
+
+  function search(q,categoryId,isInitial){
+    var my=++seq;
+    results.innerHTML=skeletons(8);
+    statusEl.textContent=q?copy[lang].searching:copy[lang].loading;
+    browseTitle.textContent=(q||categoryId)?copy[lang].searchTitle:copy[lang].browseTitle;
+    var url=API+"/listings?limit=24";
+    if(q)url+="&search="+encodeURIComponent(q);
+    if(categoryId)url+="&category_id="+categoryId;
+    fetch(url).then(function(r){return r.json();}).then(function(list){
+      if(my!==seq)return;
+      if(!Array.isArray(list))list=[];
+      if(list.length===0){
+        results.innerHTML="";
+        statusEl.textContent="";
+        results.innerHTML='<div class="empty">'+esc(q?copy[lang].none(q):(lang==="lt"?"Skelbimų kol kas nėra.":"No listings yet."))+'</div>';
+        return;
+      }
+      statusEl.textContent=q?copy[lang].resultsFor(list.length,q):"";
+      results.innerHTML=list.map(tileHtml).join("");
+    }).catch(function(){
+      if(my!==seq)return;
+      results.innerHTML='<div class="empty">'+esc(copy[lang].loadFail)+' <a class="app-link" style="color:var(--dot);font-weight:600" data-path="/market" href="'+appUrl("/market")+'">'+APP.replace("https://","")+'</a></div>';
+      statusEl.textContent="";
+    });
+  }
+
+  // ---- categories ----
+  fetch(API+"/categories").then(function(r){return r.json();}).then(function(cats){
+    if(!Array.isArray(cats))return;
+    var wrap=$("#cats");
+    var allBtn='<button class="cat active" data-cat="">'+(lang==="lt"?"Visi":"All")+'</button>';
+    wrap.innerHTML=allBtn+cats.map(function(c){return '<button class="cat" data-cat="'+c.id+'">'+esc(c.name)+'</button>';}).join("");
+    wrap.addEventListener("click",function(e){
+      var b=e.target.closest(".cat"); if(!b)return;
+      $$(".cat",wrap).forEach(function(x){x.classList.remove("active");});
+      b.classList.add("active");
+      var cid=b.getAttribute("data-cat");
+      $("#searchInput").value="";
+      search("",cid?Number(cid):null);
+    });
+  }).catch(function(){});
+
+  // ---- search form ----
+  var debounce;
+  $("#searchForm").addEventListener("submit",function(e){e.preventDefault();clearTimeout(debounce);doSearch();});
+  $("#searchInput").addEventListener("input",function(){
+    clearTimeout(debounce);
+    debounce=setTimeout(doSearch,350);
+  });
+  function doSearch(){
+    var q=$("#searchInput").value.trim();
+    $$(".cat").forEach(function(x){x.classList.toggle("active",x.getAttribute("data-cat")==="");});
+    search(q,null);
+  }
+
+  // ---- detail modal ----
+  var modal=$("#modal"), modalBody=$("#modalBody"), lastFocus=null;
+  function openModal(id){
+    lastFocus=document.activeElement;
+    modal.classList.add("open");
+    document.body.style.overflow="hidden";
+    modalBody.innerHTML='<div style="padding:3rem;text-align:center;color:var(--muted)">'+copy[lang].searching+'</div>';
+    fetch(API+"/listings/"+id).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(l){
+      renderDetail(l);
+      // best-effort provider reviews
+      if(l.doer_id){
+        fetch(API+"/reviews/user/"+l.doer_id).then(function(r){return r.ok?r.json():[];}).then(function(rv){
+          if(Array.isArray(rv)&&rv.length)renderReviews(rv);
+        }).catch(function(){});
+      }
+    }).catch(function(){
+      modalBody.innerHTML='<div style="padding:3rem;text-align:center;color:var(--muted)">'+
+        (lang==="lt"?"Nepavyko įkelti skelbimo.":"Could not load this listing.")+'</div>';
+    });
+  }
+  function closeModal(){
+    modal.classList.remove("open");
+    document.body.style.overflow="";
+    if(location.hash.indexOf("#listing-")===0)history.replaceState(null,"",location.pathname+location.search);
+    if(lastFocus)try{lastFocus.focus();}catch(e){}
+  }
+  function renderDetail(l){
+    var imgs=(l.images&&l.images.length)?l.images:(l.cover_image_url?[{image_url:l.cover_image_url}]:[]);
+    var gal=imgs.length
+      ? '<div class="gallery">'+imgs.map(function(i){return '<img src="'+esc(i.image_url)+'" alt="'+esc(l.title)+'" loading="lazy">';}).join("")+'</div>'
+      : '<div class="gallery"><div class="placeholder">🛠️</div></div>';
+    var initials=(l.doer_name||"?").trim().charAt(0).toUpperCase();
+    var pp=l.doer_photo_url
+      ? '<img class="pp" src="'+esc(l.doer_photo_url)+'" alt="'+esc(l.doer_name)+'">'
+      : '<div class="pp ph">'+esc(initials)+'</div>';
+    var rating=l.doer_rating?('★ '+Number(l.doer_rating).toFixed(1)+' · '+copy[lang].reviewCount(l.doer_review_count||0)):copy[lang].reviewCount(l.doer_review_count||0);
+    modalBody.innerHTML=gal+
+      '<h2 class="d-title" id="dTitle">'+esc(l.title)+'</h2>'+
+      (l.price_text?'<div class="d-price">'+esc(l.price_text)+'</div>':'')+
+      (l.location?'<div class="d-loc">📍 '+esc(l.location)+'</div>':'')+
+      '<div class="d-desc">'+esc(l.description||copy[lang].noDesc)+'</div>'+
+      '<div class="provider">'+pp+'<div><div class="pn">'+esc(l.doer_name||"")+
+        (l.doer_phone_verified?' '+verifiedSvg():'')+'</div>'+
+        '<div class="ps">'+esc(rating)+'</div></div></div>'+
+      '<div class="reviews" id="dReviews"></div>'+
+      '<div class="d-cta">'+
+        '<a class="btn btn--primary btn--block" href="'+appUrl("/listing/"+l.id)+'">'+copy[lang].message+'</a>'+
+        '<a class="btn btn--ghost btn--block" href="'+appUrl("/listing/"+l.id)+'">'+copy[lang].openApp+'</a>'+
+        '<p class="d-note">'+copy[lang].needAccount+'</p>'+
+      '</div>';
+  }
+  function renderReviews(rv){
+    var box=$("#dReviews"); if(!box)return;
+    // Only reviews of this person as a provider (left by the customer/asker).
+    var asProvider=rv.filter(function(r){return r.reviewer_role==="asker";});
+    if(!asProvider.length)return;
+    var top=asProvider.filter(function(r){return r.comment;}).slice(0,4);
+    if(!top.length)top=asProvider.slice(0,3);
+    var stars=function(n){return "★★★★★".slice(0,n)+"☆☆☆☆☆".slice(0,5-n);};
+    box.innerHTML='<h4>'+copy[lang].reviews+'</h4>'+top.map(function(r){
+      var when=r.created_at?new Date(r.created_at).toLocaleDateString(lang==="lt"?"lt-LT":"en-GB",{year:"numeric",month:"short",day:"numeric"}):"";
+      return '<div class="review"><div class="stars">'+stars(r.rating||0)+'</div>'+
+        (r.comment?'<p>'+esc(r.comment)+'</p>':'')+
+        (when?'<div class="when">'+when+'</div>':'')+'</div>';
+    }).join("");
+  }
+
+  // open modal on tile click (delegated)
+  results.addEventListener("click",function(e){
+    var t=e.target.closest(".tile"); if(!t)return;
+    e.preventDefault();
+    var id=t.getAttribute("data-id");
+    history.replaceState(null,"","#listing-"+id);
+    openModal(id);
+  });
+  $$("[data-close]",modal).forEach(function(el){el.addEventListener("click",closeModal);});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&modal.classList.contains("open"))closeModal();});
+
+  // ---- reveal on scroll ----
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target);}});},{threshold:.12});
+    $$(".reveal").forEach(function(el){io.observe(el);});
+  }
+
+  // ---- init ----
+  var savedLang;try{savedLang=localStorage.getItem("vk_lang");}catch(e){}
+  if(!savedLang){var nv=(navigator.language||"en").toLowerCase();savedLang=nv.indexOf("lt")===0?"lt":"en";}
+  setLang(savedLang);
+
+  // initial load: featured/recent listings
+  search("",null,true);
+
+  // deep link support: #listing-<id>
+  var m=location.hash.match(/^#listing-(\d+)/);
+  if(m)openModal(m[1]);
 })();
 </script>
-
 </body>
 </html>

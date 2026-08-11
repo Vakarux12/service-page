@@ -1,0 +1,28 @@
+# https://verko.lt/robots.txt
+
+Sitemap: https://verko.lt/sitemap.xml
+
+# Google AdSense crawler — reads page content to serve relevant ads
+User-agent: Mediapartners-Google
+Allow: /
+
+# AdSense/Ads landing page quality checks
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+User-agent: AdsBot-Google-Mobile-Apps
+Allow: /
+
+# Search indexing
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Everyone else
+User-agent: *
+Allow: /

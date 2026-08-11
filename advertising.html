@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title id="docTitle">Advertising &amp; cookies — Verko</title>
+<meta id="metaDesc" name="description" content="How verko.lt uses cookies and third-party advertising, which data is involved, and how to opt out of personalised ads.">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://verko.lt/advertising.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f0f0f'/%3E%3Ctext x='50' y='62' font-family='Inter,Arial,sans-serif' font-size='52' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EV%3C/text%3E%3Ccircle cx='78' cy='66' r='8' fill='%23ef5350'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#0f0f0f; --muted:#6b7280; --line:#e5e7eb;
+    --accent:#0f0f0f; --accent-fg:#ffffff; --field-bg:#f9fafb;
+    --dot:#ef5350; --radius:10px; --max:1180px;
+    color-scheme:light;
+  }
+  html[data-theme="dark"]{
+    --bg:#0f1012; --fg:#f3f4f6; --muted:#9ca3af; --line:#2a2d31;
+    --accent:#f3f4f6; --accent-fg:#0f1012; --field-bg:#1b1d21;
+    color-scheme:dark;
+  }
+  @media (prefers-color-scheme: dark){
+    html[data-theme="auto"]{
+      --bg:#0f1012; --fg:#f3f4f6; --muted:#9ca3af; --line:#2a2d31;
+      --accent:#f3f4f6; --accent-fg:#0f1012; --field-bg:#1b1d21;
+      color-scheme:dark;
+    }
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .container{width:min(100% - 2.5rem,var(--max));margin-inline:auto;}
+  .site-header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:62px;}
+  .logo{font-weight:800;font-size:1.2rem;letter-spacing:-.03em;text-decoration:none;}
+  .logo .dot{color:var(--dot);}
+  .header-right{display:flex;align-items:center;gap:.6rem;}
+  .seg{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;}
+  .seg button{background:none;border:0;padding:.35rem .7rem;font:inherit;font-size:.78rem;font-weight:600;color:var(--muted);cursor:pointer;}
+  .seg button.active{background:var(--accent);color:var(--accent-fg);}
+  .icon-btn{background:none;border:1px solid var(--line);border-radius:999px;width:32px;height:32px;font-size:.9rem;color:var(--muted);cursor:pointer;}
+  .btn{display:inline-flex;align-items:center;gap:.4rem;border-radius:999px;padding:.5rem 1rem;font-size:.85rem;font-weight:600;text-decoration:none;background:var(--accent);color:var(--accent-fg);border:1px solid var(--accent);}
+  main{padding-block:clamp(2.5rem,6vw,4rem);}
+  .doc{max-width:72ch;}
+  .kicker{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;}
+  h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.025em;margin:.5rem 0 .4rem;}
+  .updated{color:var(--muted);font-size:.85rem;margin-bottom:2rem;}
+  h2{font-size:1.15rem;font-weight:700;letter-spacing:-.01em;margin:2.2rem 0 .7rem;padding-top:1.4rem;border-top:1px solid var(--line);}
+  h2:first-of-type{border-top:0;padding-top:0;}
+  p{color:var(--muted);margin-bottom:.9rem;}
+  p.lead{color:var(--fg);font-size:1.05rem;}
+  strong{color:var(--fg);font-weight:600;}
+  ul{margin:0 0 .9rem 1.1rem;color:var(--muted);}
+  li{margin-bottom:.5rem;}
+  .doc a{color:var(--fg);font-weight:600;text-decoration:underline;text-underline-offset:3px;}
+  .note{background:var(--field-bg);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.25rem;margin:1.2rem 0;}
+  .note p:last-child{margin-bottom:0;}
+  .site-footer{border-top:1px solid var(--line);margin-top:3rem;padding-block:1.5rem;font-size:.85rem;color:var(--muted);}
+  .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;}
+  .footer-inner a{color:var(--muted);}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/">Verko<span class="dot">.</span></a>
+    <div class="header-right">
+      <div class="seg" role="group" aria-label="Language">
+        <button id="langEn" type="button">EN</button>
+        <button id="langLt" type="button">LT</button>
+      </div>
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle theme">◐</button>
+      <a class="btn" href="/"><span class="i18n" data-en="Back to site" data-lt="Į svetainę">Back to site</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container doc">
+    <p class="kicker i18n" data-en="Website policy" data-lt="Svetainės politika">Website policy</p>
+    <h1 class="i18n" data-en="Advertising &amp; cookies" data-lt="Reklama ir slapukai">Advertising &amp; cookies</h1>
+    <p class="updated"><span class="i18n" data-en="Last updated" data-lt="Atnaujinta">Last updated</span>: 2026-08-11</p>
+
+    <p class="lead i18n" data-en="This page explains how the public website at verko.lt uses cookies and displays third-party advertising. It covers this website only. Personal data you give us as a Verko user — your account, listings, messages and bookings — is governed by the Verko privacy policy, which is linked at the bottom of this page." data-lt="Šiame puslapyje paaiškinama, kaip vieša svetainė verko.lt naudoja slapukus ir rodo trečiųjų šalių reklamą. Jis apima tik šią svetainę. Asmens duomenis, kuriuos pateiki kaip Verko naudotojas — paskyrą, skelbimus, žinutes ir užsakymus — reglamentuoja Verko privatumo politika, į kurią nuoroda pateikta puslapio apačioje.">This page explains how the public website at verko.lt uses cookies and displays third-party advertising. It covers this website only. Personal data you give us as a Verko user — your account, listings, messages and bookings — is governed by the Verko privacy policy, which is linked at the bottom of this page.</p>
+
+    <h2 class="i18n" data-en="Advertising on this website" data-lt="Reklama šioje svetainėje">Advertising on this website</h2>
+    <p class="i18n" data-en="verko.lt displays advertising supplied by Google, through the Google AdSense programme. The adverts are selected and delivered by Google, not by us, and we do not control which specific advertisers appear." data-lt="verko.lt rodoma „Google“ tiekiama reklama per „Google AdSense“ programą. Skelbimus parenka ir pateikia „Google“, o ne mes, ir mes nekontroliuojame, kurie konkretūs reklamuotojai pasirodys.">verko.lt displays advertising supplied by Google, through the Google AdSense programme. The adverts are selected and delivered by Google, not by us, and we do not control which specific advertisers appear.</p>
+    <ul>
+      <li class="i18n" data-en="Third-party vendors, including Google, use cookies to serve adverts based on your prior visits to this website or to other websites." data-lt="Trečiosios šalys, įskaitant „Google“, naudoja slapukus, kad rodytų skelbimus pagal ankstesnius tavo apsilankymus šioje ar kitose svetainėse.">Third-party vendors, including Google, use cookies to serve adverts based on your prior visits to this website or to other websites.</li>
+      <li class="i18n" data-en="Google's use of advertising cookies enables it and its partners to serve adverts to you based on your visit to this site and/or other sites on the internet." data-lt="„Google“ naudojami reklamos slapukai leidžia jai ir jos partneriams rodyti tau skelbimus pagal apsilankymą šioje ir (arba) kitose interneto svetainėse.">Google's use of advertising cookies enables it and its partners to serve adverts to you based on your visit to this site and/or other sites on the internet.</li>
+      <li class="i18n" data-en="These cookies may involve your IP address, device and browser information, and general location, and are used for ad selection, frequency capping, measurement and fraud prevention." data-lt="Šie slapukai gali apimti tavo IP adresą, įrenginio ir naršyklės informaciją bei apytikslę vietą; jie naudojami skelbimams parinkti, rodymo dažniui riboti, matavimui ir sukčiavimo prevencijai.">These cookies may involve your IP address, device and browser information, and general location, and are used for ad selection, frequency capping, measurement and fraud prevention.</li>
+    </ul>
+
+    <h2 class="i18n" data-en="How to opt out" data-lt="Kaip atsisakyti">How to opt out</h2>
+    <p class="i18n" data-en="You are not obliged to accept personalised advertising. You can:" data-lt="Personalizuotos reklamos priimti neprivalai. Gali:">You are not obliged to accept personalised advertising. You can:</p>
+    <ul>
+      <li><span class="i18n" data-en="Turn off personalised advertising in your Google account at" data-lt="Išjungti personalizuotą reklamą savo „Google“ paskyroje adresu">Turn off personalised advertising in your Google account at</span> <a href="https://www.google.com/settings/ads" rel="noopener nofollow" target="_blank">google.com/settings/ads</a>.</li>
+      <li><span class="i18n" data-en="Opt out of third-party vendor cookies used for advertising at" data-lt="Atsisakyti reklamai naudojamų trečiųjų šalių slapukų adresu">Opt out of third-party vendor cookies used for advertising at</span> <a href="https://www.aboutads.info/choices/" rel="noopener nofollow" target="_blank">aboutads.info/choices</a> <span class="i18n" data-en="or" data-lt="arba">or</span> <a href="https://www.youronlinechoices.eu/" rel="noopener nofollow" target="_blank">youronlinechoices.eu</a>.</li>
+      <li class="i18n" data-en="Block or delete cookies in your browser settings. Blocking them does not remove the adverts; it means they are chosen without reference to your browsing history." data-lt="Blokuoti ar ištrinti slapukus naršyklės nustatymuose. Blokavimas skelbimų nepašalina — tiesiog jie bus parenkami neatsižvelgiant į naršymo istoriją.">Block or delete cookies in your browser settings. Blocking them does not remove the adverts; it means they are chosen without reference to your browsing history.</li>
+    </ul>
+    <div class="note">
+      <p class="i18n" data-en="If you are in the European Economic Area, the United Kingdom or Switzerland, a consent prompt is shown before advertising cookies that require consent are set, and you can change or withdraw that choice at any time through the same prompt." data-lt="Jei esi Europos ekonominėje erdvėje, Jungtinėje Karalystėje ar Šveicarijoje, prieš įrašant sutikimo reikalaujančius reklamos slapukus rodomas sutikimo langas; savo pasirinkimą bet kada gali pakeisti ar atšaukti tame pačiame lange.">If you are in the European Economic Area, the United Kingdom or Switzerland, a consent prompt is shown before advertising cookies that require consent are set, and you can change or withdraw that choice at any time through the same prompt.</p>
+    </div>
+
+    <h2 class="i18n" data-en="What this website stores itself" data-lt="Ką ši svetainė saugo pati">What this website stores itself</h2>
+    <p class="i18n" data-en="Apart from advertising, verko.lt keeps very little. It stores two preferences in your browser's local storage so the site looks the same on your next visit:" data-lt="Be reklamos, verko.lt saugo labai nedaug. Naršyklės vietinėje saugykloje laikomi du nustatymai, kad kitą kartą svetainė atrodytų taip pat:">Apart from advertising, verko.lt keeps very little. It stores two preferences in your browser's local storage so the site looks the same on your next visit:</p>
+    <ul>
+      <li class="i18n" data-en="your chosen colour theme (light or dark);" data-lt="pasirinkta spalvų tema (šviesi ar tamsi);">your chosen colour theme (light or dark);</li>
+      <li class="i18n" data-en="your chosen interface language (Lithuanian or English)." data-lt="pasirinkta sąsajos kalba (lietuvių ar anglų).">your chosen interface language (Lithuanian or English).</li>
+    </ul>
+    <p class="i18n" data-en="Neither leaves your device, neither identifies you, and clearing your browser data removes both. The listings shown on the home page are fetched from the Verko service so that the page can display them; browsing this website does not require an account and does not create one." data-lt="Nė vienas nustatymas neišeina iš tavo įrenginio ir tavęs neidentifikuoja; išvalius naršyklės duomenis abu dingsta. Pagrindiniame puslapyje rodomi skelbimai gaunami iš Verko paslaugos, kad puslapis galėtų juos parodyti; naršyti šioje svetainėje paskyros nereikia ir ji nesukuriama.">Neither leaves your device, neither identifies you, and clearing your browser data removes both. The listings shown on the home page are fetched from the Verko service so that the page can display them; browsing this website does not require an account and does not create one.</p>
+
+    <h2 class="i18n" data-en="Full Verko policies" data-lt="Visos Verko politikos">Full Verko policies</h2>
+    <p class="i18n" data-en="Everything concerning your Verko account and your use of the marketplace — what personal data we hold, why, how long for, and your rights under the GDPR — is set out in the policies in the app:" data-lt="Viskas, kas susiję su tavo Verko paskyra ir naudojimusi rinka — kokius asmens duomenis tvarkome, kodėl, kiek laiko ir kokios tavo teisės pagal BDAR — išdėstyta programos politikose:">Everything concerning your Verko account and your use of the marketplace — what personal data we hold, why, how long for, and your rights under the GDPR — is set out in the policies in the app:</p>
+    <ul>
+      <li><a href="https://app.verko.lt/legal/privacy" rel="noopener"><span class="i18n" data-en="Privacy policy" data-lt="Privatumo politika">Privacy policy</span></a></li>
+      <li><a href="https://app.verko.lt/legal/terms" rel="noopener"><span class="i18n" data-en="Terms of service" data-lt="Paslaugų teikimo sąlygos">Terms of service</span></a></li>
+      <li><a href="https://app.verko.lt/legal/minor" rel="noopener"><span class="i18n" data-en="Minors policy" data-lt="Nepilnamečių politika">Minors policy</span></a></li>
+    </ul>
+
+    <h2 class="i18n" data-en="Questions" data-lt="Klausimai">Questions</h2>
+    <p><span class="i18n" data-en="Write to us at" data-lt="Rašyk mums adresu">Write to us at</span> <a href="mailto:info@verko.lt">info@verko.lt</a><span class="i18n" data-en=" and we will answer. If you believe your data has been handled improperly, you may also complain to the State Data Protection Inspectorate of Lithuania." data-lt=" — atsakysime. Jei manai, kad tavo duomenys tvarkomi netinkamai, gali kreiptis ir į Valstybinę duomenų apsaugos inspekciją."> and we will answer. If you believe your data has been handled improperly, you may also complain to the State Data Protection Inspectorate of Lithuania.</span></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="i18n" data-en="© 2026 Verko. All rights reserved." data-lt="© 2026 Verko. Visos teisės saugomos.">© 2026 Verko. All rights reserved.</span>
+    <a href="/" class="i18n" data-en="verko.lt" data-lt="verko.lt">verko.lt</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s);};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s));};
+  var copy={
+    en:{title:"Advertising & cookies — Verko",desc:"How verko.lt uses cookies and third-party advertising, which data is involved, and how to opt out of personalised ads."},
+    lt:{title:"Reklama ir slapukai — Verko",desc:"Kaip verko.lt naudoja slapukus ir trečiųjų šalių reklamą, kokie duomenys tvarkomi ir kaip atsisakyti personalizuotos reklamos."}
+  };
+  function applyTheme(t){
+    if(t!=="light"&&t!=="dark"&&t!=="auto")t="auto";
+    document.documentElement.setAttribute("data-theme",t);
+    try{localStorage.setItem("vk_theme",t);}catch(e){}
+  }
+  (function(){var t;try{t=localStorage.getItem("vk_theme");}catch(e){} applyTheme(t);})();
+  $("#themeBtn").addEventListener("click",function(){
+    var cur=document.documentElement.getAttribute("data-theme");
+    applyTheme(cur==="dark"?"light":"dark");
+  });
+  function setLang(l){
+    var lang=(l==="lt")?"lt":"en";
+    document.documentElement.lang=lang;
+    $$(".i18n").forEach(function(el){
+      var v=el.getAttribute("data-"+lang);
+      if(v!=null) el.innerHTML=v;
+    });
+    $("#docTitle").textContent=copy[lang].title;
+    $("#metaDesc").setAttribute("content",copy[lang].desc);
+    $("#langEn").classList.toggle("active",lang==="en");
+    $("#langLt").classList.toggle("active",lang==="lt");
+    try{localStorage.setItem("vk_lang",lang);}catch(e){}
+  }
+  $("#langEn").addEventListener("click",function(){setLang("en");});
+  $("#langLt").addEventListener("click",function(){setLang("lt");});
+  var saved;try{saved=localStorage.getItem("vk_lang");}catch(e){}
+  setLang(saved||((navigator.language||"").toLowerCase().indexOf("lt")===0?"lt":"en"));
+})();
+</script>
+</body>
+</html>

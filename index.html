@@ -11,7 +11,46 @@
 <meta property="og:url" content="https://verko.lt/">
 <meta name="theme-color" content="#ffffff">
 <meta name="google-adsense-account" content="ca-pub-9142954017884206">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9142954017884206" crossorigin="anonymous"></script>
 <link rel="canonical" href="https://verko.lt/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://verko.lt/#org",
+      "name": "Verko",
+      "url": "https://verko.lt/",
+      "email": "info@verko.lt",
+      "areaServed": { "@type": "Country", "name": "Lithuania" },
+      "description": "Peer-to-peer marketplace for cleaning, repairs, moving and everyday help in Lithuania."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://verko.lt/#website",
+      "url": "https://verko.lt/",
+      "name": "Verko",
+      "publisher": { "@id": "https://verko.lt/#org" },
+      "inLanguage": ["lt", "en"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://verko.lt/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Does it cost anything to use Verko?", "acceptedAnswer": { "@type": "Answer", "text": "Creating an account, browsing listings and messaging a provider are free. What you pay for the work itself is the price the provider has set and that the two of you agree on — Verko does not add an agency margin on top of it." } },
+        { "@type": "Question", "name": "Who decides the price?", "acceptedAnswer": { "@type": "Answer", "text": "The provider does. Every listing shows their own rate, which is why two cleaners in the same city can quote differently for what looks like the same job. Read what the price includes before you agree — travel, materials and the size of the property all change it." } },
+        { "@type": "Question", "name": "Are providers checked in any way?", "acceptedAnswer": { "@type": "Answer", "text": "Accounts are verified by phone number, and every profile carries a legitimacy score alongside reviews left by customers after real jobs. That is a useful signal, not a background check — you should still read the reviews and ask questions before letting someone into your home." } },
+        { "@type": "Question", "name": "Do I need to install an app?", "acceptedAnswer": { "@type": "Answer", "text": "No. Verko runs in the browser at app.verko.lt and can be added to your home screen if you want it to behave like an app. This website shows a sample of what is live; searching, messaging and booking happen in the app itself." } },
+        { "@type": "Question", "name": "Which parts of Lithuania are covered?", "acceptedAnswer": { "@type": "Answer", "text": "Coverage follows the providers rather than a fixed map. Each listing states the area that person is willing to travel to, so availability is best in the larger cities and thinner in smaller towns. Searching for your area is the quickest way to see what is nearby." } },
+        { "@type": "Question", "name": "How do I become a provider?", "acceptedAnswer": { "@type": "Answer", "text": "Create an account, then publish a listing describing what you do, the area you cover and what you charge. You choose your own hours and can change or pause a listing whenever you like. Reviews accumulate on your profile as you complete jobs." } },
+        { "@type": "Question", "name": "What if something goes wrong with a job?", "acceptedAnswer": { "@type": "Answer", "text": "Raise it with the provider first — most problems are a misunderstanding about scope and get settled in the chat. If that does not resolve it, contact us at info@verko.lt with the listing and the conversation, and leave an honest review so other customers can see what happened." } },
+        { "@type": "Question", "name": "Does this website use cookies and show ads?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. verko.lt carries third-party advertising, and ad providers may set cookies in your browser to measure and select what is shown. The details, and how to opt out, are set out on our advertising and cookies page." } }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f0f0f'/%3E%3Ctext x='50' y='62' font-family='Inter,Arial,sans-serif' font-size='52' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EV%3C/text%3E%3Ccircle cx='78' cy='66' r='8' fill='%23ef5350'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -185,7 +224,7 @@
 
   /* ---------- footer ---------- */
   .site-footer{border-top:1px solid var(--line);background:var(--field-bg);}
-  .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2rem;padding-block:clamp(2rem,5vw,3rem);}
+  .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;padding-block:clamp(2rem,5vw,3rem);}
   .footer-brand p{color:var(--muted);font-size:.9rem;max-width:32ch;margin-top:.7rem;}
   .footer-col h5{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.9rem;font-weight:700;}
   .footer-col ul{display:flex;flex-direction:column;gap:.6rem;font-size:.92rem;}
@@ -238,7 +277,40 @@
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
     .reveal.in{opacity:1;transform:none;}
   }
+
+  /* ---- Long-form content: about, services, safety, FAQ, contact ---- */
+  .qa[open] summary{border-bottom:1px solid var(--line);}
+  .prose{max-width:70ch;}
+  .prose p{color:var(--muted);line-height:1.75;margin-top:.9rem;}
+  .prose p:first-child{margin-top:0;}
+  .prose strong{color:var(--fg);font-weight:600;}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+  .svc{border:1px solid var(--line);border-radius:14px;padding:1.4rem;background:var(--bg);display:flex;flex-direction:column;gap:.55rem;}
+  .svc .ic{font-size:1.35rem;line-height:1;}
+  .svc h3{font-size:1.02rem;font-weight:700;}
+  .svc p{font-size:.88rem;color:var(--muted);line-height:1.6;}
+  .svc .eg{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:.55rem;margin-top:auto;}
+  .faq{display:grid;gap:.7rem;max-width:80ch;}
+  .qa{border:1px solid var(--line);border-radius:12px;background:var(--bg);overflow:hidden;}
+  .qa summary{cursor:pointer;padding:1rem 1.2rem;font-weight:600;font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+  .qa summary::-webkit-details-marker{display:none;}
+  .qa summary::after{content:"+";font-size:1.25rem;font-weight:400;color:var(--muted);flex:none;}
+  .qa[open] summary::after{content:"−";}
+  .qa summary:hover{background:var(--field-bg);}
+  .qa .a{padding:0 1.2rem 1.2rem;color:var(--muted);font-size:.92rem;line-height:1.7;}
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+  .contact-card{border:1px solid var(--line);border-radius:14px;padding:1.4rem;background:var(--bg);}
+  .contact-card h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem;}
+  .contact-card p{font-size:.88rem;color:var(--muted);line-height:1.6;}
+  .contact-card a{color:var(--fg);font-weight:600;text-decoration:underline;text-underline-offset:3px;}
+  @media (max-width:900px){
+    .svc-grid,.contact-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:680px){
+    .svc-grid,.contact-grid{grid-template-columns:1fr;}
+  }
 </style>
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
 <a class="skip-link" href="#browse">Skip to content</a>
@@ -248,8 +320,9 @@
     <a class="logo" href="#top" aria-label="Verko">Verko<span class="dot">.</span></a>
     <nav class="nav-links" aria-label="Main">
       <a href="#browse" class="i18n" data-en="Browse" data-lt="Naršyti">Browse</a>
+      <a href="#services" class="i18n" data-en="Services" data-lt="Paslaugos">Services</a>
       <a href="#how" class="i18n" data-en="How it works" data-lt="Kaip veikia">How it works</a>
-      <a href="#why" class="i18n" data-en="Why Verko" data-lt="Kodėl Verko">Why Verko</a>
+      <a href="#faq" class="i18n" data-en="FAQ" data-lt="DUK">FAQ</a>
     </nav>
     <div class="header-right">
       <div class="seg" role="group" aria-label="Language">
@@ -359,6 +432,165 @@
     </div>
   </section>
 
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head"><div>
+        <p class="kicker i18n" data-en="About" data-lt="Apie">About</p>
+        <h2 class="i18n" data-en="What Verko is, and why it exists." data-lt="Kas yra Verko ir kodėl jis atsirado.">What Verko is, and why it exists.</h2>
+      </div></div>
+      <div class="prose reveal">
+        <p class="i18n" data-en="Verko is a peer-to-peer marketplace for everyday services in Lithuania. If you need a flat cleaned, a tap fixed, a sofa carried up three flights of stairs or a lawn cut, Verko lets you find someone nearby who does that work — and talk to them directly." data-lt="Verko — tiesioginė kasdienių paslaugų rinka Lietuvoje. Jei reikia išvalyti butą, pataisyti maišytuvą, užnešti sofą į trečią aukštą ar nupjauti žolę, Verko padeda rasti tai dirbantį žmogų netoliese ir su juo susisiekti tiesiogiai.">Verko is a peer-to-peer marketplace for everyday services in Lithuania. If you need a flat cleaned, a tap fixed, a sofa carried up three flights of stairs or a lawn cut, Verko lets you find someone nearby who does that work — and talk to them directly.</p>
+        <p class="i18n" data-en="The usual way of booking household help puts an agency in the middle. The agency takes the call, assigns whoever is free, adds its margin, and you never really know who is coming or how much of your money reaches them. <strong>Verko removes that layer.</strong> You see the actual person, their price, their past reviews and their coverage area before you commit to anything." data-lt="Įprastai buities paslaugas užsakome per agentūrą. Agentūra atsiliepia, paskiria bet ką, kas laisvas, prideda savo antkainį, o tu taip ir nesužinai, kas atvyks ir kiek pinigų jį pasiekia. <strong>Verko šį sluoksnį panaikina.</strong> Prieš ką nors užsakydamas matai konkretų žmogų, jo kainą, ankstesnius atsiliepimus ir aptarnaujamą rajoną.">The usual way of booking household help puts an agency in the middle. The agency takes the call, assigns whoever is free, adds its margin, and you never really know who is coming or how much of your money reaches them. <strong>Verko removes that layer.</strong> You see the actual person, their price, their past reviews and their coverage area before you commit to anything.</p>
+        <p class="i18n" data-en="It works the same way in reverse. If you clean, repair, move, tutor or garden for a living, you publish your own listing, set your own rate and choose your own hours. The reputation you build stays attached to you rather than to an employer, and the customers who find you are people who searched for exactly what you offer." data-lt="Lygiai taip pat veikia ir atvirkščiai. Jei valai, remontuoji, kraustai, moki ar tvarkai sodus — paskelbi savo skelbimą, nusistatai įkainį ir pasirenki darbo valandas. Sukurta reputacija lieka prie tavęs, o ne prie darbdavio, o klientai, kurie tave randa, ieškojo būtent to, ką siūlai.">It works the same way in reverse. If you clean, repair, move, tutor or garden for a living, you publish your own listing, set your own rate and choose your own hours. The reputation you build stays attached to you rather than to an employer, and the customers who find you are people who searched for exactly what you offer.</p>
+        <p class="i18n" data-en="Verko is built and run in Lithuania, and the marketplace covers Lithuanian towns and cities. The website you are reading is the public front door; browsing, messaging, booking and reviews all happen in the Verko app." data-lt="Verko kuriamas ir valdomas Lietuvoje, o rinka apima Lietuvos miestus ir miestelius. Ši svetainė — viešasis įėjimas; naršymas, susirašinėjimas, užsakymai ir atsiliepimai vyksta Verko programoje.">Verko is built and run in Lithuania, and the marketplace covers Lithuanian towns and cities. The website you are reading is the public front door; browsing, messaging, booking and reviews all happen in the Verko app.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICE CATEGORIES ================= -->
+  <section class="section alt" id="services">
+    <div class="container">
+      <div class="section-head"><div>
+        <p class="kicker i18n" data-en="Services" data-lt="Paslaugos">Services</p>
+        <h2 class="i18n" data-en="What people book on Verko." data-lt="Ką žmonės užsako Verko.">What people book on Verko.</h2>
+        <p class="i18n" data-en="Providers write their own listings, so the exact wording varies. These are the categories they fall into." data-lt="Teikėjai skelbimus rašo patys, todėl formuluotės skiriasi. Tai — kategorijos, į kurias jie patenka.">Providers write their own listings, so the exact wording varies. These are the categories they fall into.</p>
+      </div></div>
+      <div class="svc-grid">
+        <div class="svc reveal">
+          <div class="ic">🧹</div>
+          <h3 class="i18n" data-en="Cleaning" data-lt="Valymas">Cleaning</h3>
+          <p class="i18n" data-en="Regular flat and house cleaning, one-off deep cleans, cleaning after a tenancy ends, and post-renovation clean-ups where dust and paint residue need specialist attention." data-lt="Reguliarus butų ir namų valymas, vienkartinis giluminis valymas, valymas pasibaigus nuomai ir tvarkymas po remonto, kai dulkes bei dažų likučius reikia valyti atskirai.">Regular flat and house cleaning, one-off deep cleans, cleaning after a tenancy ends, and post-renovation clean-ups where dust and paint residue need specialist attention.</p>
+          <p class="eg i18n" data-en="Often booked weekly or fortnightly." data-lt="Dažnai užsakoma kas savaitę ar kas dvi.">Often booked weekly or fortnightly.</p>
+        </div>
+        <div class="svc reveal">
+          <div class="ic">🔧</div>
+          <h3 class="i18n" data-en="Repairs &amp; handyman" data-lt="Remontas ir meistro darbai">Repairs &amp; handyman</h3>
+          <p class="i18n" data-en="Leaking taps, blocked drains, sockets and light fittings, doors that no longer close, shelves and blinds that need mounting, and the small jobs that are too minor for a contractor." data-lt="Lašantys maišytuvai, užsikimšę vamzdžiai, lizdai ir šviestuvai, nebeužsidarančios durys, tvirtinamos lentynos ir žaliuzės — smulkūs darbai, dėl kurių nesamdysi rangovo.">Leaking taps, blocked drains, sockets and light fittings, doors that no longer close, shelves and blinds that need mounting, and the small jobs that are too minor for a contractor.</p>
+          <p class="eg i18n" data-en="Usually quoted per visit or per hour." data-lt="Paprastai kaina už vizitą arba už valandą.">Usually quoted per visit or per hour.</p>
+        </div>
+        <div class="svc reveal">
+          <div class="ic">📦</div>
+          <h3 class="i18n" data-en="Moving &amp; delivery" data-lt="Kraustymas ir pervežimai">Moving &amp; delivery</h3>
+          <p class="i18n" data-en="Flat and office moves, an extra pair of hands on moving day, collecting a wardrobe from a marketplace seller, and taking old furniture or appliances away for disposal." data-lt="Butų ir biurų kraustymas, papildomos rankos kraustymosi dieną, spintos paėmimas iš pardavėjo ir senų baldų ar buitinės technikos išvežimas.">Flat and office moves, an extra pair of hands on moving day, collecting a wardrobe from a marketplace seller, and taking old furniture or appliances away for disposal.</p>
+          <p class="eg i18n" data-en="Check whether a van is included." data-lt="Pasitikslink, ar įskaičiuotas mikroautobusas.">Check whether a van is included.</p>
+        </div>
+        <div class="svc reveal">
+          <div class="ic">🌿</div>
+          <h3 class="i18n" data-en="Garden &amp; outdoor" data-lt="Sodas ir lauko darbai">Garden &amp; outdoor</h3>
+          <p class="i18n" data-en="Lawn mowing through the season, hedge and tree trimming, clearing leaves in autumn, snow clearing in winter, and general tidying of yards and plots that have been left for a while." data-lt="Žolės pjovimas per sezoną, gyvatvorių ir medžių genėjimas, lapų grėbimas rudenį, sniego valymas žiemą ir apleistų kiemų bei sklypų tvarkymas.">Lawn mowing through the season, hedge and tree trimming, clearing leaves in autumn, snow clearing in winter, and general tidying of yards and plots that have been left for a while.</p>
+          <p class="eg i18n" data-en="Seasonal — book early in spring." data-lt="Sezoniška — užsakyk anksti pavasarį.">Seasonal — book early in spring.</p>
+        </div>
+        <div class="svc reveal">
+          <div class="ic">📚</div>
+          <h3 class="i18n" data-en="Tutoring &amp; lessons" data-lt="Korepetitoriai ir pamokos">Tutoring &amp; lessons</h3>
+          <p class="i18n" data-en="School subject tutoring and exam preparation, language practice with a speaker who lives nearby, music lessons, and help getting to grips with a piece of software." data-lt="Mokyklinių dalykų korepetitoriai ir pasiruošimas egzaminams, kalbų praktika su netoliese gyvenančiu žmogumi, muzikos pamokos ir pagalba įvaldant programas.">School subject tutoring and exam preparation, language practice with a speaker who lives nearby, music lessons, and help getting to grips with a piece of software.</p>
+          <p class="eg i18n" data-en="In person or remote, depending on the listing." data-lt="Gyvai arba nuotoliniu būdu — priklauso nuo skelbimo.">In person or remote, depending on the listing.</p>
+        </div>
+        <div class="svc reveal">
+          <div class="ic">🐾</div>
+          <h3 class="i18n" data-en="Pets &amp; everyday help" data-lt="Augintiniai ir kasdienė pagalba">Pets &amp; everyday help</h3>
+          <p class="i18n" data-en="Dog walking and pet sitting while you travel, queuing and errands, assembling flat-pack furniture, and the assorted tasks that do not fit neatly into any other category." data-lt="Šunų vedžiojimas ir gyvūnų priežiūra tau išvykus, smulkūs pavedimai, baldų surinkimas ir įvairios užduotys, netelpančios į kitas kategorijas.">Dog walking and pet sitting while you travel, queuing and errands, assembling flat-pack furniture, and the assorted tasks that do not fit neatly into any other category.</p>
+          <p class="eg i18n" data-en="Describe the task in your first message." data-lt="Aprašyk užduotį pirmoje žinutėje.">Describe the task in your first message.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SAFETY ================= -->
+  <section class="section" id="safety">
+    <div class="container">
+      <div class="section-head"><div>
+        <p class="kicker i18n" data-en="Safety" data-lt="Saugumas">Safety</p>
+        <h2 class="i18n" data-en="Hiring a stranger, sensibly." data-lt="Kaip protingai samdyti nepažįstamą žmogų.">Hiring a stranger, sensibly.</h2>
+      </div></div>
+      <div class="tracks">
+        <div class="track reveal">
+          <p class="kicker i18n" data-en="Before you book" data-lt="Prieš užsakant">Before you book</p>
+          <div class="step"><span class="num">1</span><div><h4 class="i18n" data-en="Read the reviews, not just the score" data-lt="Skaityk atsiliepimus, o ne tik įvertį">Read the reviews, not just the score</h4><p class="i18n" data-en="A rating averages everything. The written reviews tell you whether someone turns up on time and how they handle problems." data-lt="Įvertis viską suvidurkina. Rašytiniai atsiliepimai parodo, ar žmogus atvyksta laiku ir kaip sprendžia problemas.">A rating averages everything. The written reviews tell you whether someone turns up on time and how they handle problems.</p></div></div>
+          <div class="step"><span class="num">2</span><div><h4 class="i18n" data-en="Agree the scope in writing" data-lt="Susitark dėl apimties raštu">Agree the scope in writing</h4><p class="i18n" data-en="Say what needs doing, how long you expect it to take and what the price covers — in the chat, before the work starts, so both of you can point back to it." data-lt="Pokalbyje, prieš pradedant darbą, aptark, ką reikia padaryti, kiek tai truks ir ką kaina apima — kad abu galėtumėte tuo remtis.">Say what needs doing, how long you expect it to take and what the price covers — in the chat, before the work starts, so both of you can point back to it.</p></div></div>
+          <div class="step"><span class="num">3</span><div><h4 class="i18n" data-en="Keep the conversation on Verko" data-lt="Bendrauk Verko aplinkoje">Keep the conversation on Verko</h4><p class="i18n" data-en="If a dispute comes up later, a conversation that happened in the app is something you can both refer to. Be wary of anyone who wants to move the deal elsewhere immediately." data-lt="Kilus ginčui, programoje vykęs pokalbis lieka įrodymu. Būk atsargus su tais, kurie iškart siūlo persikelti kitur.">If a dispute comes up later, a conversation that happened in the app is something you can both refer to. Be wary of anyone who wants to move the deal elsewhere immediately.</p></div></div>
+        </div>
+        <div class="track reveal">
+          <p class="kicker i18n" data-en="Warning signs" data-lt="Įspėjamieji ženklai">Warning signs</p>
+          <div class="step"><span class="num">!</span><div><h4 class="i18n" data-en="Pressure to pay everything upfront" data-lt="Spaudimas sumokėti viską iš anksto">Pressure to pay everything upfront</h4><p class="i18n" data-en="A deposit for materials is normal. Demanding the full amount before any work has started, especially by instant transfer, is not." data-lt="Avansas medžiagoms — normalu. Reikalavimas sumokėti visą sumą dar nepradėjus darbo, ypač momentiniu pavedimu, — ne.">A deposit for materials is normal. Demanding the full amount before any work has started, especially by instant transfer, is not.</p></div></div>
+          <div class="step"><span class="num">!</span><div><h4 class="i18n" data-en="A price that makes no sense" data-lt="Kaina, kuri neatitinka logikos">A price that makes no sense</h4><p class="i18n" data-en="An offer far below every comparable listing usually means the scope is narrower than you think, or that costs will appear once the job is underway." data-lt="Pasiūlymas, gerokai pigesnis už visus panašius skelbimus, dažniausiai reiškia siauresnę apimtį arba išlaidas, kurios išaiškės darbo eigoje.">An offer far below every comparable listing usually means the scope is narrower than you think, or that costs will appear once the job is underway.</p></div></div>
+          <div class="step"><span class="num">!</span><div><h4 class="i18n" data-en="Reluctance to be identified" data-lt="Vengimas atskleisti tapatybę">Reluctance to be identified</h4><p class="i18n" data-en="Verko accounts are phone-verified and each profile carries a legitimacy score. Someone avoiding basic questions about who they are is telling you something." data-lt="Verko paskyros patvirtinamos telefonu, o kiekvienas profilis turi patikimumo įvertį. Jei žmogus vengia paprastų klausimų apie save — tai jau atsakymas.">Verko accounts are phone-verified and each profile carries a legitimacy score. Someone avoiding basic questions about who they are is telling you something.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section alt" id="faq">
+    <div class="container">
+      <div class="section-head"><div>
+        <p class="kicker i18n" data-en="FAQ" data-lt="DUK">FAQ</p>
+        <h2 class="i18n" data-en="Questions people actually ask." data-lt="Klausimai, kurių tikrai klausiama.">Questions people actually ask.</h2>
+      </div></div>
+      <div class="faq">
+        <details class="qa reveal">
+          <summary class="i18n" data-en="Does it cost anything to use Verko?" data-lt="Ar naudotis Verko kainuoja?">Does it cost anything to use Verko?</summary>
+          <div class="a i18n" data-en="Creating an account, browsing listings and messaging a provider are free. What you pay for the work itself is the price the provider has set and that the two of you agree on — Verko does not add an agency margin on top of it." data-lt="Susikurti paskyrą, naršyti skelbimus ir rašyti teikėjui — nemokama. Už patį darbą moki tiek, kiek teikėjas nurodė ir dėl kiek susitarėte — Verko nepriskaičiuoja agentūros antkainio.">Creating an account, browsing listings and messaging a provider are free. What you pay for the work itself is the price the provider has set and that the two of you agree on — Verko does not add an agency margin on top of it.</div>
+        </details>
+        <details class="qa reveal">
+          <summary class="i18n" data-en="Who decides the price?" data-lt="Kas nustato kainą?">Who decides the price?</summary>
+          <div class="a i18n" data-en="The provider does. Every listing shows their own rate, which is why two cleaners in the same city can quote differently for what looks like the same job. Read what the price includes before you agree — travel, materials and the size of the property all change it." data-lt="Teikėjas. Kiekviename skelbime nurodytas jo paties įkainis — todėl du valytojai tame pačiame mieste už panašų darbą gali prašyti skirtingai. Prieš sutikdamas pasižiūrėk, kas į kainą įskaičiuota: kelionė, medžiagos ir patalpų dydis ją keičia.">The provider does. Every listing shows their own rate, which is why two cleaners in the same city can quote differently for what looks like the same job. Read what the price includes before you agree — travel, materials and the size of the property all change it.</div>
+        </details>
+        <details class="qa reveal">
+          <summary class="i18n" data-en="Are providers checked in any way?" data-lt="Ar teikėjai kaip nors tikrinami?">Are providers checked in any way?</summary>
+          <div class="a i18n" data-en="Accounts are verified by phone number, and every profile carries a legitimacy score alongside reviews left by customers after real jobs. That is a useful signal, not a background check — you should still read the reviews and ask questions before letting someone into your home." data-lt="Paskyros tvirtinamos telefono numeriu, o kiekviename profilyje šalia klientų po realių darbų palikų atsiliepimų rodomas patikimumo įvertis. Tai naudingas rodiklis, bet ne biografijos patikra — prieš įsileisdamas žmogų į namus vis tiek perskaityk atsiliepimus ir paklausk.">Accounts are verified by phone number, and every profile carries a legitimacy score alongside reviews left by customers after real jobs. That is a useful signal, not a background check — you should still read the reviews and ask questions before letting someone into your home.</div>
+        </details>
+        <details class="qa reveal">
+          <summary class="i18n" data-en="Do I need to install an app?" data-lt="Ar reikia diegti programą?">Do I need to install an app?</summary>
+          <div class="a i18n" data-en="No. Verko runs in the browser at app.verko.lt and can be added to your home screen if you want it to behave like an app. This website shows a sample of what is live; searching, messaging and booking happen in the app itself." data-lt="Ne. Verko veikia naršyklėje adresu app.verko.lt, o norint gali įsidėti jį į pradžios ekraną — veiks kaip programa. Ši svetainė rodo dalį to, kas paskelbta; paieška, susirašinėjimas ir užsakymai vyksta pačioje programoje.">No. Verko runs in the browser at app.verko.lt and can be added to your home screen if you want it to behave like an app. This website shows a sample of what is live; searching, messaging and booking happen in the app itself.</div>
+        </details>
+        <details class="qa reveal">
+          <summary class="i18n" data-en="Which parts of Lithuania are covered?" data-lt="Kokios Lietuvos vietos aptarnaujamos?">Which parts of Lithuania are covered?</summary>
+          <div class="a i18n" data-en="Coverage follows the providers rather than a fixed map. Each listing states the area that person is willing to travel to, so availability is best in the larger cities and thinner in smaller towns. Searching for your area is the quickest way to see what is nearby." data-lt="Aprėptis priklauso nuo teikėjų, o ne nuo fiksuoto žemėlapio. Kiekviename skelbime nurodyta, į kokį rajoną žmogus sutinka važiuoti, todėl didesniuose miestuose pasirinkimas platesnis, mažesniuose — kuklesnis. Greičiausias būdas sužinoti — įvesti savo vietovę paieškoje.">Coverage follows the providers rather than a fixed map. Each listing states the area that person is willing to travel to, so availability is best in the larger cities and thinner in smaller towns. Searching for your area is the quickest way to see what is nearby.</div>
+        </details>
+        <details class="qa reveal">
+          <summary class="i18n" data-en="How do I become a provider?" data-lt="Kaip tapti teikėju?">How do I become a provider?</summary>
+          <div class="a i18n" data-en="Create an account, then publish a listing describing what you do, the area you cover and what you charge. You choose your own hours and can change or pause a listing whenever you like. Reviews accumulate on your profile as you complete jobs." data-lt="Susikurk paskyrą ir paskelbk skelbimą: ką darai, kokį rajoną aptarnauji ir kiek imi. Darbo valandas pasirenki pats, skelbimą gali bet kada keisti ar sustabdyti. Atliekant darbus profilyje kaupiasi atsiliepimai.">Create an account, then publish a listing describing what you do, the area you cover and what you charge. You choose your own hours and can change or pause a listing whenever you like. Reviews accumulate on your profile as you complete jobs.</div>
+        </details>
+        <details class="qa reveal">
+          <summary class="i18n" data-en="What if something goes wrong with a job?" data-lt="O jei darbas nepavyksta?">What if something goes wrong with a job?</summary>
+          <div class="a i18n" data-en="Raise it with the provider first — most problems are a misunderstanding about scope and get settled in the chat. If that does not resolve it, contact us at info@verko.lt with the listing and the conversation, and leave an honest review so other customers can see what happened." data-lt="Pirmiausia aptark su teikėju — dauguma problemų kyla dėl skirtingai suprastos apimties ir išsisprendžia susirašinėjant. Jei nepavyksta, parašyk mums info@verko.lt, nurodyk skelbimą ir pokalbį, ir palik sąžiningą atsiliepimą, kad kiti klientai matytų, kas nutiko.">Raise it with the provider first — most problems are a misunderstanding about scope and get settled in the chat. If that does not resolve it, contact us at info@verko.lt with the listing and the conversation, and leave an honest review so other customers can see what happened.</div>
+        </details>
+        <details class="qa reveal">
+          <summary class="i18n" data-en="Does this website use cookies and show ads?" data-lt="Ar ši svetainė naudoja slapukus ir rodo reklamą?">Does this website use cookies and show ads?</summary>
+          <div class="a i18n" data-en="Yes. verko.lt carries third-party advertising, and ad providers may set cookies in your browser to measure and select what is shown. The details, and how to opt out, are set out on our advertising and cookies page." data-lt="Taip. verko.lt rodoma trečiųjų šalių reklama, o reklamos tiekėjai gali įrašyti slapukus tavo naršyklėje, kad matuotų ir parinktų rodomą turinį. Išsamiau ir apie atsisakymo būdus — reklamos ir slapukų puslapyje.">Yes. verko.lt carries third-party advertising, and ad providers may set cookies in your browser to measure and select what is shown. The details, and how to opt out, are set out on our advertising and cookies page.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head"><div>
+        <p class="kicker i18n" data-en="Contact" data-lt="Kontaktai">Contact</p>
+        <h2 class="i18n" data-en="Reach a person." data-lt="Susisiek su žmogumi.">Reach a person.</h2>
+      </div></div>
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <h3 class="i18n" data-en="General and support" data-lt="Bendrai ir pagalba">General and support</h3>
+          <p class="i18n" data-en="Questions about a booking, a listing or your account. We read everything that arrives here." data-lt="Klausimai apie užsakymą, skelbimą ar paskyrą. Perskaitome viską, kas čia ateina.">Questions about a booking, a listing or your account. We read everything that arrives here.</p>
+          <p><a href="mailto:info@verko.lt">info@verko.lt</a></p>
+        </div>
+        <div class="contact-card reveal">
+          <h3 class="i18n" data-en="Reporting a problem" data-lt="Pranešti apie problemą">Reporting a problem</h3>
+          <p class="i18n" data-en="If a listing looks fraudulent or someone has behaved badly, tell us. Include the listing and, if you can, the conversation." data-lt="Jei skelbimas atrodo apgaulingas arba kas nors pasielgė netinkamai — parašyk. Nurodyk skelbimą ir, jei gali, pokalbį.">If a listing looks fraudulent or someone has behaved badly, tell us. Include the listing and, if you can, the conversation.</p>
+          <p><a href="mailto:info@verko.lt?subject=Report">info@verko.lt</a></p>
+        </div>
+        <div class="contact-card reveal">
+          <h3 class="i18n" data-en="Where Verko operates" data-lt="Kur veikia Verko">Where Verko operates</h3>
+          <p class="i18n" data-en="Verko is built and operated in Lithuania, and the marketplace serves Lithuanian towns and cities. Support is available in Lithuanian and English." data-lt="Verko kuriamas ir valdomas Lietuvoje, rinka veikia Lietuvos miestuose ir miesteliuose. Konsultuojame lietuvių ir anglų kalbomis.">Verko is built and operated in Lithuania, and the marketplace serves Lithuanian towns and cities. Support is available in Lithuanian and English.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= FINAL CTA ================= -->
   <section class="section">
     <div class="container">
@@ -391,11 +623,23 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h5 class="i18n" data-en="Account" data-lt="Paskyra">Account</h5>
+      <h5 class="i18n" data-en="Company" data-lt="Apie mus">Company</h5>
       <ul>
-        <li><a class="app-link" data-path="/login"><span class="i18n" data-en="Log in" data-lt="Prisijungti">Log in</span></a></li>
-        <li><a class="app-link" data-path="/register"><span class="i18n" data-en="Create account" data-lt="Susikurti paskyrą">Create account</span></a></li>
+        <li><a href="#about" class="i18n" data-en="About Verko" data-lt="Apie Verko">About Verko</a></li>
+        <li><a href="#safety" class="i18n" data-en="Safety" data-lt="Saugumas">Safety</a></li>
+        <li><a href="#faq" class="i18n" data-en="FAQ" data-lt="DUK">FAQ</a></li>
+        <li><a href="#contact" class="i18n" data-en="Contact" data-lt="Kontaktai">Contact</a></li>
         <li><a href="mailto:info@verko.lt">info@verko.lt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5 class="i18n" data-en="Legal" data-lt="Teisinė informacija">Legal</h5>
+      <ul>
+        <li><a href="/advertising.html" class="i18n" data-en="Advertising &amp; cookies" data-lt="Reklama ir slapukai">Advertising &amp; cookies</a></li>
+        <li><a class="app-link" data-path="/legal/privacy"><span class="i18n" data-en="Privacy policy" data-lt="Privatumo politika">Privacy policy</span></a></li>
+        <li><a class="app-link" data-path="/legal/terms"><span class="i18n" data-en="Terms of service" data-lt="Paslaugų teikimo sąlygos">Terms of service</span></a></li>
+        <li><a class="app-link" data-path="/legal/minor"><span class="i18n" data-en="Minors policy" data-lt="Nepilnamečių politika">Minors policy</span></a></li>
+        <li><a class="app-link" data-path="/login"><span class="i18n" data-en="Log in" data-lt="Prisijungti">Log in</span></a></li>
       </ul>
     </div>
   </div>
@@ -654,6 +898,9 @@
   if("IntersectionObserver" in window){
     var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target);}});},{threshold:.12});
     $$(".reveal").forEach(function(el){io.observe(el);});
+  }else{
+    // No observer support: show everything rather than leaving it at opacity 0.
+    $$(".reveal").forEach(function(el){el.classList.add("in");});
   }
 
   // ---- init ----

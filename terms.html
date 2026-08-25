@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="lt" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title id="docTitle">Paslaugų teikimo sąlygos — Home by Verko</title>
+<meta id="metaDesc" name="description" content="Home by Verko naudojimosi sąlygos — kaip veikia platforma, kas atsakingas už ką, ir kaip sprendžiami ginčai. Juodraštis, skirtas peržiūrai prieš oficialų paleidimą.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#131610">
+<link rel="canonical" href="https://verko.lt/terms.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232c5a3e'/%3E%3Cpath d='M50 18l32 28h-11v34H49V56H41v24H29V46H18z' fill='%23eaeee5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#131610; --surface:#1c201a; --surface-border:#2a2f26; --surface-2:#22261f; --higher:#161a14;
+  --text:#eaeee5; --text-muted:#c3cbba; --text-dim:#a7b09f; --text-faint:#7d8674;
+  --moss:#2c5a3e; --moss-border:#386b4a; --moss-on:#f0f5ee; --moss-soft:#233a2b; --moss-soft-text:#7cc394;
+  --amber:#f0a04b; --amber-ink:#241a0c; --amber-soft-bg:#241f16; --amber-soft-border:#3b331f; --amber-soft-text:#e0c79a;
+  --shadow:rgba(0,0,0,.45); --bar-bg:rgba(19,22,16,.86);
+  --max:1180px; --ease:cubic-bezier(.16,.8,.24,1);
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f6f1e7; --surface:#fffdf7; --surface-border:#e6ddc7; --surface-2:#ece4d0; --higher:#f2ecdf;
+    --text:#232922; --text-muted:#4b5245; --text-dim:#6b7263; --text-faint:#8a9180;
+    --moss-soft:#dcead9; --moss-soft-text:#1f4530;
+    --amber-soft-bg:#fbf1de; --amber-soft-border:#e8d6ab; --amber-soft-text:#6b4e1c;
+    --shadow:rgba(60,45,10,.14); --bar-bg:rgba(246,241,231,.86);
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f6f1e7; --surface:#fffdf7; --surface-border:#e6ddc7; --surface-2:#ece4d0; --higher:#f2ecdf;
+  --text:#232922; --text-muted:#4b5245; --text-dim:#6b7263; --text-faint:#8a9180;
+  --moss-soft:#dcead9; --moss-soft-text:#1f4530;
+  --amber-soft-bg:#fbf1de; --amber-soft-border:#e8d6ab; --amber-soft-text:#6b4e1c;
+  --shadow:rgba(60,45,10,.14); --bar-bg:rgba(246,241,231,.86);
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --bg:#131610; --surface:#1c201a; --surface-border:#2a2f26; --surface-2:#22261f; --higher:#161a14;
+  --text:#eaeee5; --text-muted:#c3cbba; --text-dim:#a7b09f; --text-faint:#7d8674;
+  --moss-soft:#233a2b; --moss-soft-text:#7cc394;
+  --amber-soft-bg:#241f16; --amber-soft-border:#3b331f; --amber-soft-text:#e0c79a;
+  --shadow:rgba(0,0,0,.45); --bar-bg:rgba(19,22,16,.86);
+  color-scheme:dark;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px;}
+.container{width:min(100% - 2.5rem,var(--max));margin-inline:auto;}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1.05rem;letter-spacing:-.01em;color:var(--text);text-decoration:none;}
+.logo .mark{width:32px;height:32px;border-radius:10px;background:var(--moss);border:1px solid var(--moss-border);display:flex;align-items:center;justify-content:center;flex:none;}
+.logo .by{color:var(--text-faint);font-weight:400;}
+.site-header{position:sticky;top:0;z-index:20;background:var(--bar-bg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--surface-border);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:66px;}
+.header-right{display:flex;align-items:center;gap:.55rem;}
+.seg{display:flex;border:1px solid var(--surface-border);border-radius:999px;overflow:hidden;background:var(--surface-2);}
+.seg button{background:none;border:0;padding:.4rem .75rem;font:inherit;font-size:.78rem;font-weight:600;color:var(--text-dim);cursor:pointer;}
+.seg button.active{background:var(--moss);color:var(--moss-on);}
+.icon-btn{background:var(--surface-2);border:1px solid var(--surface-border);border-radius:999px;width:38px;height:38px;font-size:.9rem;color:var(--text-dim);cursor:pointer;}
+.btn{display:inline-flex;align-items:center;gap:.4rem;border-radius:999px;padding:.55rem 1.1rem;font-size:.85rem;font-weight:600;text-decoration:none;background:var(--amber);color:var(--amber-ink);border:1px solid var(--amber);}
+main{padding-block:clamp(2.5rem,6vw,4rem);}
+.doc{max-width:72ch;}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-faint);font-weight:600;}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-.025em;margin:.6rem 0 .4rem;}
+.updated{color:var(--text-faint);font-size:.85rem;margin-bottom:1.4rem;}
+.draft-notice{display:flex;gap:.8rem;background:var(--amber-soft-bg);border:1px solid var(--amber-soft-border);border-radius:14px;padding:1.1rem 1.25rem;margin-bottom:2rem;}
+.draft-notice svg{flex:none;margin-top:2px;}
+.draft-notice p{color:var(--amber-soft-text);font-size:.9rem;margin:0;line-height:1.6;}
+h2{font-size:1.15rem;font-weight:700;letter-spacing:-.01em;margin:2.2rem 0 .7rem;padding-top:1.4rem;border-top:1px solid var(--surface-border);}
+h2:first-of-type{border-top:0;padding-top:0;}
+p{color:var(--text-muted);margin-bottom:.9rem;}
+p.lead{color:var(--text);font-size:1.05rem;}
+strong{color:var(--text);font-weight:600;}
+ul{margin:0 0 .9rem 1.1rem;color:var(--text-muted);}
+li{margin-bottom:.5rem;}
+.doc a{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:3px;}
+.note{background:var(--surface);border:1px solid var(--surface-border);border-radius:14px;padding:1.1rem 1.25rem;margin:1.2rem 0;}
+.note p:last-child{margin-bottom:0;}
+.site-footer{border-top:1px solid var(--surface-border);margin-top:3rem;padding-block:1.5rem;font-size:.85rem;color:var(--text-faint);}
+.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;}
+.footer-inner a{color:var(--text-faint);}
+.cookie-banner{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:250;max-width:640px;margin-inline:auto;background:var(--surface);border:1px solid var(--surface-border);border-radius:20px;padding:1.4rem 1.5rem;box-shadow:0 20px 50px -18px var(--shadow);transform:translateY(140%);opacity:0;transition:transform .4s var(--ease),opacity .4s var(--ease);}
+.cookie-banner.show{transform:translateY(0);opacity:1;}
+.cookie-banner p{font-size:.88rem;color:var(--text-muted);line-height:1.55;}
+.cookie-banner a{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+.cookie-actions{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap;}
+.cookie-actions .btn{flex:1;justify-content:center;background:var(--amber);}
+.cookie-actions .btn.ghost{background:var(--surface-2);color:var(--text);border-color:var(--surface-border);}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <span class="mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--moss-on)" stroke="none"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3z"/></svg></span>
+      Home<span class="by">&nbsp;by Verko</span>
+    </a>
+    <div class="header-right">
+      <div class="seg" role="group" aria-label="Language">
+        <button id="langLt" type="button">LT</button>
+        <button id="langEn" type="button">EN</button>
+      </div>
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle theme">◐</button>
+      <a class="btn" href="index.html"><span data-i18n="back">Į svetainę</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container doc">
+    <p class="kicker" data-i18n="kicker">Teisinė informacija</p>
+    <h1 data-i18n="h1">Paslaugų teikimo sąlygos</h1>
+    <p class="updated"><span data-i18n="updatedLabel">Atnaujinta</span>: 2026-08-25</p>
+
+    <div class="draft-notice">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--amber-soft-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L2.8 17a2 2 0 001.7 3h15a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
+      <p data-i18n="draftNotice">Tai juodraštinė versija, paskelbta prieš oficialų Home by Verko paleidimą. Ji bus peržiūrėta ir prireikus atnaujinta iki programos starto adresu home.verko.lt. Tai nėra teisinė konsultacija.</p>
+    </div>
+
+    <p class="lead" data-i18n="lead">Šios sąlygos apibrėžia, kaip veikia Home by Verko ir kokios yra tavo bei mūsų atsakomybės naudojantis platforma.</p>
+
+    <h2 data-i18n="h2_1">1. Kas yra Home by Verko</h2>
+    <p data-i18n="p1_1">Home by Verko yra platforma, sujungianti žmones, kuriems reikia pagalbos namuose, su netoliese gyvenančiais kaimynais, galinčiais tą pagalbą suteikti. Verko <strong>nėra susitarimo šalis</strong> — susitarimą dėl darbo, kainos ir laiko sudarote jūs abu tiesiogiai.</p>
+    <p data-i18n="p1_2">Home <strong>neapdoroja mokėjimų</strong> ir neima jokio komisinio mokesčio nuo susitartos kainos. Nesame darbo santykių, paslaugų teikimo sutarties ar atstovavimo šalis — esame tik įrankis susirasti vieni kitus ir susitarti.</p>
+
+    <h2 data-i18n="h2_2">2. Paskyra</h2>
+    <p data-i18n="p2_1">Paskyrai sukurti reikės patvirtinti telefono numerį SMS kodu. Įsipareigoji pateikti tikslią informaciją ir neleisti kitiems naudotis savo paskyra. Turi būti bent 18 metų, kad galėtum sukurti paskyrą.</p>
+
+    <h2 data-i18n="h2_3">3. Darbų skelbimas ir pasiūlymai</h2>
+    <p data-i18n="p3_1">Skelbdamas darbą, nurodai orientacinį biudžetą — tai tik pasiūlymo gairė, ne galutinė kaina. Kiekvienas pagalbininkas siūlo savo kainą. Galutinę kainą, laiką ir sąlygas susitariate tiesiogiai pokalbyje prieš pradedant darbą.</p>
+    <p data-i18n="p3_2">Home nesuveda, nelygina ir nepatvirtina jokios kainos — visi kainų pasiūlymai yra naudotojų, ne Home.</p>
+
+    <h2 data-i18n="h2_4">4. Elgesys ir sauga</h2>
+    <ul>
+      <li data-i18n="p4_li1">bendrauk pagarbiai ir sąžiningai su kitais naudotojais;</li>
+      <li data-i18n="p4_li2">nesiūlyk ir neprašyk neteisėtos veiklos ar darbų;</li>
+      <li data-i18n="p4_li3">prieš susitikdamas asmeniškai, peržiūrėk profilį, atsiliepimus ir aptark visas detales pokalbyje;</li>
+      <li data-i18n="p4_li4">pasilieku teisę sustabdyti ar panaikinti paskyrą, pažeidžiančią šias sąlygas ar keliančią pavojų kitiems.</li>
+    </ul>
+
+    <h2 data-i18n="h2_5">5. Atsiliepimai</h2>
+    <p data-i18n="p5_1">Po darbo abi pusės gali palikti atsiliepimą ir įvertinimą. Atsiliepimai turi būti sąžiningi ir pagrįsti realia patirtimi — nesąžiningus ar įžeidžiančius atsiliepimus galime pašalinti.</p>
+
+    <h2 data-i18n="h2_6">6. Ginčai</h2>
+    <p data-i18n="p6_1">Kadangi Home neapdoroja mokėjimų, negalime grąžinti pinigų ar tarpininkauti finansiniuose ginčuose kaip mokėjimo platforma. Rekomenduojame pirmiausia spręsti nesutarimą tiesiogiai pokalbyje. Jei nepavyksta, gali kreiptis <a href="mailto:info@verko.lt">info@verko.lt</a> — ginčą nagrinėsime remdamiesi pokalbio istorija ir susitarimo įrodymais platformoje.</p>
+
+    <h2 data-i18n="h2_7">7. Atsakomybės apribojimas</h2>
+    <p data-i18n="p7_1">Home by Verko yra tarpininkavimo įrankis — negarantuojame kito naudotojo tapatybės, darbo kokybės ar rezultato. Kiekvienas naudotojas atsako už savo sprendimus susitarti, susitikti ir atlikti darbą. Naudojiesi platforma savo rizika, kiek tai leidžia įstatymai.</p>
+
+    <h2 data-i18n="h2_8">8. Paskyros panaikinimas</h2>
+    <p data-i18n="p8_1">Gali panaikinti paskyrą bet kada. Mes galime sustabdyti ar panaikinti paskyrą, jei pažeidžiamos šios sąlygos, pastebimas sukčiavimas ar keliama grėsmė kitiems naudotojams.</p>
+
+    <h2 data-i18n="h2_9">9. Pakeitimai</h2>
+    <p data-i18n="p9_1">Šios sąlygos gali keistis, ypač artėjant Home by Verko paleidimui. Reikšmingus pakeitimus paskelbsime šiame puslapyje su atnaujinta data.</p>
+
+    <h2 data-i18n="h2_10">10. Taikoma teisė</h2>
+    <p data-i18n="p10_1">Šioms sąlygoms taikoma Lietuvos Respublikos teisė.</p>
+
+    <h2 data-i18n="h2_11">11. Kontaktai</h2>
+    <p data-i18n="p11_1">Klausimus siųsk <a href="mailto:info@verko.lt">info@verko.lt</a>.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span data-i18n="footerCopy">© 2026 Verko. Visos teisės saugomos.</span>
+    <a href="index.html">verko.lt</a>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p data-i18n="cookieText">Naudojame slapukus, kad svetainė veiktų, ir, jei sutinkate, rodytume reklamą. Naudodamiesi verko.lt sutinkate su <a href="privacy.html">Privatumo politika</a> ir <a href="terms.html">Paslaugų teikimo sąlygomis</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn ghost" type="button" id="cookieDecline" data-i18n="cookieDecline">Atmesti</button>
+    <button class="btn" type="button" id="cookieAccept" data-i18n="cookieAccept">Sutinku</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s);};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
+
+  function applyTheme(t){
+    if(t!=="light"&&t!=="dark")t="dark";
+    document.documentElement.setAttribute("data-theme",t);
+    try{localStorage.setItem("vk_theme",t);}catch(e){}
+  }
+  (function(){var t;try{t=localStorage.getItem("vk_theme");}catch(e){} applyTheme(t||"dark");})();
+  $("#themeBtn").addEventListener("click",function(){
+    var cur=document.documentElement.getAttribute("data-theme");
+    applyTheme(cur==="dark"?"light":"dark");
+  });
+
+  var copy = {
+    lt:{ title:"Paslaugų teikimo sąlygos — Home by Verko", desc:"Home by Verko naudojimosi sąlygos — kaip veikia platforma, kas atsakingas už ką, ir kaip sprendžiami ginčai. Juodraštis, skirtas peržiūrai prieš oficialų paleidimą." },
+    en:{ title:"Terms of Service — Home by Verko", desc:"Home by Verko terms of use — how the platform works, who is responsible for what, and how disputes are handled. Draft version for review ahead of launch." }
+  };
+  var I18N = {
+    lt:{
+      back:"Į svetainę", kicker:"Teisinė informacija", h1:"Paslaugų teikimo sąlygos", updatedLabel:"Atnaujinta",
+      draftNotice:"Tai juodraštinė versija, paskelbta prieš oficialų Home by Verko paleidimą. Ji bus peržiūrėta ir prireikus atnaujinta iki programos starto adresu home.verko.lt. Tai nėra teisinė konsultacija.",
+      lead:"Šios sąlygos apibrėžia, kaip veikia Home by Verko ir kokios yra tavo bei mūsų atsakomybės naudojantis platforma.",
+      h2_1:"1. Kas yra Home by Verko",
+      p1_1:"Home by Verko yra platforma, sujungianti žmones, kuriems reikia pagalbos namuose, su netoliese gyvenančiais kaimynais, galinčiais tą pagalbą suteikti. Verko <strong>nėra susitarimo šalis</strong> — susitarimą dėl darbo, kainos ir laiko sudarote jūs abu tiesiogiai.",
+      p1_2:"Home <strong>neapdoroja mokėjimų</strong> ir neima jokio komisinio mokesčio nuo susitartos kainos. Nesame darbo santykių, paslaugų teikimo sutarties ar atstovavimo šalis — esame tik įrankis susirasti vieni kitus ir susitarti. ",
+      h2_2:"2. Paskyra", p2_1:"Paskyrai sukurti reikės patvirtinti telefono numerį SMS kodu. Įsipareigoji pateikti tikslią informaciją ir neleisti kitiems naudotis savo paskyra. Turi būti bent 18 metų, kad galėtum sukurti paskyrą.",
+      h2_3:"3. Darbų skelbimas ir pasiūlymai",
+      p3_1:"Skelbdamas darbą, nurodai orientacinį biudžetą — tai tik pasiūlymo gairė, ne galutinė kaina. Kiekvienas pagalbininkas siūlo savo kainą. Galutinę kainą, laiką ir sąlygas susitariate tiesiogiai pokalbyje prieš pradedant darbą.",
+      p3_2:"Home nesuveda, nelygina ir nepatvirtina jokios kainos — visi kainų pasiūlymai yra naudotojų, ne Home.",
+      h2_4:"4. Elgesys ir sauga",
+      p4_li1:"bendrauk pagarbiai ir sąžiningai su kitais naudotojais;", p4_li2:"nesiūlyk ir neprašyk neteisėtos veiklos ar darbų;",
+      p4_li3:"prieš susitikdamas asmeniškai, peržiūrėk profilį, atsiliepimus ir aptark visas detales pokalbyje;",
+      p4_li4:"pasilieku teisę sustabdyti ar panaikinti paskyrą, pažeidžiančią šias sąlygas ar keliančią pavojų kitiems.",
+      h2_5:"5. Atsiliepimai", p5_1:"Po darbo abi pusės gali palikti atsiliepimą ir įvertinimą. Atsiliepimai turi būti sąžiningi ir pagrįsti realia patirtimi — nesąžiningus ar įžeidžiančius atsiliepimus galime pašalinti.",
+      h2_6:"6. Ginčai", p6_1:"Kadangi Home neapdoroja mokėjimų, negalime grąžinti pinigų ar tarpininkauti finansiniuose ginčuose kaip mokėjimo platforma. Rekomenduojame pirmiausia spręsti nesutarimą tiesiogiai pokalbyje. Jei nepavyksta, gali kreiptis <a href=\"mailto:info@verko.lt\">info@verko.lt</a> — ginčą nagrinėsime remdamiesi pokalbio istorija ir susitarimo įrodymais platformoje.",
+      h2_7:"7. Atsakomybės apribojimas", p7_1:"Home by Verko yra tarpininkavimo įrankis — negarantuojame kito naudotojo tapatybės, darbo kokybės ar rezultato. Kiekvienas naudotojas atsako už savo sprendimus susitarti, susitikti ir atlikti darbą. Naudojiesi platforma savo rizika, kiek tai leidžia įstatymai.",
+      h2_8:"8. Paskyros panaikinimas", p8_1:"Gali panaikinti paskyrą bet kada. Mes galime sustabdyti ar panaikinti paskyrą, jei pažeidžiamos šios sąlygos, pastebimas sukčiavimas ar keliama grėsmė kitiems naudotojams.",
+      h2_9:"9. Pakeitimai", p9_1:"Šios sąlygos gali keistis, ypač artėjant Home by Verko paleidimui. Reikšmingus pakeitimus paskelbsime šiame puslapyje su atnaujinta data.",
+      h2_10:"10. Taikoma teisė", p10_1:"Šioms sąlygoms taikoma Lietuvos Respublikos teisė.",
+      h2_11:"11. Kontaktai", p11_1:"Klausimus siųsk <a href=\"mailto:info@verko.lt\">info@verko.lt</a>.",
+      footerCopy:"© 2026 Verko. Visos teisės saugomos.",
+      cookieText:"Naudojame slapukus, kad svetainė veiktų, ir, jei sutinkate, rodytume reklamą. Naudodamiesi verko.lt sutinkate su <a href=\"privacy.html\">Privatumo politika</a> ir <a href=\"terms.html\">Paslaugų teikimo sąlygomis</a>.",
+      cookieDecline:"Atmesti", cookieAccept:"Sutinku"
+    },
+    en:{
+      back:"Back to site", kicker:"Legal", h1:"Terms of Service", updatedLabel:"Last updated",
+      draftNotice:"This is a draft, published ahead of the official Home by Verko launch. It will be reviewed and updated as needed before the app goes live at home.verko.lt. This is not legal advice.",
+      lead:"These terms set out how Home by Verko works and what you and we are each responsible for when using the platform.",
+      h2_1:"1. What Home by Verko is",
+      p1_1:"Home by Verko is a platform connecting people who need help at home with nearby neighbours who can provide it. Verko is <strong>not a party to the agreement</strong> — the agreement on the job, price and timing is made directly between the two of you.",
+      p1_2:"Home <strong>does not process payments</strong> and takes no commission on the agreed price. We are not a party to any employment relationship, service contract, or agency arrangement — we're a tool to help you find each other and agree.",
+      h2_2:"2. Your account", p2_1:"Creating an account requires verifying a phone number by SMS code. You agree to provide accurate information and not let others use your account. You must be at least 18 to create an account.",
+      h2_3:"3. Posting jobs and offers",
+      p3_1:"When you post a job, you give an indicative budget — this is a guide for offers, not a final price. Each helper offers their own price. The final price, timing and terms are agreed directly in chat before the job starts.",
+      p3_2:"Home does not total, compare, or confirm any price — every price offer belongs to the users, not to Home.",
+      h2_4:"4. Conduct and safety",
+      p4_li1:"communicate respectfully and honestly with other users;", p4_li2:"don't offer or request unlawful activity or jobs;",
+      p4_li3:"before meeting in person, review the profile, reviews, and discuss all details in chat;",
+      p4_li4:"we reserve the right to suspend or remove an account that breaches these terms or endangers others.",
+      h2_5:"5. Reviews", p5_1:"After a job, both sides can leave a review and rating. Reviews must be honest and based on real experience — we may remove reviews that are dishonest or abusive.",
+      h2_6:"6. Disputes", p6_1:"Because Home does not process payments, we cannot issue refunds or mediate financial disputes as a payment platform would. We recommend resolving disagreements directly in chat first. If that doesn't work, contact <a href=\"mailto:info@verko.lt\">info@verko.lt</a> — we'll look into disputes using chat history and agreement evidence on the platform.",
+      h2_7:"7. Limitation of liability", p7_1:"Home by Verko is a matchmaking tool — we don't guarantee another user's identity, the quality of any work, or the outcome. Each user is responsible for their own decisions to agree, meet, and carry out a job. You use the platform at your own risk, to the extent permitted by law.",
+      h2_8:"8. Account termination", p8_1:"You can delete your account at any time. We may suspend or remove an account if these terms are breached, fraud is suspected, or other users are put at risk.",
+      h2_9:"9. Changes", p9_1:"These terms may change, especially as the Home by Verko launch approaches. We'll post material changes here with an updated date.",
+      h2_10:"10. Governing law", p10_1:"These terms are governed by the law of the Republic of Lithuania.",
+      h2_11:"11. Contact", p11_1:"Send questions to <a href=\"mailto:info@verko.lt\">info@verko.lt</a>.",
+      footerCopy:"© 2026 Verko. All rights reserved.",
+      cookieText:"We use cookies to run this site and, if you agree, to show ads. By using verko.lt you agree to our <a href=\"privacy.html\">Privacy Policy</a> and <a href=\"terms.html\">Terms of Service</a>.",
+      cookieDecline:"Decline", cookieAccept:"Accept"
+    }
+  };
+
+  function setLang(lang){
+    lang = (lang==="en") ? "en" : "lt";
+    document.documentElement.lang = lang;
+    $$("[data-i18n]").forEach(function(el){
+      var key = el.getAttribute("data-i18n");
+      var val = I18N[lang][key];
+      if(val!=null) el.innerHTML = val;
+    });
+    $("#docTitle").textContent = copy[lang].title;
+    $("#metaDesc").setAttribute("content", copy[lang].desc);
+    $("#langEn").classList.toggle("active", lang==="en");
+    $("#langLt").classList.toggle("active", lang==="lt");
+    try{localStorage.setItem("vk_lang", lang);}catch(e){}
+  }
+  $("#langEn").addEventListener("click", function(){ setLang("en"); });
+  $("#langLt").addEventListener("click", function(){ setLang("lt"); });
+  var savedLang; try{ savedLang = localStorage.getItem("vk_lang"); }catch(e){}
+  setLang(savedLang || "lt");
+
+  var banner = $("#cookieBanner");
+  function loadAds(){
+    if(document.getElementById("adsbygoogle-js")) return;
+    var s = document.createElement("script");
+    s.id = "adsbygoogle-js";
+    s.async = true;
+    s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9142954017884206";
+    s.crossOrigin = "anonymous";
+    document.head.appendChild(s);
+  }
+  function getConsent(){ try{ return localStorage.getItem("vk_consent"); }catch(e){ return null; } }
+  function setConsent(v){ try{ localStorage.setItem("vk_consent", v); }catch(e){} }
+  function showBanner(){ banner.classList.add("show"); }
+  function hideBanner(){ banner.classList.remove("show"); }
+
+  var consent = getConsent();
+  if(consent === "accepted"){ loadAds(); }
+  else if(consent !== "declined"){ setTimeout(showBanner, 600); }
+
+  $("#cookieAccept").addEventListener("click", function(){ setConsent("accepted"); hideBanner(); loadAds(); });
+  $("#cookieDecline").addEventListener("click", function(){ setConsent("declined"); hideBanner(); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="lt" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title id="docTitle">Privatumo politika — Home by Verko</title>
+<meta id="metaDesc" name="description" content="Kaip verko.lt ir Home by Verko tvarko asmens duomenis ir slapukus. Juodraštis, skirtas peržiūrai prieš oficialų paleidimą.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#131610">
+<link rel="canonical" href="https://verko.lt/privacy.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232c5a3e'/%3E%3Cpath d='M50 18l32 28h-11v34H49V56H41v24H29V46H18z' fill='%23eaeee5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#131610; --surface:#1c201a; --surface-border:#2a2f26; --surface-2:#22261f; --higher:#161a14;
+  --text:#eaeee5; --text-muted:#c3cbba; --text-dim:#a7b09f; --text-faint:#7d8674;
+  --moss:#2c5a3e; --moss-border:#386b4a; --moss-on:#f0f5ee; --moss-soft:#233a2b; --moss-soft-text:#7cc394;
+  --amber:#f0a04b; --amber-ink:#241a0c; --amber-soft-bg:#241f16; --amber-soft-border:#3b331f; --amber-soft-text:#e0c79a;
+  --shadow:rgba(0,0,0,.45); --bar-bg:rgba(19,22,16,.86);
+  --max:1180px; --ease:cubic-bezier(.16,.8,.24,1);
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f6f1e7; --surface:#fffdf7; --surface-border:#e6ddc7; --surface-2:#ece4d0; --higher:#f2ecdf;
+    --text:#232922; --text-muted:#4b5245; --text-dim:#6b7263; --text-faint:#8a9180;
+    --moss-soft:#dcead9; --moss-soft-text:#1f4530;
+    --amber-soft-bg:#fbf1de; --amber-soft-border:#e8d6ab; --amber-soft-text:#6b4e1c;
+    --shadow:rgba(60,45,10,.14); --bar-bg:rgba(246,241,231,.86);
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f6f1e7; --surface:#fffdf7; --surface-border:#e6ddc7; --surface-2:#ece4d0; --higher:#f2ecdf;
+  --text:#232922; --text-muted:#4b5245; --text-dim:#6b7263; --text-faint:#8a9180;
+  --moss-soft:#dcead9; --moss-soft-text:#1f4530;
+  --amber-soft-bg:#fbf1de; --amber-soft-border:#e8d6ab; --amber-soft-text:#6b4e1c;
+  --shadow:rgba(60,45,10,.14); --bar-bg:rgba(246,241,231,.86);
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --bg:#131610; --surface:#1c201a; --surface-border:#2a2f26; --surface-2:#22261f; --higher:#161a14;
+  --text:#eaeee5; --text-muted:#c3cbba; --text-dim:#a7b09f; --text-faint:#7d8674;
+  --moss-soft:#233a2b; --moss-soft-text:#7cc394;
+  --amber-soft-bg:#241f16; --amber-soft-border:#3b331f; --amber-soft-text:#e0c79a;
+  --shadow:rgba(0,0,0,.45); --bar-bg:rgba(19,22,16,.86);
+  color-scheme:dark;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px;}
+.container{width:min(100% - 2.5rem,var(--max));margin-inline:auto;}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1.05rem;letter-spacing:-.01em;color:var(--text);text-decoration:none;}
+.logo .mark{width:32px;height:32px;border-radius:10px;background:var(--moss);border:1px solid var(--moss-border);display:flex;align-items:center;justify-content:center;flex:none;}
+.logo .by{color:var(--text-faint);font-weight:400;}
+.site-header{position:sticky;top:0;z-index:20;background:var(--bar-bg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--surface-border);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:66px;}
+.header-right{display:flex;align-items:center;gap:.55rem;}
+.seg{display:flex;border:1px solid var(--surface-border);border-radius:999px;overflow:hidden;background:var(--surface-2);}
+.seg button{background:none;border:0;padding:.4rem .75rem;font:inherit;font-size:.78rem;font-weight:600;color:var(--text-dim);cursor:pointer;}
+.seg button.active{background:var(--moss);color:var(--moss-on);}
+.icon-btn{background:var(--surface-2);border:1px solid var(--surface-border);border-radius:999px;width:38px;height:38px;font-size:.9rem;color:var(--text-dim);cursor:pointer;}
+.btn{display:inline-flex;align-items:center;gap:.4rem;border-radius:999px;padding:.55rem 1.1rem;font-size:.85rem;font-weight:600;text-decoration:none;background:var(--amber);color:var(--amber-ink);border:1px solid var(--amber);}
+main{padding-block:clamp(2.5rem,6vw,4rem);}
+.doc{max-width:72ch;}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-faint);font-weight:600;}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-.025em;margin:.6rem 0 .4rem;}
+.updated{color:var(--text-faint);font-size:.85rem;margin-bottom:1.4rem;}
+.draft-notice{display:flex;gap:.8rem;background:var(--amber-soft-bg);border:1px solid var(--amber-soft-border);border-radius:14px;padding:1.1rem 1.25rem;margin-bottom:2rem;}
+.draft-notice svg{flex:none;margin-top:2px;}
+.draft-notice p{color:var(--amber-soft-text);font-size:.9rem;margin:0;line-height:1.6;}
+h2{font-size:1.15rem;font-weight:700;letter-spacing:-.01em;margin:2.2rem 0 .7rem;padding-top:1.4rem;border-top:1px solid var(--surface-border);}
+h2:first-of-type{border-top:0;padding-top:0;}
+p{color:var(--text-muted);margin-bottom:.9rem;}
+p.lead{color:var(--text);font-size:1.05rem;}
+strong{color:var(--text);font-weight:600;}
+ul{margin:0 0 .9rem 1.1rem;color:var(--text-muted);}
+li{margin-bottom:.5rem;}
+.doc a{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:3px;}
+.note{background:var(--surface);border:1px solid var(--surface-border);border-radius:14px;padding:1.1rem 1.25rem;margin:1.2rem 0;}
+.note p:last-child{margin-bottom:0;}
+.site-footer{border-top:1px solid var(--surface-border);margin-top:3rem;padding-block:1.5rem;font-size:.85rem;color:var(--text-faint);}
+.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;}
+.footer-inner a{color:var(--text-faint);}
+.cookie-banner{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:250;max-width:640px;margin-inline:auto;background:var(--surface);border:1px solid var(--surface-border);border-radius:20px;padding:1.4rem 1.5rem;box-shadow:0 20px 50px -18px var(--shadow);transform:translateY(140%);opacity:0;transition:transform .4s var(--ease),opacity .4s var(--ease);}
+.cookie-banner.show{transform:translateY(0);opacity:1;}
+.cookie-banner p{font-size:.88rem;color:var(--text-muted);line-height:1.55;}
+.cookie-banner a{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+.cookie-actions{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap;}
+.cookie-actions .btn{flex:1;justify-content:center;background:var(--amber);}
+.cookie-actions .btn.ghost{background:var(--surface-2);color:var(--text);border-color:var(--surface-border);}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <span class="mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--moss-on)" stroke="none"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3z"/></svg></span>
+      Home<span class="by">&nbsp;by Verko</span>
+    </a>
+    <div class="header-right">
+      <div class="seg" role="group" aria-label="Language">
+        <button id="langLt" type="button">LT</button>
+        <button id="langEn" type="button">EN</button>
+      </div>
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle theme">◐</button>
+      <a class="btn" href="index.html"><span data-i18n="back">Į svetainę</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container doc">
+    <p class="kicker" data-i18n="kicker">Teisinė informacija</p>
+    <h1 data-i18n="h1">Privatumo politika</h1>
+    <p class="updated"><span data-i18n="updatedLabel">Atnaujinta</span>: 2026-08-25</p>
+
+    <div class="draft-notice">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--amber-soft-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L2.8 17a2 2 0 001.7 3h15a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
+      <p data-i18n="draftNotice">Tai juodraštinė versija, paskelbta prieš oficialų Home by Verko paleidimą. Ji bus peržiūrėta ir prireikus atnaujinta iki programos starto adresu home.verko.lt. Tai nėra teisinė konsultacija.</p>
+    </div>
+
+    <p class="lead" data-i18n="lead">Ši politika apima svetainę verko.lt ir būsimą programą Home by Verko. Ji paaiškina, kokius duomenis renkame, kodėl, ir kokias teises turi.</p>
+
+    <h2 data-i18n="h2_1">1. Kas mes esame</h2>
+    <p data-i18n="p1_1">Duomenų valdytojas yra Verko, pasiekiamas el. paštu <a href="mailto:info@verko.lt">info@verko.lt</a>. Ši politika taikoma svetainei verko.lt ir programai Home by Verko (home.verko.lt), kai ji bus paleista.</p>
+
+    <h2 data-i18n="h2_2">2. Ką renkame šioje svetainėje (verko.lt)</h2>
+    <p data-i18n="p2_1">Naršant verko.lt be paskyros, renkama labai nedaug:</p>
+    <ul>
+      <li data-i18n="p2_li1">tavo pasirinkta spalvų tema ir kalba, saugomos naršyklės vietinėje saugykloje tavo įrenginyje;</li>
+      <li data-i18n="p2_li2">tavo slapukų sutikimo pasirinkimas (sutikai ar atsisakei);</li>
+      <li data-i18n="p2_li3">jei sutikai su reklamos slapukais — informacija, kurią renka „Google AdSense“, aprašyta mūsų <a href="advertising.html">Reklamos ir slapukų puslapyje</a>.</li>
+    </ul>
+    <p data-i18n="p2_2">Šie duomenys neišeina iš tavo įrenginio (išskyrus reklamos slapukus) ir jų nesiejame su tavo tapatybe.</p>
+
+    <h2 data-i18n="h2_3">3. Ką rinks programa Home by Verko</h2>
+    <p data-i18n="p3_1">Kai programa startuos, paskyrai sukurti ir naudotis reikės pateikti:</p>
+    <ul>
+      <li data-i18n="p3_li1">telefono numerį, patvirtinamą SMS kodu (prisijungimui, be slaptažodžio);</li>
+      <li data-i18n="p3_li2">profilio informaciją, kurią pateiki pats — vardą, nuotrauką, sritis, kuriose gali padėti ar kurios tau reikalingos;</li>
+      <li data-i18n="p3_li3">skelbiamų darbų turinį — aprašymą, vietą, laiką, nuotraukas, orientacinį biudžetą;</li>
+      <li data-i18n="p3_li4">žinutes, siunčiamas per programos pokalbį su kitais naudotojais;</li>
+      <li data-i18n="p3_li5">atsiliepimus ir įvertinimus, kuriuos palieki ar gauni po darbo.</li>
+    </ul>
+    <p data-i18n="p3_2"><strong data-i18n="p3_2strong">Svarbu:</strong> Home niekada nerenka ir nesaugo mokėjimo kortelių duomenų ar banko rekvizitų, nes Home neapdoroja mokėjimų — atsiskaitymas vyksta tiesiogiai tarp naudotojų. Ši dalis bus patikslinta prieš programos paleidimą.</p>
+
+    <h2 data-i18n="h2_4">4. Kodėl renkame šiuos duomenis</h2>
+    <ul>
+      <li data-i18n="p4_li1">kad galėtum sukurti paskyrą ir ja saugiai naudotis;</li>
+      <li data-i18n="p4_li2">kad kiti naudotojai matytų tavo skelbimus, pasiūlymus ir profilį;</li>
+      <li data-i18n="p4_li3">kad veiktų pokalbiai ir pranešimai apie naujus pasiūlymus;</li>
+      <li data-i18n="p4_li4">saugumui — kovai su sukčiavimu ir piktnaudžiavimu, ginčų nagrinėjimui.</li>
+    </ul>
+
+    <h2 data-i18n="h2_5">5. Kiek laiko saugome</h2>
+    <p data-i18n="p5_1">Svetainės vietinės saugyklos duomenis saugo tavo naršyklė, kol jų neišvalai. Programos paskyros duomenis planuojame saugoti tol, kol paskyra aktyvi, ir protingą laiką po jos ištrynimo, kaip reikalauja teisiniai įsipareigojimai (pvz., dėl ginčų). Tikslūs terminai bus nustatyti iki programos paleidimo.</p>
+
+    <h2 data-i18n="h2_6">6. Tavo teisės</h2>
+    <p data-i18n="p6_1">Pagal BDAR turi teisę prašyti susipažinti su savo duomenimis, juos ištaisyti, ištrinti, apriboti tvarkymą, nesutikti su tvarkymu ir gauti duomenis perkeliamu formatu. Dėl šių teisių rašyk <a href="mailto:info@verko.lt">info@verko.lt</a>. Taip pat gali kreiptis į Valstybinę duomenų apsaugos inspekciją.</p>
+
+    <h2 data-i18n="h2_7">7. Slapukai ir reklama</h2>
+    <p data-i18n="p7_1">Išsamią informaciją apie slapukus ir trečiųjų šalių reklamą svetainėje verko.lt rasi <a href="advertising.html">Reklamos ir slapukų puslapyje</a>.</p>
+
+    <h2 data-i18n="h2_8">8. Pakeitimai</h2>
+    <p data-i18n="p8_1">Ši politika gali keistis, ypač artėjant Home by Verko paleidimui. Reikšmingus pakeitimus paskelbsime šiame puslapyje su atnaujinta data.</p>
+
+    <h2 data-i18n="h2_9">9. Kontaktai</h2>
+    <p data-i18n="p9_1">Klausimus siųsk <a href="mailto:info@verko.lt">info@verko.lt</a>.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span data-i18n="footerCopy">© 2026 Verko. Visos teisės saugomos.</span>
+    <a href="index.html">verko.lt</a>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p data-i18n="cookieText">Naudojame slapukus, kad svetainė veiktų, ir, jei sutinkate, rodytume reklamą. Naudodamiesi verko.lt sutinkate su <a href="privacy.html">Privatumo politika</a> ir <a href="terms.html">Paslaugų teikimo sąlygomis</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn ghost" type="button" id="cookieDecline" data-i18n="cookieDecline">Atmesti</button>
+    <button class="btn" type="button" id="cookieAccept" data-i18n="cookieAccept">Sutinku</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s);};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
+
+  function applyTheme(t){
+    if(t!=="light"&&t!=="dark")t="dark";
+    document.documentElement.setAttribute("data-theme",t);
+    try{localStorage.setItem("vk_theme",t);}catch(e){}
+  }
+  (function(){var t;try{t=localStorage.getItem("vk_theme");}catch(e){} applyTheme(t||"dark");})();
+  $("#themeBtn").addEventListener("click",function(){
+    var cur=document.documentElement.getAttribute("data-theme");
+    applyTheme(cur==="dark"?"light":"dark");
+  });
+
+  var copy = {
+    lt:{ title:"Privatumo politika — Home by Verko", desc:"Kaip verko.lt ir Home by Verko tvarko asmens duomenis ir slapukus. Juodraštis, skirtas peržiūrai prieš oficialų paleidimą." },
+    en:{ title:"Privacy Policy — Home by Verko", desc:"How verko.lt and Home by Verko handle personal data and cookies. Draft version for review ahead of launch." }
+  };
+  var I18N = {
+    lt:{
+      back:"Į svetainę", kicker:"Teisinė informacija", h1:"Privatumo politika", updatedLabel:"Atnaujinta",
+      draftNotice:"Tai juodraštinė versija, paskelbta prieš oficialų Home by Verko paleidimą. Ji bus peržiūrėta ir prireikus atnaujinta iki programos starto adresu home.verko.lt. Tai nėra teisinė konsultacija.",
+      lead:"Ši politika apima svetainę verko.lt ir būsimą programą Home by Verko. Ji paaiškina, kokius duomenis renkame, kodėl, ir kokias teises turi.",
+      h2_1:"1. Kas mes esame", p1_1:"Duomenų valdytojas yra Verko, pasiekiamas el. paštu <a href=\"mailto:info@verko.lt\">info@verko.lt</a>. Ši politika taikoma svetainei verko.lt ir programai Home by Verko (home.verko.lt), kai ji bus paleista.",
+      h2_2:"2. Ką renkame šioje svetainėje (verko.lt)", p2_1:"Naršant verko.lt be paskyros, renkama labai nedaug:",
+      p2_li1:"tavo pasirinkta spalvų tema ir kalba, saugomos naršyklės vietinėje saugykloje tavo įrenginyje;",
+      p2_li2:"tavo slapukų sutikimo pasirinkimas (sutikai ar atsisakei);",
+      p2_li3:"jei sutikai su reklamos slapukais — informacija, kurią renka „Google AdSense“, aprašyta mūsų <a href=\"advertising.html\">Reklamos ir slapukų puslapyje</a>.",
+      p2_2:"Šie duomenys neišeina iš tavo įrenginio (išskyrus reklamos slapukus) ir jų nesiejame su tavo tapatybe.",
+      h2_3:"3. Ką rinks programa Home by Verko", p3_1:"Kai programa startuos, paskyrai sukurti ir naudotis reikės pateikti:",
+      p3_li1:"telefono numerį, patvirtinamą SMS kodu (prisijungimui, be slaptažodžio);",
+      p3_li2:"profilio informaciją, kurią pateiki pats — vardą, nuotrauką, sritis, kuriose gali padėti ar kurios tau reikalingos;",
+      p3_li3:"skelbiamų darbų turinį — aprašymą, vietą, laiką, nuotraukas, orientacinį biudžetą;",
+      p3_li4:"žinutes, siunčiamas per programos pokalbį su kitais naudotojais;",
+      p3_li5:"atsiliepimus ir įvertinimus, kuriuos palieki ar gauni po darbo.",
+      p3_2strong:"Svarbu:", p3_2:"<strong>Svarbu:</strong> Home niekada nerenka ir nesaugo mokėjimo kortelių duomenų ar banko rekvizitų, nes Home neapdoroja mokėjimų — atsiskaitymas vyksta tiesiogiai tarp naudotojų. Ši dalis bus patikslinta prieš programos paleidimą.",
+      h2_4:"4. Kodėl renkame šiuos duomenis",
+      p4_li1:"kad galėtum sukurti paskyrą ir ja saugiai naudotis;", p4_li2:"kad kiti naudotojai matytų tavo skelbimus, pasiūlymus ir profilį;",
+      p4_li3:"kad veiktų pokalbiai ir pranešimai apie naujus pasiūlymus;", p4_li4:"saugumui — kovai su sukčiavimu ir piktnaudžiavimu, ginčų nagrinėjimui.",
+      h2_5:"5. Kiek laiko saugome", p5_1:"Svetainės vietinės saugyklos duomenis saugo tavo naršyklė, kol jų neišvalai. Programos paskyros duomenis planuojame saugoti tol, kol paskyra aktyvi, ir protingą laiką po jos ištrynimo, kaip reikalauja teisiniai įsipareigojimai (pvz., dėl ginčų). Tikslūs terminai bus nustatyti iki programos paleidimo.",
+      h2_6:"6. Tavo teisės", p6_1:"Pagal BDAR turi teisę prašyti susipažinti su savo duomenimis, juos ištaisyti, ištrinti, apriboti tvarkymą, nesutikti su tvarkymu ir gauti duomenis perkeliamu formatu. Dėl šių teisių rašyk <a href=\"mailto:info@verko.lt\">info@verko.lt</a>. Taip pat gali kreiptis į Valstybinę duomenų apsaugos inspekciją.",
+      h2_7:"7. Slapukai ir reklama", p7_1:"Išsamią informaciją apie slapukus ir trečiųjų šalių reklamą svetainėje verko.lt rasi <a href=\"advertising.html\">Reklamos ir slapukų puslapyje</a>.",
+      h2_8:"8. Pakeitimai", p8_1:"Ši politika gali keistis, ypač artėjant Home by Verko paleidimui. Reikšmingus pakeitimus paskelbsime šiame puslapyje su atnaujinta data.",
+      h2_9:"9. Kontaktai", p9_1:"Klausimus siųsk <a href=\"mailto:info@verko.lt\">info@verko.lt</a>.",
+      footerCopy:"© 2026 Verko. Visos teisės saugomos.",
+      cookieText:"Naudojame slapukus, kad svetainė veiktų, ir, jei sutinkate, rodytume reklamą. Naudodamiesi verko.lt sutinkate su <a href=\"privacy.html\">Privatumo politika</a> ir <a href=\"terms.html\">Paslaugų teikimo sąlygomis</a>.",
+      cookieDecline:"Atmesti", cookieAccept:"Sutinku"
+    },
+    en:{
+      back:"Back to site", kicker:"Legal", h1:"Privacy Policy", updatedLabel:"Last updated",
+      draftNotice:"This is a draft, published ahead of the official Home by Verko launch. It will be reviewed and updated as needed before the app goes live at home.verko.lt. This is not legal advice.",
+      lead:"This policy covers the verko.lt website and the upcoming Home by Verko app. It explains what data we collect, why, and what rights you have.",
+      h2_1:"1. Who we are", p1_1:"The data controller is Verko, reachable at <a href=\"mailto:info@verko.lt\">info@verko.lt</a>. This policy applies to the verko.lt website and to the Home by Verko app (home.verko.lt) once it launches.",
+      h2_2:"2. What this website (verko.lt) collects", p2_1:"Browsing verko.lt without an account collects very little:",
+      p2_li1:"your chosen colour theme and language, stored in your browser's local storage on your device;",
+      p2_li2:"your cookie consent choice (accepted or declined);",
+      p2_li3:"if you accepted advertising cookies — information collected by Google AdSense, described on our <a href=\"advertising.html\">Advertising & cookies page</a>.",
+      p2_2:"This data doesn't leave your device (except advertising cookies) and isn't linked to your identity.",
+      h2_3:"3. What the Home by Verko app will collect", p3_1:"Once the app launches, creating and using an account will require:",
+      p3_li1:"a phone number, verified by SMS code (for sign-in, with no password);",
+      p3_li2:"profile information you provide — your name, photo, and the categories you can help with or need help in;",
+      p3_li3:"the content of jobs you post — description, location, timing, photos, an indicative budget;",
+      p3_li4:"messages sent through the in-app chat with other users;",
+      p3_li5:"reviews and ratings you leave or receive after a job.",
+      p3_2strong:"Important:", p3_2:"<strong>Important:</strong> Home never collects or stores payment card details or bank account numbers, because Home does not process payments — payment happens directly between users. This section will be refined before the app launches.",
+      h2_4:"4. Why we collect this",
+      p4_li1:"so you can create and safely use an account;", p4_li2:"so other users can see your listings, offers and profile;",
+      p4_li3:"so chat and notifications about new offers work;", p4_li4:"for safety — to fight fraud and abuse, and to handle disputes.",
+      h2_5:"5. How long we keep it", p5_1:"Website local-storage data is kept by your browser until you clear it. We plan to keep app account data for as long as the account is active, plus a reasonable period afterwards as required by legal obligations (e.g. for disputes). Exact retention periods will be set before the app launches.",
+      h2_6:"6. Your rights", p6_1:"Under the GDPR you can request access to your data, its correction, deletion, restriction of processing, object to processing, and receive your data in a portable format. Write to <a href=\"mailto:info@verko.lt\">info@verko.lt</a> for any of these. You may also complain to the State Data Protection Inspectorate of Lithuania.",
+      h2_7:"7. Cookies and advertising", p7_1:"Full detail on cookies and third-party advertising on verko.lt is on our <a href=\"advertising.html\">Advertising & cookies page</a>.",
+      h2_8:"8. Changes", p8_1:"This policy may change, especially as the Home by Verko launch approaches. We'll post material changes here with an updated date.",
+      h2_9:"9. Contact", p9_1:"Send questions to <a href=\"mailto:info@verko.lt\">info@verko.lt</a>.",
+      footerCopy:"© 2026 Verko. All rights reserved.",
+      cookieText:"We use cookies to run this site and, if you agree, to show ads. By using verko.lt you agree to our <a href=\"privacy.html\">Privacy Policy</a> and <a href=\"terms.html\">Terms of Service</a>.",
+      cookieDecline:"Decline", cookieAccept:"Accept"
+    }
+  };
+
+  function setLang(lang){
+    lang = (lang==="en") ? "en" : "lt";
+    document.documentElement.lang = lang;
+    $$("[data-i18n]").forEach(function(el){
+      var key = el.getAttribute("data-i18n");
+      var val = I18N[lang][key];
+      if(val!=null) el.innerHTML = val;
+    });
+    $("#docTitle").textContent = copy[lang].title;
+    $("#metaDesc").setAttribute("content", copy[lang].desc);
+    $("#langEn").classList.toggle("active", lang==="en");
+    $("#langLt").classList.toggle("active", lang==="lt");
+    try{localStorage.setItem("vk_lang", lang);}catch(e){}
+  }
+  $("#langEn").addEventListener("click", function(){ setLang("en"); });
+  $("#langLt").addEventListener("click", function(){ setLang("lt"); });
+  var savedLang; try{ savedLang = localStorage.getItem("vk_lang"); }catch(e){}
+  setLang(savedLang || "lt");
+
+  var banner = $("#cookieBanner");
+  function loadAds(){
+    if(document.getElementById("adsbygoogle-js")) return;
+    var s = document.createElement("script");
+    s.id = "adsbygoogle-js";
+    s.async = true;
+    s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9142954017884206";
+    s.crossOrigin = "anonymous";
+    document.head.appendChild(s);
+  }
+  function getConsent(){ try{ return localStorage.getItem("vk_consent"); }catch(e){ return null; } }
+  function setConsent(v){ try{ localStorage.setItem("vk_consent", v); }catch(e){} }
+  function showBanner(){ banner.classList.add("show"); }
+  function hideBanner(){ banner.classList.remove("show"); }
+
+  var consent = getConsent();
+  if(consent === "accepted"){ loadAds(); }
+  else if(consent !== "declined"){ setTimeout(showBanner, 600); }
+
+  $("#cookieAccept").addEventListener("click", function(){ setConsent("accepted"); hideBanner(); loadAds(); });
+  $("#cookieDecline").addEventListener("click", function(){ setConsent("declined"); hideBanner(); });
+})();
+</script>
+</body>
+</html>

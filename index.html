@@ -134,7 +134,7 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
 .hero h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:700;letter-spacing:-.03em;line-height:1.06;margin:1rem 0 0;}
 .hero h1 .accent{color:var(--amber);}
 .hero .tagline{font-size:clamp(1rem,1.6vw,1.14rem);color:var(--text-muted);max-width:46ch;margin:1.15rem 0 0;}
-.hero .cta-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.75rem;}
+.hero .cta-row{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:flex-start;margin-top:1.75rem;}
 .hero .fineprint{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--text-faint);margin-top:1.4rem;}
 .hero .fineprint svg{flex:none;}
 
@@ -280,7 +280,6 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
   <section class="hero" id="top">
     <div class="container hero-grid">
       <div>
-        <p class="kicker"><span class="pulse"></span><span data-i18n="heroKicker">Netrukus · home.verko.lt</span></p>
         <h1 data-i18n="heroTitle">Pagalba namuose nuo <span class="accent">kaimynų.</span></h1>
         <p class="tagline" data-i18n="heroTagline">Home by Verko sujungia tave su netoliese gyvenančiais kaimynais — valymui, sodo darbams, baldų surinkimui ir kitiems kasdieniams darbams. Paskelbk, ko reikia, gauk tikrų pasiūlymų ir susitark tiesiogiai.</p>
         <div class="cta-row">
@@ -502,7 +501,6 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
   var I18N = {
     lt: {
       navHow:"Kaip veikia", navCats:"Sritys", navFaq:"DUK", navAbout:"Apie", navCta:"Aplankyti",
-      heroKicker:"Netrukus · home.verko.lt",
       heroTitle:"Pagalba namuose nuo <span class=\"accent\">kaimynų.</span>",
       heroTagline:"Home by Verko sujungia tave su netoliese gyvenančiais kaimynais — valymui, sodo darbams, baldų surinkimui ir kitiems kasdieniams darbams. Paskelbk, ko reikia, gauk tikrų pasiūlymų ir susitark tiesiogiai.",
       heroCtaPrimary:"Aplankyti home.verko.lt", heroCtaSecondary:"Kaip tai veikia",
@@ -546,7 +544,6 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
     },
     en: {
       navHow:"How it works", navCats:"Categories", navFaq:"FAQ", navAbout:"About", navCta:"Visit app",
-      heroKicker:"Coming soon · home.verko.lt",
       heroTitle:"Get help at home, from <span class=\"accent\">your neighbours.</span>",
       heroTagline:"Home by Verko connects you with neighbours nearby for cleaning, garden work, furniture assembly and other everyday jobs. Post what you need, get real offers, and agree the details directly.",
       heroCtaPrimary:"Visit home.verko.lt", heroCtaSecondary:"See how it works",

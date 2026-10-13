@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title id="docTitle">Home by Verko — Kaimynai, kurie padeda kaimynams</title>
-<meta id="metaDesc" name="description" content="Home by Verko sujungia tave su kaimynais netoliese — valymui, sodo darbams, baldų surinkimui ir kitiems kasdieniams darbams. Be agentūrų, be komisinių. Netrukus home.verko.lt.">
-<meta property="og:title" content="Home by Verko — Kaimynai, kurie padeda kaimynams">
-<meta property="og:description" content="Paskelbk darbą, gauk pasiūlymų iš kaimynų, susitark tiesiogiai. Be agentūrų, be komisinių.">
+<title id="docTitle">Verko — Home by Verko kūrėjai</title>
+<meta id="metaDesc" name="description" content="Verko yra Lietuvos komanda, kurianti Home by Verko — programą, sujungiančią tave su kaimynais netoliese kasdieniams darbams namuose. Be agentūrų, be komisinių.">
+<meta property="og:title" content="Verko — Home by Verko kūrėjai">
+<meta property="og:description" content="Kas mes esame, kuo tikime ir ką kuriame: Home by Verko — kaimynų pagalba namuose, be agentūrų ir komisinių.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://verko.lt/">
 <meta name="theme-color" content="#131610">
@@ -23,7 +23,7 @@
       "url": "https://verko.lt/",
       "email": "info@verko.lt",
       "areaServed": { "@type": "Country", "name": "Lithuania" },
-      "description": "Home by Verko is a neighbour-to-neighbour platform for everyday home help in Lithuania — cleaning, garden work, moving and more."
+      "description": "Verko is a Lithuanian team building Home by Verko, a neighbour-to-neighbour platform for everyday home help — cleaning, garden work, moving and more."
     },
     {
       "@type": "WebSite",
@@ -126,7 +126,7 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
 .kicker .pulse{position:relative;width:7px;height:7px;border-radius:50%;background:var(--amber);flex:none;}
 .kicker .pulse::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1.5px solid var(--amber);animation:pulse 1.8s ease-out infinite;}
 @keyframes pulse{0%{transform:scale(.6);opacity:.9;}100%{transform:scale(2);opacity:0;}}
-@media (prefers-reduced-motion:reduce){.kicker .pulse::after{animation:none;}}
+@media (prefers-reduced-motion:reduce){.kicker .pulse::after,.g-rating{animation:none;}}
 
 /* ---------- hero ---------- */
 .hero{padding:clamp(2.75rem,7vw,4.5rem) 0 clamp(2rem,5vw,3rem);}
@@ -137,6 +137,14 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
 .hero .cta-row{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:flex-start;margin-top:1.75rem;}
 .hero .fineprint{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--text-faint);margin-top:1.4rem;}
 .hero .fineprint svg{flex:none;}
+.g-rating{display:flex;align-items:center;gap:.5rem;width:fit-content;margin-top:1.1rem;padding:.4rem .85rem;border-radius:999px;background:var(--surface-2);border:1px solid var(--surface-border);font-size:.85rem;color:var(--text-muted);white-space:nowrap;animation:fade-in .5s var(--ease);transition:border-color .2s var(--ease);}
+.g-rating[hidden]{display:none;}
+.g-rating:hover{border-color:var(--moss-border);}
+.g-rating b{color:var(--text);font-weight:600;}
+.g-rating .g-count::before,.g-rating .g-src::before{content:"·";margin-right:.5rem;color:var(--text-faint);}
+.g-stars .off{fill:var(--text-faint);opacity:.35;}
+.g-stars .on{fill:var(--amber);}
+@keyframes fade-in{from{opacity:0;}}
 
 /* ---------- phone mockup ---------- */
 .phone-wrap{display:flex;justify-content:center;}
@@ -173,20 +181,19 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
 
 /* ---------- how it works ---------- */
 .tracks{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
-.track{border:1px solid var(--surface-border);border-radius:var(--radius-lg);padding:clamp(1.5rem,3vw,2.2rem);display:flex;flex-direction:column;gap:1.3rem;background:var(--bg);}
+.track{border:1px solid var(--surface-border);border-radius:var(--radius-lg);padding:clamp(1.5rem,3vw,2.2rem);display:flex;flex-direction:column;gap:1.3rem;background:var(--surface);}
 .track .kicker{margin-bottom:.2rem;}
 .step{display:flex;gap:.9rem;align-items:flex-start;}
 .step .num{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:.85rem;color:var(--amber);min-width:2.4ch;padding-top:.15rem;}
 .step h4{font-size:1rem;font-weight:600;margin-bottom:.2rem;}
 .step p{font-size:.9rem;color:var(--text-muted);}
 
-/* ---------- categories ---------- */
-.cat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;}
-.cat-card{border:1px solid var(--surface-border);border-radius:18px;padding:1.3rem 1rem;background:var(--surface);display:flex;flex-direction:column;gap:1.6rem;}
-.cat-card .ic{width:38px;height:38px;border-radius:11px;background:var(--moss-soft);display:flex;align-items:center;justify-content:center;}
-.cat-card h4{font-size:.9rem;font-weight:600;line-height:1.25;}
+/* ---------- about ---------- */
+.prose{max-width:70ch;margin-bottom:clamp(2.5rem,5vw,3.5rem);}
+.prose p{color:var(--text-muted);line-height:1.75;margin-top:1rem;}
+.prose p:first-child{margin-top:0;}
+.prose a{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:3px;}
 
-/* ---------- trust ---------- */
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
 .trust-card{border:1px solid var(--surface-border);border-radius:16px;padding:1.5rem;background:var(--bg);display:flex;flex-direction:column;gap:.7rem;}
 .trust-card .ic{width:36px;height:36px;border-radius:10px;background:var(--amber-soft-bg);border:1px solid var(--amber-soft-border);display:flex;align-items:center;justify-content:center;}
@@ -203,13 +210,12 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
 .qa[open] summary{border-bottom:1px solid var(--surface-border);}
 .qa .a{padding:0 1.25rem 1.2rem;color:var(--text-muted);font-size:.92rem;line-height:1.7;}
 
-/* ---------- final cta ---------- */
-.final{background:var(--moss);color:var(--moss-on);border-radius:28px;text-align:center;padding:clamp(2.75rem,6vw,4rem) 1.5rem;}
-.final h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700;letter-spacing:-.02em;}
-.final p{opacity:.78;margin:.8rem auto 1.9rem;max-width:44ch;}
-.final .btn--amber{box-shadow:0 5px 0 #a86f2f;}
-.final .btn--ghost{background:transparent;border-color:rgba(240,245,238,.3);color:var(--moss-on);}
-.cta-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.contact-card{border:1px solid var(--surface-border);border-radius:16px;padding:1.5rem;background:var(--bg);}
+.contact-card h3{font-size:.95rem;font-weight:600;margin-bottom:.5rem;}
+.contact-card p{font-size:.9rem;color:var(--text-muted);line-height:1.6;}
+.contact-card a{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:3px;}
 
 /* ---------- footer ---------- */
 .site-footer{border-top:1px solid var(--surface-border);background:var(--surface);}
@@ -234,17 +240,18 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
 @media (max-width:980px){
   .hero-grid{grid-template-columns:1fr;}
   .phone-wrap{order:-1;margin-bottom:.5rem;}
-  .cat-grid{grid-template-columns:repeat(3,1fr);}
   .trust-grid{grid-template-columns:1fr 1fr;}
+  .contact-grid{grid-template-columns:1fr 1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
 }
 @media (max-width:680px){
   .nav-links{display:none;}
   .tracks{grid-template-columns:1fr;}
+  .trust-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr;}
 }
 @media (max-width:480px){
-  .cat-grid{grid-template-columns:repeat(2,1fr);}
   .header-inner{gap:.6rem;}
 }
 </style>
@@ -259,10 +266,10 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
       Home<span class="by">&nbsp;by Verko</span>
     </a>
     <nav class="nav-links" aria-label="Main">
+      <a href="#about" data-i18n="navAbout">Apie</a>
       <a href="#how" data-i18n="navHow">Kaip veikia</a>
-      <a href="#categories" data-i18n="navCats">Sritys</a>
       <a href="#faq" data-i18n="navFaq">DUK</a>
-      <a href="about.html" data-i18n="navAbout">Apie</a>
+      <a href="#contact" data-i18n="navContact">Kontaktai</a>
     </nav>
     <div class="header-right">
       <div class="seg" role="group" aria-label="Language">
@@ -283,9 +290,13 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
         <h1 data-i18n="heroTitle">Pagalba namuose nuo <span class="accent">kaimynų.</span></h1>
         <p class="tagline" data-i18n="heroTagline">Home by Verko sujungia tave su netoliese gyvenančiais kaimynais — valymui, sodo darbams, baldų surinkimui ir kitiems kasdieniams darbams. Paskelbk, ko reikia, gauk tikrų pasiūlymų ir susitark tiesiogiai.</p>
         <div class="cta-row">
+          <!-- ponytail: web app only, no Google Play listing yet; send Android users to the Play Store page once it exists -->
           <a class="btn btn--amber" href="https://home.verko.lt/" data-i18n="heroCtaPrimary">Aplankyti home.verko.lt</a>
-          <a class="btn btn--ghost" href="#how" data-i18n="heroCtaSecondary">Kaip tai veikia</a>
+          <a class="btn btn--ghost" href="#about" data-i18n="heroCtaSecondary">Apie mus</a>
         </div>
+        <a class="g-rating" id="gRating" target="_blank" rel="noopener" hidden>
+          <b id="gScore"></b><span class="g-stars" id="gStars"></span><span class="g-count" id="gCount"></span><span class="g-src">Google Maps</span>
+        </a>
         <p class="fineprint">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
           <span data-i18n="heroFineprint">Be agentūrų, be komisinių — kainą ir atsiskaitymą susitariate tiesiogiai.</span>
@@ -336,7 +347,48 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
     </div>
   </section>
 
-  <section class="section alt" id="how">
+  <section class="section alt" id="about">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker" data-i18n="aboutKicker">Apie mus</p>
+        <h2 data-i18n="aboutTitle">Kaimynystė, tik skaitmeninė.</h2>
+        <p data-i18n="aboutLead">Home by Verko yra Verko komandos kuriama platforma, sujungianti žmones, kuriems reikia pagalbos namuose, su kaimynais, kurie gali padėti — be agentūrų, be tarpininkų, be komisinių.</p>
+      </div>
+      <div class="prose">
+        <p data-i18n="about1">Idėja gimė iš paprasto pastebėjimo: dažniausiai geriausią pagalbą namuose randame ne per agentūrą, o per kaimyną, pažįstamą ar rekomendaciją — žmogų, kuris gyvena šalia ir kuriuo galima pasitikėti. Home by Verko tiesiog perkelia tai į telefoną: paskelbi, ko reikia, ir netoliese esantys žmonės patys pasiūlo pagalbą.</p>
+        <p data-i18n="about2">Mes sąmoningai neatliekame mokėjimų, nenustatome kainų ir neimame komisinio mokesčio. Kainą, laiką ir atsiskaitymo būdą susitariate tiesiogiai jūs ir kaimynas — Home tik padeda susirasti vieni kitus, saugiai susirašinėti ir pasitikrinti, su kuo kalbatės.</p>
+        <p data-i18n="about3">Esame iš Lietuvos ir kuriame Home by Verko pirmiausia lietuviškoms bendruomenėms, pradedant Vilniumi. Programa netrukus startuos adresu <a href="https://home.verko.lt/">home.verko.lt</a>.</p>
+      </div>
+      <div class="section-head">
+        <p class="kicker" data-i18n="beliefsKicker">Kuo tikime</p>
+        <h2 data-i18n="beliefsTitle">Keturios taisyklės, kurių laikomės</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber-soft-text)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h4 data-i18n="belief1Title">Jokių komisinių</h4>
+          <p data-i18n="belief1Body">Home niekada neapdoroja mokėjimų. Kainą nustato pats žmogus, siūlantis pagalbą, o susitaria abi pusės.</p>
+        </div>
+        <div class="trust-card">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber-soft-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/></svg></div>
+          <h4 data-i18n="belief2Title">Susitariama tiesiogiai</h4>
+          <p data-i18n="belief2Body">Jokių paslėptų taisyklių ar automatinio suvedimo — jūs abu matote tą pačią informaciją ir susitariate patys.</p>
+        </div>
+        <div class="trust-card">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber-soft-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.4L5.7 21.5 7 14.5l-5-5 7-1z"/></svg></div>
+          <h4 data-i18n="belief3Title">Reputacija svarbiau nei reklama</h4>
+          <p data-i18n="belief3Body">Atsiliepimai kaupiasi po realių darbų — geriausi pagalbininkai išsiskiria darbais, ne biudžetu reklamai.</p>
+        </div>
+        <div class="trust-card">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber-soft-text)" stroke-width="2" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <h4 data-i18n="belief4Title">Paprasta iš pradžių iki galo</h4>
+          <p data-i18n="belief4Body">Prisijungimas telefonu, be el. pašto ar slaptažodžių. Mažiau žingsnių tarp jūsų ir pagalbos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
     <div class="container">
       <div class="section-head">
         <p class="kicker" data-i18n="howKicker">Kaip veikia</p>
@@ -360,55 +412,6 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
     </div>
   </section>
 
-  <section class="section" id="categories">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker" data-i18n="catKicker">Sritys</p>
-        <h2 data-i18n="catTitle">Kasdieniai darbai, ne agentūros paslaugos.</h2>
-      </div>
-      <div class="cat-grid">
-        <div class="cat-card"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--moss-soft-text)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V10l6-6 6 6v10M9 20v-6h6v6"/></svg></div><h4 data-i18n="catClean2">Namų švara</h4></div>
-        <div class="cat-card"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--moss-soft-text)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v9M12 12c-4 0-6-3-6-6 3 0 6 2 6 6zM12 12c4 0 6-3 6-6-3 0-6 2-6 6zM7 21h10"/></svg></div><h4 data-i18n="catGarden2">Sodas ir žolė</h4></div>
-        <div class="cat-card"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--moss-soft-text)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 11h16M12 5v14"/></svg></div><h4 data-i18n="catWindows2">Langai</h4></div>
-        <div class="cat-card"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--moss-soft-text)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7v13h12V7M9 7V4h6v3"/></svg></div><h4 data-i18n="catLaundry">Skalbimas ir lyginimas</h4></div>
-        <div class="cat-card"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--moss-soft-text)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="8" rx="1"/><path d="M6 10V7a2 2 0 012-2h8a2 2 0 012 2v3"/></svg></div><h4 data-i18n="catFurniture">Baldų surinkimas</h4></div>
-        <div class="cat-card"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--moss-soft-text)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15l4-8 4 8M6 12h4M14 20h6M17 20V9l-3 3M17 9l3 3"/></svg></div><h4 data-i18n="catSnow">Sniegas ir lapai</h4></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head">
-        <p class="kicker" data-i18n="whyKicker">Kodėl Home</p>
-        <h2 data-i18n="whyTitle">Susitariate patys, tiesiogiai.</h2>
-        <p data-i18n="whySub">Home tik sujungia žmones ir saugo susitarimą — kaina, laikas ir atsiskaitymas visada jūsų reikalas.</p>
-      </div>
-      <div class="trust-grid">
-        <div class="trust-card">
-          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber-soft-text)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h4 data-i18n="trust1Title">Jokių komisinių</h4>
-          <p data-i18n="trust1Body">Home neapdoroja pinigų ir neima komisinių. Susitarta kaina lieka jūsų dviejų reikalas.</p>
-        </div>
-        <div class="trust-card">
-          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber-soft-text)" stroke-width="2" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-          <h4 data-i18n="trust2Title">Prisijunk telefonu</h4>
-          <p data-i18n="trust2Body">Jokio el. pašto ar slaptažodžio — tik telefono numeris ir SMS kodas.</p>
-        </div>
-        <div class="trust-card">
-          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber-soft-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.4L5.7 21.5 7 14.5l-5-5 7-1z"/></svg></div>
-          <h4 data-i18n="trust3Title">Tikri kaimynai, tikri atsiliepimai</h4>
-          <p data-i18n="trust3Body">Kiekvienas profilis kaupia įvertinimus po realių darbų — matai, ką kiti apie juos sako.</p>
-        </div>
-        <div class="trust-card">
-          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber-soft-text)" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></div>
-          <h4 data-i18n="trust4Title">Tu sprendi</h4>
-          <p data-i18n="trust4Body">Priimk, atmesk ar užklausk bet kurį pasiūlymą prieš ką nors nuspręsdamas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section" id="faq">
     <div class="container">
       <div class="section-head">
@@ -425,14 +428,24 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
     </div>
   </section>
 
-  <section class="section">
+  <section class="section alt" id="contact">
     <div class="container">
-      <div class="final">
-        <h2 data-i18n="finalTitle">Netrukus jūsų rajone.</h2>
-        <p data-i18n="finalBody">Home by Verko startuoja adresu home.verko.lt. Pasižiūrėkite, kaip viskas veiks, arba susisiekite su mumis.</p>
-        <div class="cta-row">
-          <a class="btn btn--amber" href="https://home.verko.lt/" data-i18n="finalCtaPrimary">Aplankyti home.verko.lt</a>
-          <a class="btn btn--ghost" href="about.html" data-i18n="finalCtaSecondary">Apie Home by Verko</a>
+      <div class="section-head">
+        <p class="kicker" data-i18n="contactKicker">Susisiekite</p>
+        <h2 data-i18n="contactTitle">Turite klausimų ar norite pasakyti "labas"?</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3 data-i18n="contact1Title">Bendri klausimai</h3>
+          <p><a href="mailto:info@verko.lt">info@verko.lt</a></p>
+        </div>
+        <div class="contact-card">
+          <h3 data-i18n="contact2Title">Būsimas produktas</h3>
+          <p data-i18n="contact2Body">Programa vystoma adresu <a href="https://home.verko.lt/">home.verko.lt</a>.</p>
+        </div>
+        <div class="contact-card">
+          <h3 data-i18n="contact3Title">Teisinė informacija</h3>
+          <p><a href="privacy.html" data-i18n="contact3Privacy">Privatumo politika</a> · <a href="terms.html" data-i18n="contact3Terms">Paslaugų sąlygos</a></p>
         </div>
       </div>
     </div>
@@ -452,8 +465,9 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
     <div class="footer-col">
       <h5 data-i18n="footerCompany">Įmonė</h5>
       <ul>
-        <li><a href="about.html" data-i18n="footerAbout">Apie mus</a></li>
+        <li><a href="#about" data-i18n="footerAbout">Apie mus</a></li>
         <li><a href="mailto:info@verko.lt">info@verko.lt</a></li>
+        <li hidden><a id="gReview" target="_blank" rel="noopener" data-i18n="footerGoogleReview">Įvertink mus Google</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -500,10 +514,10 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
   /* ---------- i18n ---------- */
   var I18N = {
     lt: {
-      navHow:"Kaip veikia", navCats:"Sritys", navFaq:"DUK", navAbout:"Apie", navCta:"Aplankyti",
+      navHow:"Kaip veikia", navFaq:"DUK", navAbout:"Apie", navContact:"Kontaktai", navCta:"Aplankyti",
       heroTitle:"Pagalba namuose nuo <span class=\"accent\">kaimynų.</span>",
       heroTagline:"Home by Verko sujungia tave su netoliese gyvenančiais kaimynais — valymui, sodo darbams, baldų surinkimui ir kitiems kasdieniams darbams. Paskelbk, ko reikia, gauk tikrų pasiūlymų ir susitark tiesiogiai.",
-      heroCtaPrimary:"Aplankyti home.verko.lt", heroCtaSecondary:"Kaip tai veikia",
+      heroCtaPrimary:"Aplankyti home.verko.lt", heroCtaSecondary:"Apie mus",
       heroFineprint:"Be agentūrų, be komisinių — kainą ir atsiskaitymą susitariate tiesiogiai.",
       phoneArea:"Žvėrynas · Vilnius", phoneGreeting:"Labas, Rūta", phoneBrand:"namai · verko",
       phoneHeroTitle:"Ko šiandien reikia namuose?", phoneHeroSub:"Paskelbk darbą ir kaimynai pasiūlys pagalbą per kelias minutes.",
@@ -519,34 +533,39 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
       howHelp1Title:"Naršyk darbus netoliese", howHelp1Body:"Matai skelbimus savo rajone su nurodyta sritimi ir orientaciniu biudžetu.",
       howHelp2Title:"Siųsk savo pasiūlymą", howHelp2Body:"Pats nustatai kainą ir parašai trumpą žinutę, kodėl tinki šiam darbui.",
       howHelp3Title:"Gauk darbą, gauk atsiliepimą", howHelp3Body:"Atlikai darbą — gavai apmokėjimą tiesiogiai iš kaimyno ir atsiliepimą profilyje.",
-      catKicker:"Sritys", catTitle:"Kasdieniai darbai, ne agentūros paslaugos.",
-      catClean2:"Namų švara", catGarden2:"Sodas ir žolė", catWindows2:"Langai", catLaundry:"Skalbimas ir lyginimas", catFurniture:"Baldų surinkimas", catSnow:"Sniegas ir lapai",
-      whyKicker:"Kodėl Home", whyTitle:"Susitariate patys, tiesiogiai.", whySub:"Home tik sujungia žmones ir saugo susitarimą — kaina, laikas ir atsiskaitymas visada jūsų reikalas.",
-      trust1Title:"Jokių komisinių", trust1Body:"Home neapdoroja pinigų ir neima komisinių. Susitarta kaina lieka jūsų dviejų reikalas.",
-      trust2Title:"Prisijunk telefonu", trust2Body:"Jokio el. pašto ar slaptažodžio — tik telefono numeris ir SMS kodas.",
-      trust3Title:"Tikri kaimynai, tikri atsiliepimai", trust3Body:"Kiekvienas profilis kaupia įvertinimus po realių darbų — matai, ką kiti apie juos sako.",
-      trust4Title:"Tu sprendi", trust4Body:"Priimk, atmesk ar užklausk bet kurį pasiūlymą prieš ką nors nuspręsdamas.",
+      aboutKicker:"Apie mus", aboutTitle:"Kaimynystė, tik skaitmeninė.",
+      aboutLead:"Home by Verko yra Verko komandos kuriama platforma, sujungianti žmones, kuriems reikia pagalbos namuose, su kaimynais, kurie gali padėti — be agentūrų, be tarpininkų, be komisinių.",
+      about1:"Idėja gimė iš paprasto pastebėjimo: dažniausiai geriausią pagalbą namuose randame ne per agentūrą, o per kaimyną, pažįstamą ar rekomendaciją — žmogų, kuris gyvena šalia ir kuriuo galima pasitikėti. Home by Verko tiesiog perkelia tai į telefoną: paskelbi, ko reikia, ir netoliese esantys žmonės patys pasiūlo pagalbą.",
+      about2:"Mes sąmoningai neatliekame mokėjimų, nenustatome kainų ir neimame komisinio mokesčio. Kainą, laiką ir atsiskaitymo būdą susitariate tiesiogiai jūs ir kaimynas — Home tik padeda susirasti vieni kitus, saugiai susirašinėti ir pasitikrinti, su kuo kalbatės.",
+      about3:"Esame iš Lietuvos ir kuriame Home by Verko pirmiausia lietuviškoms bendruomenėms, pradedant Vilniumi. Programa netrukus startuos adresu <a href=\"https://home.verko.lt/\">home.verko.lt</a>.",
+      beliefsKicker:"Kuo tikime", beliefsTitle:"Keturios taisyklės, kurių laikomės",
+      belief1Title:"Jokių komisinių", belief1Body:"Home niekada neapdoroja mokėjimų. Kainą nustato pats žmogus, siūlantis pagalbą, o susitaria abi pusės.",
+      belief2Title:"Susitariama tiesiogiai", belief2Body:"Jokių paslėptų taisyklių ar automatinio suvedimo — jūs abu matote tą pačią informaciją ir susitariate patys.",
+      belief3Title:"Reputacija svarbiau nei reklama", belief3Body:"Atsiliepimai kaupiasi po realių darbų — geriausi pagalbininkai išsiskiria darbais, ne biudžetu reklamai.",
+      belief4Title:"Paprasta iš pradžių iki galo", belief4Body:"Prisijungimas telefonu, be el. pašto ar slaptažodžių. Mažiau žingsnių tarp jūsų ir pagalbos.",
       faqKicker:"DUK", faqTitle:"Dažniausi klausimai",
       faq1q:"Ar Home ima komisinį mokestį?", faq1a:"Ne. Home niekada neapdoroja mokėjimų ir neima komisinių — kainą nustato ir susitaria tiesiogiai jūs ir kaimynas.",
       faq2q:"Kaip vyksta atsiskaitymas?", faq2a:"Tiesiogiai tarp jūsų dviejų — grynais, pavedimu ar kaip patogiau. Home tam neturi jokio vaidmens.",
       faq3q:"Kaip patikrinami vartotojai?", faq3a:"Kiekviena paskyra patvirtinama telefono numeriu, o profiliuose kaupiasi atsiliepimai po realių darbų. Tai naudingas signalas, bet ne patikra — visada verta pasiskaityti atsiliepimus ir pasikalbėti prieš sutariant.",
       faq4q:"Kada bus galima naudotis Home by Verko?", faq4a:"Programa netrukus startuos adresu home.verko.lt. Sekite šį puslapį arba parašykite mums, jei norite sužinoti pirmieji.",
       faq5q:"Kas jei kaimynas nusprendžia neatvykti ar darbas nutrūksta?", faq5a:"Pirmiausia aptarkite tai pokalbyje — dažniausiai tai nesusipratimas. Jei neišsisprendžia, susisiekite su mumis el. paštu, o ginčai sprendžiami remiantis pokalbio istorija ir susitarimo įrodymais.",
-      finalTitle:"Netrukus jūsų rajone.", finalBody:"Home by Verko startuoja adresu home.verko.lt. Pasižiūrėkite, kaip viskas veiks, arba susisiekite su mumis.",
-      finalCtaPrimary:"Aplankyti home.verko.lt", finalCtaSecondary:"Apie Home by Verko",
+      contactKicker:"Susisiekite", contactTitle:"Turite klausimų ar norite pasakyti \"labas\"?",
+      contact1Title:"Bendri klausimai", contact2Title:"Būsimas produktas", contact2Body:"Programa vystoma adresu <a href=\"https://home.verko.lt/\">home.verko.lt</a>.",
+      contact3Title:"Teisinė informacija", contact3Privacy:"Privatumo politika", contact3Terms:"Paslaugų sąlygos",
       footerBrand:"Kaimynai, kurie padeda kaimynams. Netrukus adresu home.verko.lt.",
-      footerCompany:"Įmonė", footerAbout:"Apie mus",
+      footerCompany:"Įmonė", footerAbout:"Apie mus", footerGoogleReview:"Įvertink mus Google",
       footerLegal:"Teisinė informacija", footerPrivacy:"Privatumo politika", footerTerms:"Paslaugų teikimo sąlygos", footerAds:"Reklama ir slapukai",
       footerCopy:"© 2026 Verko. Visos teisės saugomos.", footerCookieSettings:"Slapukų nustatymai",
       cookieText:"Naudojame slapukus, kad svetainė veiktų, ir, jei sutinkate, rodytume reklamą. Naudodamiesi verko.lt sutinkate su <a href=\"privacy.html\" data-i18n=\"cookiePrivacyLink\">Privatumo politika</a> ir <a href=\"terms.html\" data-i18n=\"cookieTermsLink\">Paslaugų teikimo sąlygomis</a>.",
       cookiePrivacyLink:"Privatumo politika", cookieTermsLink:"Paslaugų teikimo sąlygomis",
-      cookieDecline:"Atmesti", cookieAccept:"Sutinku"
+      cookieDecline:"Atmesti", cookieAccept:"Sutinku",
+      reviews:{one:"atsiliepimas", few:"atsiliepimai", other:"atsiliepimų"}, ratingAria:"Google Maps įvertinimas {r} iš 5, {n}"
     },
     en: {
-      navHow:"How it works", navCats:"Categories", navFaq:"FAQ", navAbout:"About", navCta:"Visit app",
+      navHow:"How it works", navFaq:"FAQ", navAbout:"About", navContact:"Contact", navCta:"Visit app",
       heroTitle:"Get help at home, from <span class=\"accent\">your neighbours.</span>",
       heroTagline:"Home by Verko connects you with neighbours nearby for cleaning, garden work, furniture assembly and other everyday jobs. Post what you need, get real offers, and agree the details directly.",
-      heroCtaPrimary:"Visit home.verko.lt", heroCtaSecondary:"See how it works",
+      heroCtaPrimary:"Visit home.verko.lt", heroCtaSecondary:"About us",
       heroFineprint:"No agencies, no commission — you agree the price and payment directly.",
       phoneArea:"Žvėrynas · Vilnius", phoneGreeting:"Hi, Rūta", phoneBrand:"home · verko",
       phoneHeroTitle:"What do you need at home today?", phoneHeroSub:"Post a job and neighbours will offer to help within minutes.",
@@ -562,34 +581,39 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
       howHelp1Title:"Browse jobs nearby", howHelp1Body:"See listings in your area with the category and an indicative budget.",
       howHelp2Title:"Send your offer", howHelp2Body:"Set your own price and add a short note on why you're a good fit.",
       howHelp3Title:"Get the job, get reviewed", howHelp3Body:"Do the work, get paid directly by your neighbour, and collect a review on your profile.",
-      catKicker:"Categories", catTitle:"Everyday jobs, not agency services.",
-      catClean2:"Home cleaning", catGarden2:"Garden & lawn", catWindows2:"Windows", catLaundry:"Laundry & ironing", catFurniture:"Furniture assembly", catSnow:"Snow & leaves",
-      whyKicker:"Why Home", whyTitle:"You agree, directly.", whySub:"Home only connects people and keeps the agreement — price, timing and payment are always between you two.",
-      trust1Title:"Zero commission", trust1Body:"Home never processes money and never takes a cut. The agreed price stays between the two of you.",
-      trust2Title:"Sign in with your phone", trust2Body:"No email, no password — just your phone number and an SMS code.",
-      trust3Title:"Real neighbours, real reviews", trust3Body:"Every profile builds up ratings from real completed jobs — see what others have said.",
-      trust4Title:"You're always in control", trust4Body:"Accept, decline or message any offer before you agree to anything.",
+      aboutKicker:"About us", aboutTitle:"Neighbourliness, made digital.",
+      aboutLead:"Home by Verko is a platform built by the Verko team, connecting people who need help at home with neighbours who can help — no agencies, no middlemen, no commission.",
+      about1:"The idea came from a simple observation: the best help at home usually comes not from an agency, but from a neighbour, an acquaintance or a recommendation — someone nearby you can trust. Home by Verko simply brings that onto your phone: post what you need, and people nearby offer to help.",
+      about2:"We deliberately don't process payments, set prices, or take a commission. Price, timing and how you pay are agreed directly between you and your neighbour — Home just helps you find each other, chat safely, and check who you're talking to.",
+      about3:"We're based in Lithuania and are building Home by Verko for Lithuanian communities first, starting in Vilnius. The app is launching soon at <a href=\"https://home.verko.lt/\">home.verko.lt</a>.",
+      beliefsKicker:"What we believe", beliefsTitle:"Four rules we hold to",
+      belief1Title:"Zero commission", belief1Body:"Home never processes payments. The person offering help sets the price, and both sides agree it.",
+      belief2Title:"You agree directly", belief2Body:"No hidden rules or automatic matching — you both see the same information and agree it yourselves.",
+      belief3Title:"Reputation over advertising", belief3Body:"Reviews build up from real completed jobs — the best helpers stand out through work, not ad spend.",
+      belief4Title:"Simple, start to finish", belief4Body:"Sign in with your phone, no email or passwords. Fewer steps between you and help.",
       faqKicker:"FAQ", faqTitle:"Frequently asked questions",
       faq1q:"Does Home take a commission?", faq1a:"No. Home never processes payments and never takes a cut — you and your neighbour set and agree the price directly.",
       faq2q:"How does payment work?", faq2a:"Directly between the two of you — cash, bank transfer, or whatever suits you both. Home plays no part in it.",
       faq3q:"How are people verified?", faq3a:"Every account is confirmed by phone number, and profiles build up reviews from real completed jobs. It's a useful signal, not a background check — always read reviews and talk it through before agreeing.",
       faq4q:"When can I start using Home by Verko?", faq4a:"The app is launching soon at home.verko.lt. Follow this page or write to us if you'd like to hear first.",
       faq5q:"What if a neighbour doesn't show up or a job falls through?", faq5a:"Raise it in the chat first — most issues are a misunderstanding. If it doesn't get resolved, contact us by email; disputes are handled using the chat history and agreement details.",
-      finalTitle:"Coming soon to your neighbourhood.", finalBody:"Home by Verko is launching at home.verko.lt. See how it will work, or get in touch.",
-      finalCtaPrimary:"Visit home.verko.lt", finalCtaSecondary:"About Home by Verko",
+      contactKicker:"Get in touch", contactTitle:"Questions, or just want to say hi?",
+      contact1Title:"General enquiries", contact2Title:"Upcoming product", contact2Body:"The app is being built at <a href=\"https://home.verko.lt/\">home.verko.lt</a>.",
+      contact3Title:"Legal", contact3Privacy:"Privacy policy", contact3Terms:"Terms of service",
       footerBrand:"Neighbours who help neighbours. Coming soon at home.verko.lt.",
-      footerCompany:"Company", footerAbout:"About us",
+      footerCompany:"Company", footerAbout:"About us", footerGoogleReview:"Review us on Google",
       footerLegal:"Legal", footerPrivacy:"Privacy policy", footerTerms:"Terms of service", footerAds:"Advertising & cookies",
       footerCopy:"© 2026 Verko. All rights reserved.", footerCookieSettings:"Cookie settings",
       cookieText:"We use cookies to run this site and, if you agree, to show ads. By using verko.lt you agree to our <a href=\"privacy.html\" data-i18n=\"cookiePrivacyLink\">Privacy Policy</a> and <a href=\"terms.html\" data-i18n=\"cookieTermsLink\">Terms of Service</a>.",
       cookiePrivacyLink:"Privacy Policy", cookieTermsLink:"Terms of Service",
-      cookieDecline:"Decline", cookieAccept:"Accept"
+      cookieDecline:"Decline", cookieAccept:"Accept",
+      reviews:{one:"review", other:"reviews"}, ratingAria:"Google Maps rating {r} out of 5, {n}"
     }
   };
-  var titles = { lt:"Home by Verko — Kaimynai, kurie padeda kaimynams", en:"Home by Verko — Neighbours who help neighbours" };
+  var titles = { lt:"Verko — Home by Verko kūrėjai", en:"Verko — the team behind Home by Verko" };
   var descs = {
-    lt:"Home by Verko sujungia tave su kaimynais netoliese — valymui, sodo darbams, baldų surinkimui ir kitiems kasdieniams darbams. Be agentūrų, be komisinių. Netrukus home.verko.lt.",
-    en:"Home by Verko connects you with neighbours nearby for cleaning, garden work, furniture assembly and other everyday jobs. No agencies, no commission. Coming soon to home.verko.lt."
+    lt:"Verko yra Lietuvos komanda, kurianti Home by Verko — programą, sujungiančią tave su kaimynais netoliese kasdieniams darbams namuose. Be agentūrų, be komisinių.",
+    en:"Verko is a Lithuanian team building Home by Verko — an app that connects you with neighbours nearby for everyday jobs at home. No agencies, no commission."
   };
 
   function setLang(lang){
@@ -605,6 +629,7 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
     $("#langEn").classList.toggle("active", lang==="en");
     $("#langLt").classList.toggle("active", lang==="lt");
     try{localStorage.setItem("vk_lang", lang);}catch(e){}
+    renderRating();
   }
   $("#langEn").addEventListener("click", function(){ setLang("en"); });
   $("#langLt").addEventListener("click", function(){ setLang("lt"); });
@@ -634,6 +659,39 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
   $("#cookieAccept").addEventListener("click", function(){ setConsent("accepted"); hideBanner(); loadAds(); });
   $("#cookieDecline").addEventListener("click", function(){ setConsent("declined"); hideBanner(); });
   $("#cookieSettingsBtn").addEventListener("click", function(){ showBanner(); });
+
+  /* ---------- Google rating ---------- */
+  var gData = null;
+  function isUrl(u){ return typeof u==="string" && u.indexOf("https://")===0; }
+  function renderRating(){
+    if(!gData) return;
+    var lang = document.documentElement.lang, t = I18N[lang];
+    var score = new Intl.NumberFormat(lang, {minimumFractionDigits:1, maximumFractionDigits:1}).format(gData.rating);
+    var count = gData.count + " " + (t.reviews[new Intl.PluralRules(lang).select(gData.count)] || t.reviews.other);
+    $("#gScore").textContent = score;
+    $("#gCount").textContent = count;
+    $("#gRating").setAttribute("aria-label", t.ratingAria.replace("{r}", score).replace("{n}", count));
+  }
+  fetch("https://api.verko.lt/v3/google-rating").then(function(res){
+    if(res.status!==200) throw new Error(res.status);
+    return res.json();
+  }).then(function(d){
+    if(isUrl(d.write_review_url)){
+      $("#gReview").href = d.write_review_url;
+      $("#gReview").parentNode.hidden = false;
+    }
+    if(!(typeof d.rating==="number" && d.rating>0 && d.rating<=5 && Number.isInteger(d.count) && d.count>0 && isUrl(d.reviews_url))) return;
+    var r = Math.round(d.rating*10)/10, star = "M12 2l3 6.5 7 1-5 5 1.3 7-6.3-3.4L5.7 21.5 7 14.5l-5-5 7-1z", paths = "", clip = "";
+    for(var i=0;i<5;i++){
+      paths += '<path transform="translate('+i*24+')" d="'+star+'"/>';
+      clip += '<rect x="'+(i*24+2)+'" width="'+20*Math.max(0, Math.min(1, r-i))+'" height="24"/>';
+    }
+    $("#gStars").innerHTML = '<svg width="70" height="14" viewBox="0 0 120 24" aria-hidden="true"><clipPath id="gStarClip">'+clip+'</clipPath><g class="off">'+paths+'</g><g class="on" clip-path="url(#gStarClip)">'+paths+'</g></svg>';
+    gData = {rating:r, count:d.count};
+    renderRating();
+    $("#gRating").href = d.reviews_url;
+    $("#gRating").hidden = false;
+  }).catch(function(){});
 })();
 </script>
 </body>

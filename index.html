@@ -137,7 +137,7 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
 .hero .cta-row{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:flex-start;margin-top:1.75rem;}
 .hero .fineprint{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--text-faint);margin-top:1.4rem;}
 .hero .fineprint svg{flex:none;}
-.g-rating{display:flex;align-items:center;gap:.5rem;width:fit-content;margin-top:1.1rem;padding:.4rem .85rem;border-radius:999px;background:var(--surface-2);border:1px solid var(--surface-border);font-size:.85rem;color:var(--text-muted);white-space:nowrap;animation:fade-in .5s var(--ease);transition:border-color .2s var(--ease);}
+.g-rating{display:flex;align-items:center;gap:.45rem;width:fit-content;padding:.35rem .8rem;border-radius:999px;background:var(--surface-2);border:1px solid var(--surface-border);font-size:.8rem;color:var(--text-muted);white-space:nowrap;animation:fade-in .5s var(--ease);transition:border-color .2s var(--ease);}
 .g-rating[hidden]{display:none;}
 .g-rating:hover{border-color:var(--moss-border);}
 .g-rating b{color:var(--text);font-weight:600;}
@@ -287,6 +287,9 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
   <section class="hero" id="top">
     <div class="container hero-grid">
       <div>
+        <a class="g-rating" id="gRating" target="_blank" rel="noopener" hidden>
+          <b id="gScore"></b><span class="g-stars" id="gStars"></span><span class="g-count" id="gCount"></span><span class="g-src">Google Maps</span>
+        </a>
         <h1 data-i18n="heroTitle">Pagalba namuose nuo <span class="accent">kaimynų.</span></h1>
         <p class="tagline" data-i18n="heroTagline">Home by Verko sujungia tave su netoliese gyvenančiais kaimynais — valymui, sodo darbams, baldų surinkimui ir kitiems kasdieniams darbams. Paskelbk, ko reikia, gauk tikrų pasiūlymų ir susitark tiesiogiai.</p>
         <div class="cta-row">
@@ -294,9 +297,6 @@ button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
           <a class="btn btn--amber" href="https://home.verko.lt/" data-i18n="heroCtaPrimary">Aplankyti home.verko.lt</a>
           <a class="btn btn--ghost" href="#about" data-i18n="heroCtaSecondary">Apie mus</a>
         </div>
-        <a class="g-rating" id="gRating" target="_blank" rel="noopener" hidden>
-          <b id="gScore"></b><span class="g-stars" id="gStars"></span><span class="g-count" id="gCount"></span><span class="g-src">Google Maps</span>
-        </a>
         <p class="fineprint">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
           <span data-i18n="heroFineprint">Be agentūrų, be komisinių — kainą ir atsiskaitymą susitariate tiesiogiai.</span>
